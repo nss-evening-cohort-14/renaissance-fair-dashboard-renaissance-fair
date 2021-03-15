@@ -1,5 +1,5 @@
 {
-  "name": "renfaire-dashboard",
+  "name": "renfairesite",
   "version": "1.0.0",
   "description": "",
   "main": "src/javascripts/main.js",
@@ -8,7 +8,7 @@
     "build": "webpack --mode production --module-bind js=babel-loader"
   },
   "keywords": [],
-  "author": "NSS-E14",
+  "author": "nsse14",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.11.4",
