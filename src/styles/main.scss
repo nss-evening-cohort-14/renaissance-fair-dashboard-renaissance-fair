@@ -5,5 +5,13 @@ body {
   background-color: antiquewhite;
   color: brown;
   text-align: center;
-  margin-top: 100px;
+}
+
+#nav {
+  position: fixed;
+  width: 100%;
+}
+
+#auth-button {
+  margin-left: auto;
 }
