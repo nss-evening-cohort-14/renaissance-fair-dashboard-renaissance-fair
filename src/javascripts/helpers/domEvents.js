@@ -16,7 +16,6 @@ const domEvents = () => {
     if (e.target.id.includes('food-view')) {
       getFood('-MUuao2lynNljpuXaHnJ').then((foodArray) => showFood(foodArray));
     }
-
     if (e.target.id.includes('staff-view')) {
       getStaff('-MUuao2lynNljpuXaHnJ').then((staffArray) => showStaff(staffArray));
     }
