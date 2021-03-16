@@ -1,6 +1,8 @@
+import getShows from './data/showsData';
+
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
-    console.warn('shows');
+    getShows().then((shows) => console.warn(shows));
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
