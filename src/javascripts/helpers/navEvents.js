@@ -1,4 +1,5 @@
 import getShows from './data/showsData';
+import waresButton from '../components/souvenirButton';
 import foodButton from '../components/foodButton';
 import headerTitle from '../components/headerTitle';
 import printShows from '../components/printShows';
@@ -11,7 +12,7 @@ const navEvents = () => {
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
-    console.warn('wares');
+    waresButton();
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
