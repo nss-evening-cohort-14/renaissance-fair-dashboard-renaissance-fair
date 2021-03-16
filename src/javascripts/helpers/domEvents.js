@@ -27,6 +27,10 @@ const domEvents = () => {
     if (e.target.id.includes('add-newStaff-btn')) {
       createStaff();
     }
+
+    if (e.target.id.includes('submitNewStaff')) {
+      console.warn('submitted');
+    }
   });
 };
 

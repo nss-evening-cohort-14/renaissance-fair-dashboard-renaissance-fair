@@ -10,8 +10,15 @@ const getStaff = (id) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const createStaff = (id) => new Promise((resolve, reject) => {
-  axios.put(`${dbUrl}/staff.json, `);
+const createStaff = (staffObject, id) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/staff.json`, staffObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/staff/${response.data.name}.json`, body)
+        .then(() => {
+          getStaff(id).then((staffArray) => resolve(staffArray));
+        });
+    }).catch((error) => reject(error));
 });
 
-export default getStaff;
+export { getStaff, createStaff };
