@@ -6,7 +6,7 @@ import getFood from './data/foodData';
 import getStaff from './data/staffData';
 import { showStaff } from '../components/showStaff';
 import getShows from './data/showsData';
-import createStaff from '../components/createStaff';
+import createStaff from '../components/forms/createStaff';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {

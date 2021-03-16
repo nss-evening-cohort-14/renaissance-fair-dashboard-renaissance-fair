@@ -10,4 +10,8 @@ const getStaff = (id) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const createStaff = (id) => new Promise((resolve, reject) => {
+  axios.put(`${dbUrl}/staff.json, `);
+});
+
 export default getStaff;
