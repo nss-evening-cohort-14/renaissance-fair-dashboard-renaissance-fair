@@ -1,5 +1,4 @@
 const buildNav = () => {
-  document.querySelector('#login-form-container').innerHTML = '';
   document.querySelector('#nav').innerHTML = `
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -22,7 +21,7 @@ const buildNav = () => {
           <a class="nav-link" id="food-link" href="#">Food Shoppes</a>
         </li>
       </ul>
-      <div id="logout-button"></div>
+      <div id="auth-button"></div>
     </div>
   </div>
 </nav>`;

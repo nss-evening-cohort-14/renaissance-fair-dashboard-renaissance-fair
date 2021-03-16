@@ -7,7 +7,7 @@ const signMeOut = () => {
 
 const logoutButton = () => {
   const domString = '<button id="google-auth" class="btn btn-danger">SIGNOUT</button>';
-  $('#logout-button').html(domString);
+  $('#auth-button').html(domString);
   $('#google-auth').click(signMeOut);
 };
 
