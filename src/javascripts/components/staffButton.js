@@ -1,5 +1,4 @@
-const staffButton = () => {
-  const domString = `<div id="staff-container">
+const staffButton = () => `<div id="staff-container">
                         <div class="card staff-button-card" style="width: 18rem;">
                           <img src=".." class="card-img-top top" alt="Staff">
                         <div class="card-body middle">
@@ -9,7 +8,5 @@ const staffButton = () => {
                         </div>
                       </div>
                     </div>`;
-  document.querySelector('#content-container').innerHTML += domString;
-};
 
 export default staffButton;

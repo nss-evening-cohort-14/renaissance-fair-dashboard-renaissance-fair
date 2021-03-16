@@ -18,8 +18,13 @@ body {
 .food-button-card {
   background-image: url('https://media.istockphoto.com/photos/food-backgrounds-table-filled-with-large-variety-of-food-picture-id1155240408?k=6&m=1155240408&s=612x612&w=0&h=SEhOUzsexrBBtRrdaLWNB6Zub65Dnyjk7vVrTk1KQSU=');
 }
-
-
+.food-card {
+  height: 30em;
+  margin: 20px;
+  img {
+    height: 35%;
+  }
+}
 #nav {
   position: fixed;
   width: 100%;

@@ -1,6 +1,4 @@
-const showsButton = () => {
-  // document.querySelector('#content-container').innerHTML = '';
-  document.querySelector('#content-container').innerHTML += `<div id="shows-container">
+const showsButton = () => `<div id="shows-container">
                         <div class="card shows-button-card" style="width: 18rem;">
                           <img src="..." class="card-img-top top" alt="hobbits">
                         <div class="card-body middle">
@@ -10,6 +8,5 @@ const showsButton = () => {
                         </div>
                       </div>
                     </div>`;
-};
 
 export default showsButton;
