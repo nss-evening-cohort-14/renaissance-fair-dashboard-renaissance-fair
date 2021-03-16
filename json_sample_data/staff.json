@@ -33,7 +33,7 @@
     "last_name": "",
     "staff_image": "https://images.unsplash.com/photo-1614578595532-a9e522ffb0fb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjZ8fGNvc3BsYXl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
     "years_worked": 8,
-    "staff_description": "Most powerful elves in the entire realm of Middle Earth"
+    "role": "Most powerful elves in the entire realm of Middle Earth"
   },
   "-CSCPwAIAg2hTA1XULGc": {
     "firebaseKey": "-CSCPwAIAg2hTA1XULGc",
