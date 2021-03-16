@@ -1,6 +1,7 @@
 const foodButton = () => {
+  document.querySelector('#content-container').innerHTML = '';
   const domString = `<div id="food-container">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card food-button-card" style="width: 18rem;">
                           <img src="..." class="card-img-top top" alt="...">
                         <div class="card-body middle">
                           <h5 class="card-title">Card title</h5>
