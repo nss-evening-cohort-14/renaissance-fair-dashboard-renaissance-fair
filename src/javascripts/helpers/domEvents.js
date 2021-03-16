@@ -1,9 +1,11 @@
+import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
 import getSouvenirs from './data/souvenirData';
 import showFood from '../components/showFood';
 import getFood from './data/foodData';
 import getStaff from './data/staffData';
 import { showStaff } from '../components/showStaff';
+import getShows from './data/showsData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -17,6 +19,9 @@ const domEvents = () => {
 
     if (e.target.id.includes('staff-view')) {
       getStaff('-MUuao2lynNljpuXaHnJ').then((staffArray) => showStaff(staffArray));
+    }
+    if (e.target.id.includes('shows-view')) {
+      getShows().then((showsArray) => printShows(showsArray));
     }
   });
 };
