@@ -1,6 +1,6 @@
 {
   "-MVqxNqxoNTgbacrgc_W": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNqxoNTgbacrgc_W",
     "name": "Calypso - Black Cherry Lemonade",
     "image": "http://dummyimage.com/133x250.png/cc0000/ffffff",
@@ -10,7 +10,7 @@
     "glutenFree": false
   },
   "-MVqxNqzjWxKXeC6lbs2": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNqzjWxKXeC6lbs2",
     "name": "Mix Pina Colada",
     "image": "http://dummyimage.com/215x165.jpg/dddddd/000000",
@@ -20,7 +20,7 @@
     "glutenFree": true
   },
   "-MVqxNr0wVophcLKgolo": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr0wVophcLKgolo",
     "name": "Lid Tray - 12in Dome",
     "image": "http://dummyimage.com/245x108.jpg/dddddd/000000",
@@ -30,7 +30,7 @@
     "glutenFree": false
   },
   "-MVqxNr2P3K2XSNYcnhH": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr2P3K2XSNYcnhH",
     "name": "Sprite - 355 Ml",
     "image": "http://dummyimage.com/147x163.png/cc0000/ffffff",
@@ -40,7 +40,7 @@
     "glutenFree": false
   },
   "-MVqxNr4OrvYigAth_eb": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr4OrvYigAth_eb",
     "name": "Cherries - Bing, Canned",
     "image": "http://dummyimage.com/244x106.png/5fa2dd/ffffff",
@@ -50,7 +50,7 @@
     "glutenFree": true
   },
   "-MVqxNr74tqCjRkC_V9H": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr74tqCjRkC_V9H",
     "name": "Pepper - Scotch Bonnet",
     "image": "http://dummyimage.com/139x119.jpg/5fa2dd/ffffff",
@@ -60,7 +60,7 @@
     "glutenFree": false
   },
   "-MVqxNr9L_9VM_ScMj6R": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr9L_9VM_ScMj6R",
     "name": "Bagel - 12 Grain Preslice",
     "image": "http://dummyimage.com/171x169.bmp/5fa2dd/ffffff",
@@ -70,7 +70,7 @@
     "glutenFree": false
   },
   "-MVqxNrB0w4QXvgBr_Zj": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNrB0w4QXvgBr_Zj",
     "name": "Bag Clear 10 Lb",
     "image": "http://dummyimage.com/221x149.png/5fa2dd/ffffff",
@@ -80,7 +80,7 @@
     "glutenFree": false
   },
   "-MVqxNrEduzMS9XvYbbA": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNrEduzMS9XvYbbA",
     "name": "Pail For Lid 1537",
     "image": "http://dummyimage.com/191x127.bmp/5fa2dd/ffffff",
@@ -90,7 +90,7 @@
     "glutenFree": false
   },
   "-MVqxNrHhO8NRulKEu00": {
-    "dashboard_id": "-MUuao2lynNljpuXaHnJ",
+    "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNrHhO8NRulKEu00",
     "name": "Foam Tray S2",
     "image": "http://dummyimage.com/111x109.bmp/5fa2dd/ffffff",
