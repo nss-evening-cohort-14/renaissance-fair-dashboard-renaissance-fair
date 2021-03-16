@@ -1,6 +1,4 @@
-const waresButton = () => {
-  document.querySelector('#content-container').innerHTML = '';
-  const domString = `<div id="souvenir-container">
+const waresButton = () => `<div id="souvenir-container">
                         <div class="card wares-button-card" style="width: 18rem;">
                           <img src="..." class="card-img-top top" alt="...">
                         <div class="card-body middle">
@@ -10,7 +8,5 @@ const waresButton = () => {
                         </div>
                       </div>
                     </div>`;
-  document.querySelector('#content-container').innerHTML += domString;
-};
 
 export default waresButton;

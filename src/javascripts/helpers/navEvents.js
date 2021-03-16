@@ -1,6 +1,7 @@
-import waresButton from '../components/souvenirButton';
-import foodButton from '../components/foodButton';
 import headerTitle from '../components/headerTitle';
+import buttonBuilder from '../components/buttonBuilder';
+import getSouvenirs from './data/souvenirData';
+import { buildSouvenirs } from '../components/buildSouvenirs';
 
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
@@ -8,7 +9,7 @@ const navEvents = () => {
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
-    waresButton();
+    getSouvenirs('-MUuao2lynNljpuXaHnJ').then((souvenirArray) => buildSouvenirs(souvenirArray));
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
@@ -19,7 +20,7 @@ const navEvents = () => {
     console.warn('food');
   });
   document.querySelector('#home').addEventListener('click', () => {
-    foodButton();
+    buttonBuilder();
     headerTitle('Welcome to ye ol\' home');
   });
 };

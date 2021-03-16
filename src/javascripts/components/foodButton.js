@@ -1,6 +1,4 @@
-const foodButton = () => {
-  document.querySelector('#content-container').innerHTML = '';
-  const domString = `<div id="food-container">
+const foodButton = () => `<div id="food-container">
                         <div class="card food-button-card" style="width: 18rem;">
                           <img src="..." class="card-img-top top" alt="...">
                         <div class="card-body middle">
@@ -10,7 +8,5 @@ const foodButton = () => {
                         </div>
                       </div>
                     </div>`;
-  document.querySelector('#content-container').innerHTML += domString;
-};
 
 export default foodButton;
