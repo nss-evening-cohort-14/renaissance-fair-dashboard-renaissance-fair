@@ -1,10 +1,8 @@
-import foodButton from '../components/foodButton';
 import headerTitle from '../components/headerTitle';
 import waresButton from '../components/souvenirButton';
-import staffButton from '../components/staffButton';
 import getShows from './data/showsData';
 import printShows from '../components/printShows';
-import showsButton from '../components/showsButton';
+import buttonBuilder from '../components/buttonBuilder';
 
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
@@ -24,9 +22,7 @@ const navEvents = () => {
     console.warn('food');
   });
   document.querySelector('#home').addEventListener('click', () => {
-    foodButton();
-    staffButton();
-    showsButton();
+    buttonBuilder();
     headerTitle('Welcome to ye ol\' home');
   });
 };
