@@ -8,7 +8,7 @@ const navEvents = () => {
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
-    console.warn('court');
+    console.warn('court-link');
   });
 
   document.querySelector('#food-link').addEventListener('click', () => {

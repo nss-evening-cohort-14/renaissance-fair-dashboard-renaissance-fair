@@ -15,4 +15,8 @@ const showStaff = (array) => {
   });
 };
 
-export default showStaff;
+const emptyStaff = () => {
+  document.querySelector('#content-container').innerHTML = '<h1>No Staff</h1>';
+};
+
+export { showStaff, emptyStaff };
