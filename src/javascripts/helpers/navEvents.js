@@ -1,19 +1,21 @@
 import headerTitle from '../components/headerTitle';
+import waresButton from '../components/souvenirButton';
+import getShows from './data/showsData';
+import printShows from '../components/printShows';
 import buttonBuilder from '../components/buttonBuilder';
-import getSouvenirs from './data/souvenirData';
-import { buildSouvenirs } from '../components/buildSouvenirs';
 
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
-    console.warn('shows');
+    headerTitle('Watch a Show');
+    getShows().then((shows) => printShows(shows));
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
-    getSouvenirs('-MUuao2lynNljpuXaHnJ').then((souvenirArray) => buildSouvenirs(souvenirArray));
+    waresButton();
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
-    console.warn('court');
+    console.warn('court-link');
   });
 
   document.querySelector('#food-link').addEventListener('click', () => {
