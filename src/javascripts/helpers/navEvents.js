@@ -1,10 +1,13 @@
 import getShows from './data/showsData';
 import foodButton from '../components/foodButton';
 import headerTitle from '../components/headerTitle';
+import printShows from '../components/printShows';
+import showsButton from '../components/showsButton';
 
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
-    getShows().then((shows) => console.warn(shows));
+    headerTitle('Watch a Show');
+    getShows().then((shows) => printShows(shows));
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
@@ -20,6 +23,7 @@ const navEvents = () => {
   });
   document.querySelector('#home').addEventListener('click', () => {
     foodButton();
+    showsButton();
     headerTitle('Welcome to ye ol\' home');
   });
 };
