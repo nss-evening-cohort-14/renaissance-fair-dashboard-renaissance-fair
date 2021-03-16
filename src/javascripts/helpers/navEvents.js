@@ -1,10 +1,12 @@
+import waresButton from '../components/souvenirButton';
+
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
     console.warn('shows');
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
-    console.warn('wares');
+    waresButton();
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {

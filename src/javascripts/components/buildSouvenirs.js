@@ -20,4 +20,8 @@ const buildSouvenirs = (array) => {
   });
 };
 
-export default buildSouvenirs;
+const emptySouvenirs = () => {
+  document.querySelector('#content-container').innerHTML = '<h1>No Wares</h1>';
+};
+
+export { buildSouvenirs, emptySouvenirs };
