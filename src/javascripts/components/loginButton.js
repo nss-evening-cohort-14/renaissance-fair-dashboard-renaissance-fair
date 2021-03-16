@@ -8,7 +8,7 @@ const signMeIn = () => {
 
 const loginButton = () => {
   const domString = '<button id="google-auth" class="btn btn-danger">GOOGLE LOGIN</button>';
-  $('#login-form-container').html(domString);
+  $('#auth-button').html(domString);
   $('#google-auth').click(signMeIn);
 };
 
