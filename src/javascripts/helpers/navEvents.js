@@ -1,3 +1,4 @@
+import waresButton from '../components/souvenirButton';
 import foodButton from '../components/foodButton';
 import headerTitle from '../components/headerTitle';
 import staffButton from '../components/staffButton';
@@ -8,7 +9,7 @@ const navEvents = () => {
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
-    console.warn('wares');
+    waresButton();
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
