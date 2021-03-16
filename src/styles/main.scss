@@ -7,9 +7,13 @@ body {
   text-align: center;
 }
 .content-container {
+  margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+.header-container {
+  margin-top: 100px;
 }
 #nav {
   position: fixed;
