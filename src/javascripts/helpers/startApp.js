@@ -5,6 +5,7 @@ import domEvents from './domEvents';
 import navEvents from './navEvents';
 import domBuilder from './views/domBuilder';
 import headerTitle from '../components/headerTitle';
+import showsButton from '../components/showsButton';
 
 const startApp = () => {
   domEvents();
@@ -14,6 +15,7 @@ const startApp = () => {
   navEvents();
   waresButton();
   headerTitle('Welcome to ye ol\' site');
+  showsButton();
 };
 
 export default startApp;
