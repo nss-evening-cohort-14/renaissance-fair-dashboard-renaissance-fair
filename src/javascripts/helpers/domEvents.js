@@ -6,6 +6,7 @@ import getFood from './data/foodData';
 import getStaff from './data/staffData';
 import { showStaff } from '../components/showStaff';
 import getShows from './data/showsData';
+import createStaff from '../components/createStaff';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -21,6 +22,10 @@ const domEvents = () => {
     }
     if (e.target.id.includes('shows-view')) {
       getShows().then((showsArray) => printShows(showsArray));
+    }
+
+    if (e.target.id.includes('add-newStaff-btn')) {
+      createStaff();
     }
   });
 };
