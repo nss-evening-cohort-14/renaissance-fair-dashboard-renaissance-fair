@@ -1,5 +1,6 @@
 import foodButton from '../components/foodButton';
 import headerTitle from '../components/headerTitle';
+import staffButton from '../components/staffButton';
 
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
@@ -19,6 +20,7 @@ const navEvents = () => {
   });
   document.querySelector('#home').addEventListener('click', () => {
     foodButton();
+    staffButton();
     headerTitle('Welcome to ye ol\' home');
   });
 };
