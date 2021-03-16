@@ -1,11 +1,11 @@
 import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
-import getSouvenirs from './data/souvenirData';
+import getSouvenirs from '../helpers/data/souvenirData';
 import showFood from '../components/showFood';
-import getFood from './data/foodData';
-import getStaff from './data/staffData';
+import getFood from '../helpers/data/foodData';
+import getStaff from '../helpers/data/staffData';
 import { showStaff } from '../components/showStaff';
-import getShows from './data/showsData';
+import getShows from '../helpers/data/showsData';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
