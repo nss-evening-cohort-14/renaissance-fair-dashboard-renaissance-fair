@@ -112,6 +112,10 @@ const domEvents = (id) => {
         deleteFood(firebaseKey, id).then((foodArray) => showFood(foodArray));
       }
     }
+    if (e.target.id.includes('food-edit-btn')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      console.warn(firebaseKey);
+    }
   });
 };
 
