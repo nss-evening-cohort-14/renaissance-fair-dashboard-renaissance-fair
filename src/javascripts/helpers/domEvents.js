@@ -2,14 +2,15 @@ import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
 import getSouvenirs from './data/souvenirData';
 import showFood from '../components/showFood';
-import { getFood } from './data/foodData';
-import getStaff from './data/staffData';
+import { createNewStaff, getStaff } from './data/staffData';
+import { createFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
-import getShows from './data/showsData';
+import createStaff from '../components/forms/createStaff';
+import { createShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
+import createShowForm from '../components/forms/createShowForm';
 
 const domEvents = (id) => {
-  console.warn(id);
   document.querySelector('body').addEventListener('click', (e) => {
     console.warn(e.target.id);
     if (e.target.id.includes('souvenir-view')) {
@@ -29,16 +30,46 @@ const domEvents = (id) => {
     }
     if (e.target.id.includes('submit-food')) {
       e.preventDefault();
-      console.warn(e.target.id);
+      const foodObject = {
+        event_id: id,
+        name: document.querySelector('#foodName').value,
+        description: document.querySelector('#foodDescription').value,
+        image: document.querySelector('#imageUrl').value,
+        price: document.querySelector('#price').value,
+        glutenFree: document.querySelector('#glutenFree').checked,
+        vegetarian: document.querySelector('#vegetarian').checked
+      };
+      createFood(foodObject, id).then((response) => showFood(response));
+    }
+
+    if (e.target.id.includes('add-newStaff-btn')) {
+      createStaff();
+    }
+
+    if (e.target.id.includes('submitNewStaff')) {
+      e.preventDefault();
+      const staffObject = {
+        first_name: document.querySelector('#staffFirstName').value,
+        staff_image: document.querySelector('#staffImage').value,
+        role: document.querySelector('#staffRole').value,
+        event_id: id
+      };
+      createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
+    }
+    if (e.target.id.includes('show-show-form')) {
+      createShowForm();
+    }
+    if (e.target.id.includes('submit-show')) {
       e.preventDefault();
 
-      const foodObject = {
-        title: document.querySelector('#foodName').value,
-        content: document.querySelector('#foodDescription').value,
-        image: document.querySelector('#imageUrl').value,
-        article: document.querySelector('#article').value,
+      const showObject = {
+        name: document.querySelector('#showName').value,
+        image: document.querySelector('#image').value,
+        date: document.querySelector('#date').value,
+        description: document.querySelector('#description').value,
+        event_id: id
       };
-      console.warn(foodObject);
+      createShow(showObject, id).then((showsArray) => printShows(showsArray));
     }
   });
 };
