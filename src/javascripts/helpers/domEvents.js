@@ -23,6 +23,7 @@ const domEvents = (id) => {
       getFood(id).then((foodArray) => showFood(foodArray));
     }
     if (e.target.id.includes('staff-view')) {
+      headerTitle('Staff');
       getStaff(id).then((staffArray) => showStaff(staffArray));
     }
     if (e.target.id.includes('shows-view')) {
@@ -43,10 +44,10 @@ const domEvents = (id) => {
         vegetarian: document.querySelector('#vegetarian').checked
       };
       createFood(foodObject, id).then((response) => showFood(response));
-      headerTitle('Souvenirs');
     }
 
     if (e.target.id.includes('add-newStaff-btn')) {
+      headerTitle('Staff');
       createStaff();
     }
 
@@ -76,6 +77,7 @@ const domEvents = (id) => {
       createShow(showObject, id).then((showsArray) => printShows(showsArray));
     }
     if (e.target.id.includes('add-souvenir-btn')) {
+      headerTitle('Souvenirs');
       newSouvenirsForm();
     }
     if (e.target.id.includes('submit-souvenirs')) {
