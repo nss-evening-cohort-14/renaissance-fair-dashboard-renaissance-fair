@@ -21,7 +21,7 @@ const domEvents = () => {
       getStaff('-MUuao2lynNljpuXaHnJ').then((staffArray) => showStaff(staffArray));
     }
     if (e.target.id.includes('shows-view')) {
-      getShows().then((showsArray) => printShows(showsArray));
+      getShows('-MUuao2lynNljpuXaHnJ').then((showsArray) => printShows(showsArray));
     }
     if (e.target.id.includes('add-souvenir-btn')) {
       newWaresForm();

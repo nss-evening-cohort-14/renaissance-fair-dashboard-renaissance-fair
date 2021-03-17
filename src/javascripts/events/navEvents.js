@@ -7,7 +7,7 @@ import buttonBuilder from '../components/buttonBuilder';
 const navEvents = () => {
   document.querySelector('#shows-link').addEventListener('click', () => {
     headerTitle('Watch a Show');
-    getShows().then((shows) => printShows(shows));
+    getShows('-MUuao2lynNljpuXaHnJ').then((shows) => printShows(shows));
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
