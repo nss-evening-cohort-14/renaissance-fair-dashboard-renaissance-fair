@@ -1,4 +1,7 @@
+import headerTitle from './headerTitle';
+
 const printShows = (array) => {
+  headerTitle('Watch a Show');
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '<button type="submit" id="show-show-form" class="btn btn-primary">Add Show</button>';
 
