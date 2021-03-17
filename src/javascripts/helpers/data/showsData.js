@@ -20,7 +20,14 @@ const createShow = (showObject, id) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+const deleteShow = (firebaseKey, id) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/shows/${firebaseKey}.json`)
+    .then(() => getShows(id).then((showsArray) => resolve(showsArray)))
+    .catch((error) => reject(error));
+});
+
 export {
   getShows,
-  createShow
+  createShow,
+  deleteShow
 };

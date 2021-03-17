@@ -6,7 +6,7 @@ import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
 import { createFood, deleteFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
-import { createShow, getShows } from './data/showsData';
+import { createShow, deleteShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
@@ -64,7 +64,10 @@ const domEvents = (id) => {
 
     if (e.target.id.includes('delete-staff')) {
       const firebaseKey = e.target.id.split('--')[1];
-      deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure?')) {
+        deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
+      }
     }
 
     if (e.target.id.includes('show-show-form')) {
@@ -110,6 +113,13 @@ const domEvents = (id) => {
       if (window.confirm('Are you sure?')) {
         const firebaseKey = e.target.id.split('--')[1];
         deleteFood(firebaseKey, id).then((foodArray) => showFood(foodArray));
+      }
+    }
+    if (e.target.id.includes('delete-show')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure?')) {
+        const firebaseKey = e.target.id.split('^^')[1];
+        deleteShow(firebaseKey, id).then((showsArray) => printShows(showsArray));
       }
     }
   });
