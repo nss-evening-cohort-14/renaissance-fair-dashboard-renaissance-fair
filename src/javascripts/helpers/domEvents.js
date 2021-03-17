@@ -2,15 +2,14 @@ import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
 import getSouvenirs from './data/souvenirData';
 import showFood from '../components/showFood';
-import { getFood } from './data/foodData';
 import { createNewStaff, getStaff } from './data/staffData';
+import { createFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import getShows from './data/showsData';
 import createStaff from '../components/forms/createStaff';
 import createFoodForm from '../components/forms/createFoodForm';
 
 const domEvents = (id) => {
-  console.warn(id);
   document.querySelector('body').addEventListener('click', (e) => {
     console.warn(e.target.id);
     if (e.target.id.includes('souvenir-view')) {
@@ -30,16 +29,16 @@ const domEvents = (id) => {
     }
     if (e.target.id.includes('submit-food')) {
       e.preventDefault();
-      console.warn(e.target.id);
-      e.preventDefault();
-
       const foodObject = {
-        title: document.querySelector('#foodName').value,
-        content: document.querySelector('#foodDescription').value,
+        event_id: id,
+        name: document.querySelector('#foodName').value,
+        description: document.querySelector('#foodDescription').value,
         image: document.querySelector('#imageUrl').value,
-        article: document.querySelector('#article').value,
+        price: document.querySelector('#price').value,
+        glutenFree: document.querySelector('#glutenFree').checked,
+        vegetarian: document.querySelector('#vegetarian').checked
       };
-      console.warn(foodObject);
+      createFood(foodObject, id).then((response) => showFood(response));
     }
 
     if (e.target.id.includes('add-newStaff-btn')) {

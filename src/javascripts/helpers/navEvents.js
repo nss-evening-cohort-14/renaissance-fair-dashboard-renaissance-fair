@@ -9,7 +9,7 @@ import { showStaff } from '../components/showStaff';
 const navEvents = (id) => {
   document.querySelector('#shows-link').addEventListener('click', () => {
     headerTitle('Watch a Show');
-    getShows('-MUuao2lynNljpuXaHnJ').then((shows) => printShows(shows));
+    getShows(id).then((shows) => printShows(shows));
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
