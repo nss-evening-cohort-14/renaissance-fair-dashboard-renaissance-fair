@@ -22,7 +22,7 @@ const domEvents = (id) => {
       getFood(id).then((foodArray) => showFood(foodArray));
     }
     if (e.target.id.includes('staff-view')) {
-      headerTitle('Staff');
+      headerTitle('See Our Staff');
       getStaff(id).then((staffArray) => showStaff(staffArray));
     }
     if (e.target.id.includes('shows-view')) {
@@ -54,6 +54,7 @@ const domEvents = (id) => {
       e.preventDefault();
       const staffObject = {
         first_name: document.querySelector('#staffFirstName').value,
+        last_name: document.querySelector('#staffLastName').value,
         staff_image: document.querySelector('#staffImage').value,
         role: document.querySelector('#staffRole').value,
         event_id: id

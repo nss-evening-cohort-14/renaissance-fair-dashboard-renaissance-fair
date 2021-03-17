@@ -21,13 +21,13 @@ const footerBuilder = () => {
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+          <a class="nav-link" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="nav-link" target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+          <a class="nav-link" target="_blank" href="https://twitter.com/?lang=en"><i class="fab fa-twitter"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
