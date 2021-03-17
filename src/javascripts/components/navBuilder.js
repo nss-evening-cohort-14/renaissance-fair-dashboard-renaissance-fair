@@ -12,7 +12,7 @@ const buildNav = () => {
           <a class="nav-link active" id="shows-link" aria-current="page" href="#">Shows</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="wares-link" href="#">Wares</a>
+          <a class="nav-link" id="souvenirs-link" href="#">souvenirs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="court-link" href="#">Court</a>

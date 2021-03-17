@@ -4,14 +4,17 @@ import headerTitle from '../components/headerTitle';
 import domEvents from '../events/domEvents';
 import navEvents from '../events/navEvents';
 import buttonBuilder from '../components/buttonBuilder';
+import getEvents from './data/eventsData';
 
 const startApp = () => {
-  domEvents();
-  domBuilder();
-  buildNav();
-  navEvents();
-  buttonBuilder();
-  headerTitle('Welcome to ye ol\' site');
+  getEvents().then((response) => {
+    domEvents(response.firebaseKey);
+    domBuilder();
+    buildNav();
+    navEvents(response.firebaseKey);
+    buttonBuilder();
+    headerTitle('Welcome to ye ol\' site');
+  });
 };
 
 export default startApp;

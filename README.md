@@ -3,7 +3,7 @@
 The purpose of this project is to demonstrate successful collaboration on a full-cycle CRUD app that utilizes a Firebase Realtime Database. This app is a dashboard for Renaissance Faire event planners to create, update, and delete events, food vendors, souvenir vendors, and festival staff. If the user does not provide authentication, they are only able to see the faire information, but do not have the ability to manipulate data.
 # FEATURES
 
-1. The user can create new Shows (Entertainment), Souvenirs (Wares), Food (Feasts), and Staff (Court).
+1. The user can create new Shows (Entertainment), Souvenirs (souvenirs), Food (Feasts), and Staff (Court).
 2. The user can read the existing data and see the shows, souvenirs, food, and staff that currently exist in the database.
 3. The user can update the aforementioned objects and see the page update in realtime.
 4. The user can delete those objects from the dashboard, which then deletes the data from the Firebase database.
