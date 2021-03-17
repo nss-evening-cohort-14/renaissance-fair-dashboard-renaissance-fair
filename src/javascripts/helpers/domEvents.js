@@ -62,11 +62,6 @@ const domEvents = (id) => {
       createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
     }
 
-    if (e.target.id.includes('delete-staff')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
-    }
-
     if (e.target.id.includes('show-show-form')) {
       createShowForm();
     }
@@ -110,6 +105,13 @@ const domEvents = (id) => {
       if (window.confirm('Are you sure?')) {
         const firebaseKey = e.target.id.split('--')[1];
         deleteFood(firebaseKey, id).then((foodArray) => showFood(foodArray));
+      }
+    }
+    if (e.target.id.includes('delete-staff')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure?')) {
+        const firebaseKey = e.target.id.split('--')[1];
+        deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
       }
     }
   });
