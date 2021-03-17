@@ -102,7 +102,6 @@ const domEvents = (id) => {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure?')) {
         const firebaseKey = e.target.id.split('--')[1];
-        console.warn(firebaseKey);
         deleteFood(firebaseKey, id).then((foodArray) => showFood(foodArray));
       }
     }
