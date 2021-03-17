@@ -1,6 +1,6 @@
 import headerTitle from '../components/headerTitle';
 import waresButton from '../components/souvenirButton';
-import getShows from './data/showsData';
+import { getShows } from './data/showsData';
 import printShows from '../components/printShows';
 import buttonBuilder from '../components/buttonBuilder';
 
