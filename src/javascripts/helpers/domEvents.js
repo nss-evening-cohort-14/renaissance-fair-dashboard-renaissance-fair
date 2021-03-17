@@ -29,7 +29,15 @@ const domEvents = () => {
     }
 
     if (e.target.id.includes('submitNewStaff')) {
-      console.warn('submitted');
+      e.preventDefault();
+      const staffObject = {
+        first_name: document.querySelector('#staffFirstName').value,
+        last_name: document.querySelector('#staffLastName').value,
+        staff_image: document.querySelector('#staffImage').value,
+        event_id: '-MUuao2lynNljpuXaHnJ',
+        role: document.querySelector('#staffRole').value
+      };
+      createStaff(staffObject).then((staffArray) => showStaff(staffArray));
     }
   });
 };

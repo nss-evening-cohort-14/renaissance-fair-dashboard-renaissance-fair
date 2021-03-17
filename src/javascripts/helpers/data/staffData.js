@@ -16,7 +16,7 @@ const createStaff = (staffObject, id) => new Promise((resolve, reject) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/staff/${response.data.name}.json`, body)
         .then(() => {
-          getStaff(id).then((staffArray) => resolve(staffArray));
+          console.warn(id);
         });
     }).catch((error) => reject(error));
 });
