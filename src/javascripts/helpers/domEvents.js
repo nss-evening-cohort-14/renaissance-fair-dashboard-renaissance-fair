@@ -64,7 +64,10 @@ const domEvents = (id) => {
 
     if (e.target.id.includes('delete-staff')) {
       const firebaseKey = e.target.id.split('--')[1];
-      deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure?')) {
+        deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
+      }
     }
 
     if (e.target.id.includes('show-show-form')) {
