@@ -1,10 +1,13 @@
 import headerTitle from '../components/headerTitle';
-import souvenirsButton from '../components/souvenirButton';
 import { getShows } from '../helpers/data/showsData';
 import printShows from '../components/printShows';
 import buttonBuilder from '../components/buttonBuilder';
 import { getStaff } from '../helpers/data/staffData';
 import { showStaff } from '../components/showStaff';
+import { getFood } from '../helpers/data/foodData';
+import showFood from '../components/showFood';
+import { getSouvenirs } from '../helpers/data/souvenirData';
+import { buildSouvenirs } from '../components/buildSouvenirs';
 
 const navEvents = (id) => {
   document.querySelector('#shows-link').addEventListener('click', () => {
@@ -13,7 +16,7 @@ const navEvents = (id) => {
 
   document.querySelector('#souvenirs-link').addEventListener('click', () => {
     headerTitle('Souvenirs');
-    souvenirsButton();
+    getSouvenirs(id).then((souvenirArray) => buildSouvenirs(souvenirArray));
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
@@ -22,7 +25,7 @@ const navEvents = (id) => {
   });
 
   document.querySelector('#food-link').addEventListener('click', () => {
-    console.warn('food');
+    getFood(id).then((foodArr) => showFood(foodArr));
   });
   document.querySelector('#home').addEventListener('click', () => {
     buttonBuilder();
