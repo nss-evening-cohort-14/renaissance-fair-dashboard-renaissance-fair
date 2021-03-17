@@ -1,11 +1,12 @@
 import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
-import getSouvenirs from '../helpers/data/souvenirData';
+import { createWares, getSouvenirs } from '../helpers/data/souvenirData';
 import showFood from '../components/showFood';
 import getFood from '../helpers/data/foodData';
 import getStaff from '../helpers/data/staffData';
 import { showStaff } from '../components/showStaff';
 import getShows from '../helpers/data/showsData';
+import newWaresForm from '../components/forms/newWaresForm';
 
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -21,6 +22,19 @@ const domEvents = () => {
     }
     if (e.target.id.includes('shows-view')) {
       getShows().then((showsArray) => printShows(showsArray));
+    }
+    if (e.target.id.includes('add-souvenir-btn')) {
+      newWaresForm();
+    }
+    if (e.target.id.includes('submit-wares')) {
+      e.preventDefault();
+      const waresObject = {
+        title: document.querySelector('#title').value,
+        image: document.querySelector('#image').value,
+        price: document.querySelector('#price').value,
+        description: document.querySelector('#description').value,
+      };
+      createWares(waresObject).then((souvenirArray) => getSouvenirs(souvenirArray));
     }
   });
 };

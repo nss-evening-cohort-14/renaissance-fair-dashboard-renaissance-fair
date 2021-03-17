@@ -1,5 +1,5 @@
 const buildSouvenirs = (array) => {
-  document.querySelector('#content-container').innerHTML = '';
+  document.querySelector('#content-container').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-souvenir-btn">Add A Souvenir</button>';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="item">
     <div class="souvenir-container top m-3" style="width: 20rem">
