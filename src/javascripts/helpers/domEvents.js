@@ -5,7 +5,7 @@ import showFood from '../components/showFood';
 import { getFood } from './data/foodData';
 import getStaff from './data/staffData';
 import { showStaff } from '../components/showStaff';
-import { getShows } from './data/showsData';
+import { createShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 
@@ -43,6 +43,18 @@ const domEvents = (id) => {
     }
     if (e.target.id.includes('show-show-form')) {
       createShowForm();
+    }
+    if (e.target.id.includes('submit-show')) {
+      e.preventDefault();
+
+      const showObject = {
+        name: document.querySelector('#showName').value,
+        image: document.querySelector('#image').value,
+        date: document.querySelector('#date').value,
+        description: document.querySelector('#description').value,
+        event_id: id
+      };
+      createShow(showObject, id).then((showsArray) => printShows(showsArray));
     }
   });
 };

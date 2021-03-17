@@ -3,7 +3,7 @@ const createShowForm = () => {
   document.querySelector('#content-container').innerHTML = `<form id="submit-show-form" class="mb-4" style="width: 50rem; margin: 0 auto;">
 <div class="form-group">
   <label for="name">Show Name</label>
-  <input type="text" class="form-control" id="name" aria-describedby="showName" placeholder="Enter Show Name" required>
+  <input type="text" class="form-control" id="showName" aria-describedby="showName" placeholder="Enter Show Name" required>
 </div>
 <div class="form-group">
   <label for="image">Image URL</label>
