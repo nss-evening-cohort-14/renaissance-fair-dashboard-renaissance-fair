@@ -12,6 +12,7 @@ const navEvents = (id) => {
   });
 
   document.querySelector('#souvenirs-link').addEventListener('click', () => {
+    headerTitle('Souvenirs');
     souvenirsButton();
   });
 

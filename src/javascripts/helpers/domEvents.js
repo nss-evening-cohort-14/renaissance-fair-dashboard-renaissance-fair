@@ -10,11 +10,13 @@ import { createShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
+import headerTitle from '../components/headerTitle';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
     console.warn(e.target.id);
     if (e.target.id.includes('souvenir-view')) {
+      headerTitle('Souvenirs');
       getSouvenirs(id).then((souvenirArray) => buildSouvenirs(souvenirArray));
     }
     if (e.target.id.includes('food-view')) {
