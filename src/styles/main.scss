@@ -2,25 +2,35 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
 @import './staff.scss';
+@import './food.scss';
+
+$mainfontcolor: #97A0A2;
+$secondaryfontcolor: #D7DCA8;
+$maincolor: #1A1F14;
+$secondarycolor: #628541;
+$secondarylightcolor: #9DBE77;
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: $secondaryfontcolor;
+  color: $maincolor;
   text-align: center;
   font-family: 'Alike', serif;
 }
 .content-container {
-  background-color: aqua;
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+.button-card {
+  border-radius: 10px;
+}
+.button-card:hover {
+  transform: scale(1.1);
+  transition-duration: 500ms;
+}
 .header-container {
   margin-top: 100px;
-}
-.add-food-form {
-  width: 50%;
 }
 .nav-cards {
   display: flex;
@@ -34,15 +44,6 @@ body {
   width: 40em;
   margin: 50px 0;
 }
-// .food-button-card {
-// }
-.food-card {
-  height: 30em;
-  margin: 20px;
-  img {
-    height: 35%;
-  }
-}
 #nav {
   position: fixed;
   width: 100%;
@@ -50,6 +51,3 @@ body {
 #auth-button {
   margin-left: auto;
 }
-
-// .staff-button-card {
-// }
