@@ -1,4 +1,4 @@
-const showsButton = () => `<div id="shows-container">
+const showsButton = () => `<div id="shows-container" class="nav-cards">
                         <div class="card shows-button-card" style="width: 18rem;">
                         <div class="card-body middle">
                           <h5 class="card-title">Shows</h5>

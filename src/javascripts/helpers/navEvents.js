@@ -18,7 +18,7 @@ const navEvents = () => {
 
   document.querySelector('#court-link').addEventListener('click', () => {
     headerTitle('Staff Page');
-    getStaff('-MUuao2lynNljpuXaHnJ').then((staff) => showStaff(staff));
+    getStaff().then((staff) => showStaff(staff));
   });
 
   document.querySelector('#food-link').addEventListener('click', () => {
