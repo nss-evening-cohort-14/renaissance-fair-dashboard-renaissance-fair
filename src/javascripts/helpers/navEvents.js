@@ -4,10 +4,10 @@ import getShows from './data/showsData';
 import printShows from '../components/printShows';
 import buttonBuilder from '../components/buttonBuilder';
 
-const navEvents = () => {
+const navEvents = (id) => {
   document.querySelector('#shows-link').addEventListener('click', () => {
     headerTitle('Watch a Show');
-    getShows('-MUuao2lynNljpuXaHnJ').then((shows) => printShows(shows));
+    getShows(id).then((shows) => printShows(shows));
   });
 
   document.querySelector('#wares-link').addEventListener('click', () => {
