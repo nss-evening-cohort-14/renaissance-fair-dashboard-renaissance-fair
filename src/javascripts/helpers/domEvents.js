@@ -1,6 +1,6 @@
 import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
-import getSouvenirs from './data/souvenirData';
+import { getSouvenirs, createSouvenirs } from './data/souvenirData';
 import showFood from '../components/showFood';
 import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
 import { createFood, getFood } from './data/foodData';
@@ -9,17 +9,21 @@ import createStaff from '../components/forms/createStaff';
 import { createShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
+import newSouvenirsForm from '../components/forms/newWaresForm';
+import headerTitle from '../components/headerTitle';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
     console.warn(e.target.id);
     if (e.target.id.includes('souvenir-view')) {
+      headerTitle('Souvenirs');
       getSouvenirs(id).then((souvenirArray) => buildSouvenirs(souvenirArray));
     }
     if (e.target.id.includes('food-view')) {
       getFood(id).then((foodArray) => showFood(foodArray));
     }
     if (e.target.id.includes('staff-view')) {
+      headerTitle('Staff');
       getStaff(id).then((staffArray) => showStaff(staffArray));
     }
     if (e.target.id.includes('shows-view')) {
@@ -43,6 +47,7 @@ const domEvents = (id) => {
     }
 
     if (e.target.id.includes('add-newStaff-btn')) {
+      headerTitle('Staff');
       createStaff();
     }
 
@@ -76,6 +81,21 @@ const domEvents = (id) => {
         event_id: id
       };
       createShow(showObject, id).then((showsArray) => printShows(showsArray));
+    }
+    if (e.target.id.includes('add-souvenir-btn')) {
+      headerTitle('Souvenirs');
+      newSouvenirsForm();
+    }
+    if (e.target.id.includes('submit-souvenirs')) {
+      e.preventDefault();
+      const souvenirsObject = {
+        souvenir_image: document.querySelector('#image').value,
+        name: document.querySelector('#title').value,
+        souvenir_price: document.querySelector('#price').value,
+        souvenir_description: document.querySelector('#description').value,
+        event_id: id
+      };
+      createSouvenirs(souvenirsObject, id).then((response) => buildSouvenirs(response));
     }
   });
 };
