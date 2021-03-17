@@ -43,6 +43,7 @@ const domEvents = (id) => {
         vegetarian: document.querySelector('#vegetarian').checked
       };
       createFood(foodObject, id).then((response) => showFood(response));
+      headerTitle('Souvenirs');
     }
 
     if (e.target.id.includes('add-newStaff-btn')) {
