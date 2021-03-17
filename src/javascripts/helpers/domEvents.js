@@ -2,7 +2,7 @@ import printShows from '../components/printShows';
 import { showSouvenirs } from '../components/showSouvenirs';
 import { getSouvenirs, createSouvenirs, deleteSouvenirs } from './data/souvenirData';
 import showFood from '../components/showFood';
-import { createNewStaff, getStaff } from './data/staffData';
+import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
 import { createFood, deleteFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
@@ -22,7 +22,7 @@ const domEvents = (id) => {
       getFood(id).then((foodArray) => showFood(foodArray));
     }
     if (e.target.id.includes('staff-view')) {
-      headerTitle('Staff');
+      headerTitle('See Our Staff');
       getStaff(id).then((staffArray) => showStaff(staffArray));
     }
     if (e.target.id.includes('shows-view')) {
@@ -54,12 +54,19 @@ const domEvents = (id) => {
       e.preventDefault();
       const staffObject = {
         first_name: document.querySelector('#staffFirstName').value,
+        last_name: document.querySelector('#staffLastName').value,
         staff_image: document.querySelector('#staffImage').value,
         role: document.querySelector('#staffRole').value,
         event_id: id
       };
       createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
     }
+
+    if (e.target.id.includes('delete-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
+    }
+
     if (e.target.id.includes('show-show-form')) {
       createShowForm();
     }
