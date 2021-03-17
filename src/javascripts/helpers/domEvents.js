@@ -1,6 +1,8 @@
 import printShows from '../components/printShows';
 import { showSouvenirs } from '../components/showSouvenirs';
-import { getSouvenirs, createSouvenirs, deleteSouvenirs } from './data/souvenirData';
+import {
+  getSouvenirs, createSouvenirs, deleteSouvenirs, getSingleSouvenir, updateSouvenir
+} from './data/souvenirData';
 import showFood from '../components/showFood';
 import { createNewStaff, getStaff } from './data/staffData';
 import { createFood, getFood } from './data/foodData';
@@ -11,6 +13,7 @@ import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
 import headerTitle from '../components/headerTitle';
+import editSouvenirsForm from '../components/forms/editSouvenirsForm';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -88,15 +91,33 @@ const domEvents = (id) => {
         souvenir_description: document.querySelector('#description').value,
         event_id: id
       };
-      createSouvenirs(souvenirsObject, id).then((response) => showSouvenirs(response));
+      createSouvenirs(souvenirsObject, id).then((souvenirArray) => showSouvenirs(souvenirArray));
     }
     // DELETE SOUVENIR
     if (e.target.id.includes('delete-souvenir')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure?')) {
         const firebaseKey = e.target.id.split('--')[1];
-        deleteSouvenirs(firebaseKey, id).then((response) => showSouvenirs(response));
+        deleteSouvenirs(firebaseKey, id).then((souvenirArray) => showSouvenirs(souvenirArray));
       }
+    }
+    if (e.target.id.includes('edit-souvenir')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      headerTitle('Edit Souvenir');
+      getSingleSouvenir(firebaseKey).then((souvenirObject) => editSouvenirsForm(souvenirObject));
+    }
+    if (e.target.id.includes('update-souvenir')) {
+      console.warn(e.target.id);
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const souvenirObject = {
+        souvenir_image: document.querySelector('#image').value,
+        name: document.querySelector('#title').value,
+        souvenir_price: document.querySelector('#price').value,
+        souvenir_description: document.querySelector('#description').value,
+        event_id: id
+      };
+      updateSouvenir(firebaseKey, souvenirObject).then((souvenirArray) => editSouvenirsForm(souvenirArray));
     }
   });
 };
