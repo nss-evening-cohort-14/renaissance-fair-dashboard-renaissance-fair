@@ -13,7 +13,8 @@ const printShows = (array) => {
     <h5 class="card-title">${show.name}</h5>
     <h6 id="date">${show.date}</h6>
     <p>${show.description}</p>
-    <a href="#" class="btn btn-primary">Delete</a>
+    <button class="btn btn-danger" id="edit-show^^${show.firebaseKey}">Edit</button>
+    <button class="btn btn-danger" id="delete-show^^${show.firebaseKey}">Delete</button>
   </div>
 </div>`;
     document.querySelector('#content-container').innerHTML += domString;
