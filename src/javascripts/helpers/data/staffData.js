@@ -19,4 +19,10 @@ const createNewStaff = (staffObject, id) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { createNewStaff, getStaff };
+const deleteStaff = (firebaseKey, id) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/staff/${firebaseKey}.json/`)
+    .then(() => getStaff(id).then((staffArray) => resolve(staffArray)))
+    .catch((error) => reject(error));
+});
+
+export { createNewStaff, getStaff, deleteStaff };
