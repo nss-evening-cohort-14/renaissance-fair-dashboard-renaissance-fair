@@ -1,6 +1,6 @@
 import printShows from '../components/printShows';
-import { buildSouvenirs } from '../components/buildSouvenirs';
-import { getSouvenirs, createSouvenirs } from './data/souvenirData';
+import { showSouvenirs } from '../components/showSouvenirs';
+import { getSouvenirs, createSouvenirs, deleteSouvenirs } from './data/souvenirData';
 import showFood from '../components/showFood';
 import { createNewStaff, getStaff } from './data/staffData';
 import { createFood, getFood } from './data/foodData';
@@ -17,7 +17,7 @@ const domEvents = (id) => {
     console.warn(e.target.id);
     if (e.target.id.includes('souvenir-view')) {
       headerTitle('Souvenirs');
-      getSouvenirs(id).then((souvenirArray) => buildSouvenirs(souvenirArray));
+      getSouvenirs(id).then((souvenirArray) => showSouvenirs(souvenirArray));
     }
     if (e.target.id.includes('food-view')) {
       getFood(id).then((foodArray) => showFood(foodArray));
@@ -89,7 +89,15 @@ const domEvents = (id) => {
         souvenir_description: document.querySelector('#description').value,
         event_id: id
       };
-      createSouvenirs(souvenirsObject, id).then((response) => buildSouvenirs(response));
+      createSouvenirs(souvenirsObject, id).then((response) => showSouvenirs(response));
+    }
+    // DELETE SOUVENIR
+    if (e.target.id.includes('delete-souvenir')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure?')) {
+        const firebaseKey = e.target.id.split('--')[1];
+        deleteSouvenirs(firebaseKey, id).then((response) => showSouvenirs(response));
+      }
     }
   });
 };

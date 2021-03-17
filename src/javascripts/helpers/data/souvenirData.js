@@ -19,5 +19,11 @@ const createSouvenirs = (souvenirObject, id) => new Promise((resolve, reject) =>
         .catch((error) => reject(error));
     });
 });
+// DELETE SOUVENIR
+const deleteSouvenirs = (firebaseKey, id) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/souvenirs/${firebaseKey}.json`)
+    .then(() => getSouvenirs(id).then((souvenirResponse) => resolve(souvenirResponse)))
+    .catch((error) => reject(error));
+});
 
-export { getSouvenirs, createSouvenirs };
+export { getSouvenirs, createSouvenirs, deleteSouvenirs };
