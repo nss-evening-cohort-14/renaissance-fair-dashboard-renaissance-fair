@@ -1,4 +1,4 @@
-const waresButton = () => `<div id="souvenir-container">
+const waresButton = () => `<div id="souvenir-container" class="nav-cards">
                         <div class="card wares-button-card" style="width: 18rem;">
                         <div class="card-body middle">
                           <h5 class="card-title">Wares</h5>

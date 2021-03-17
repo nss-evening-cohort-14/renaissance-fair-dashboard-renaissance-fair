@@ -8,5 +8,15 @@ const getFood = (id) => new Promise((resolve, reject) => {
     .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
+// CREATE FOOD
+const createFood = (foodObject, id) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/food.json`, foodObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/food/${response.data.name}.json`, body)
+        .then(() => getFood(id).then((foodResponse) => resolve(foodResponse)))
+        .catch((error) => reject(error));
+    });
+});
 
-export default getFood;
+export { createFood, getFood };
