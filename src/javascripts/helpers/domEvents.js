@@ -2,7 +2,7 @@ import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
 import getSouvenirs from './data/souvenirData';
 import showFood from '../components/showFood';
-import { createNewStaff, getStaff } from './data/staffData';
+import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
 import { createFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
@@ -56,6 +56,12 @@ const domEvents = (id) => {
       };
       createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
     }
+
+    if (e.target.id.includes('delete-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
+    }
+
     if (e.target.id.includes('show-show-form')) {
       createShowForm();
     }
