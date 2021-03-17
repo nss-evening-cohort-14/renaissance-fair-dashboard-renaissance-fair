@@ -3,6 +3,7 @@ import headerTitle from './headerTitle';
 const showFood = (array) => {
   headerTitle('Food Shoppes');
   document.querySelector('#content-container').innerHTML = '';
+  document.querySelector('#content-container').innerHTML = '<div class="create-food-btn" id="createFoodButton"><button type="button" class="btn btn-primary" id="create-food">Primary</button></div>';
   array.forEach((food) => {
     const domString = `<div class="card food-card" style="width: 18rem;">
     <img src="${food.image}" class="card-img-top top" alt="...">

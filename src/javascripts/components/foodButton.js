@@ -1,4 +1,4 @@
-const foodButton = () => `<div id="food-container">
+const foodButton = () => `<div id="food-container" class="nav-cards-left">
                         <div class="card food-button-card" style="width: 18rem;">
                         <div class="card-body middle">
                           <h5 class="card-title">Card title</h5>

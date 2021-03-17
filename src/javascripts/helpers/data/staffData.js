@@ -10,4 +10,13 @@ const getStaff = (id) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default getStaff;
+const createNewStaff = (staffObject, id) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/staff.json`, staffObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/staff/${response.data.name}.json`, body)
+        .then(() => getStaff(id).then((staffArray) => resolve(staffArray)));
+    }).catch((error) => reject(error));
+});
+
+export { createNewStaff, getStaff };

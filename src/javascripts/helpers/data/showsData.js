@@ -9,4 +9,18 @@ const getShows = (id) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default getShows;
+const createShow = (showObject, id) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/shows.json`, showObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/shows/${response.data.name}.json`, body)
+        .then(() => {
+          getShows(id).then((showsArray) => resolve(showsArray));
+        });
+    }).catch((error) => reject(error));
+});
+
+export {
+  getShows,
+  createShow
+};

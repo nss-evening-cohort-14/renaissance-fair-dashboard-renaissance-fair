@@ -1,12 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
+@import './staff.scss';
 
 body {
   background-color: antiquewhite;
   color: brown;
   text-align: center;
+  font-family: 'Alike', serif;
 }
 .content-container {
+  background-color: aqua;
   margin-top: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +18,21 @@ body {
 }
 .header-container {
   margin-top: 100px;
+}
+.add-food-form {
+  width: 50%;
+}
+.nav-cards {
+  display: flex;
+  justify-content: flex-start;
+  width: 40em;
+  margin: 50px 50px;
+}
+.nav-cards-left {
+  display: flex;
+  justify-content: flex-end;
+  width: 40em;
+  margin: 50px 0;
 }
 // .food-button-card {
 // }
