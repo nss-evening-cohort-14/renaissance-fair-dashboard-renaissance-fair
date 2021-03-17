@@ -1,9 +1,9 @@
 import headerTitle from '../components/headerTitle';
-import waresButton from '../components/souvenirButton';
-import { getShows } from './data/showsData';
+import souvenirsButton from '../components/souvenirButton';
+import { getShows } from '../helpers/data/showsData';
 import printShows from '../components/printShows';
 import buttonBuilder from '../components/buttonBuilder';
-import { getStaff } from './data/staffData';
+import { getStaff } from '../helpers/data/staffData';
 import { showStaff } from '../components/showStaff';
 
 const navEvents = (id) => {
@@ -11,8 +11,9 @@ const navEvents = (id) => {
     getShows(id).then((shows) => printShows(shows));
   });
 
-  document.querySelector('#wares-link').addEventListener('click', () => {
-    waresButton();
+  document.querySelector('#souvenirs-link').addEventListener('click', () => {
+    headerTitle('Souvenirs');
+    souvenirsButton();
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
