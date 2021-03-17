@@ -5,9 +5,10 @@ import showFood from '../components/showFood';
 import { createNewStaff, getStaff } from './data/staffData';
 import { createFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
-import getShows from './data/showsData';
 import createStaff from '../components/forms/createStaff';
+import { createShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
+import createShowForm from '../components/forms/createShowForm';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -54,6 +55,21 @@ const domEvents = (id) => {
         event_id: id
       };
       createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
+    }
+    if (e.target.id.includes('show-show-form')) {
+      createShowForm();
+    }
+    if (e.target.id.includes('submit-show')) {
+      e.preventDefault();
+
+      const showObject = {
+        name: document.querySelector('#showName').value,
+        image: document.querySelector('#image').value,
+        date: document.querySelector('#date').value,
+        description: document.querySelector('#description').value,
+        event_id: id
+      };
+      createShow(showObject, id).then((showsArray) => printShows(showsArray));
     }
   });
 };

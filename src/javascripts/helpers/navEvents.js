@@ -1,6 +1,6 @@
 import headerTitle from '../components/headerTitle';
 import waresButton from '../components/souvenirButton';
-import getShows from './data/showsData';
+import { getShows } from './data/showsData';
 import printShows from '../components/printShows';
 import buttonBuilder from '../components/buttonBuilder';
 import { getStaff } from './data/staffData';
@@ -8,7 +8,6 @@ import { showStaff } from '../components/showStaff';
 
 const navEvents = (id) => {
   document.querySelector('#shows-link').addEventListener('click', () => {
-    headerTitle('Watch a Show');
     getShows(id).then((shows) => printShows(shows));
   });
 
