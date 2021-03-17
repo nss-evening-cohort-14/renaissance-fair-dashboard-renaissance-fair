@@ -7,7 +7,7 @@ import { showStaff } from '../components/showStaff';
 import { getFood } from '../helpers/data/foodData';
 import showFood from '../components/showFood';
 import { getSouvenirs } from '../helpers/data/souvenirData';
-import { buildSouvenirs } from '../components/buildSouvenirs';
+import { showSouvenirs } from '../components/showSouvenirs';
 
 const navEvents = (id) => {
   document.querySelector('#shows-link').addEventListener('click', () => {
@@ -16,7 +16,7 @@ const navEvents = (id) => {
 
   document.querySelector('#souvenirs-link').addEventListener('click', () => {
     headerTitle('Souvenirs');
-    getSouvenirs(id).then((souvenirArray) => buildSouvenirs(souvenirArray));
+    getSouvenirs(id).then((souvenirArray) => showSouvenirs(souvenirArray));
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
