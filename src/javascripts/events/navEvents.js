@@ -20,7 +20,7 @@ const navEvents = (id) => {
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
-    headerTitle('Staff Page');
+    headerTitle('See Our Staff');
     getStaff(id).then((staff) => showStaff(staff));
   });
 

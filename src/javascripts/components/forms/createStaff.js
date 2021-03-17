@@ -6,6 +6,10 @@ const createStaff = () => {
     <input type="text" class="form-control" id="staffFirstName" placeholder="Enter First Name">
   </div>
   <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="staffLastName" placeholder="Enter Last Name">
+  </div>
+  <div class="form-group">
     <label for="staffImage">Staff Image</label>
     <input type="url" class="form-control" id="staffImage" placeholder="Insert image URL">
   </div>
