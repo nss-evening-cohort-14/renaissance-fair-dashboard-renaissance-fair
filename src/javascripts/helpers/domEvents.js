@@ -3,7 +3,7 @@ import { showSouvenirs } from '../components/showSouvenirs';
 import { getSouvenirs, createSouvenirs, deleteSouvenirs } from './data/souvenirData';
 import showFood from '../components/showFood';
 import { createNewStaff, getStaff } from './data/staffData';
-import { createFood, getFood } from './data/foodData';
+import { createFood, deleteFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
 import { createShow, getShows } from './data/showsData';
@@ -96,6 +96,13 @@ const domEvents = (id) => {
       if (window.confirm('Are you sure?')) {
         const firebaseKey = e.target.id.split('--')[1];
         deleteSouvenirs(firebaseKey, id).then((response) => showSouvenirs(response));
+      }
+    }
+    if (e.target.id.includes('food-delete-btn')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure?')) {
+        const firebaseKey = e.target.id.split('--')[1];
+        deleteFood(firebaseKey, id).then((foodArray) => showFood(foodArray));
       }
     }
   });
