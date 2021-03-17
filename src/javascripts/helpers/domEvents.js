@@ -3,7 +3,7 @@ import { buildSouvenirs } from '../components/buildSouvenirs';
 import getSouvenirs from './data/souvenirData';
 import showFood from '../components/showFood';
 import { getFood } from './data/foodData';
-import getStaff from './data/staffData';
+import { createNewStaff, getStaff } from './data/staffData';
 import { showStaff } from '../components/showStaff';
 import getShows from './data/showsData';
 import createStaff from '../components/forms/createStaff';
@@ -50,11 +50,11 @@ const domEvents = (id) => {
       e.preventDefault();
       const staffObject = {
         first_name: document.querySelector('#staffFirstName').value,
-        last_name: document.querySelector('#staffLastName').value,
         staff_image: document.querySelector('#staffImage').value,
-        role: document.querySelector('#staffRole').value
+        role: document.querySelector('#staffRole').value,
+        event_id: id
       };
-      console.warn(staffObject);
+      createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
     }
   });
 };
