@@ -2,9 +2,10 @@ import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
 import getSouvenirs from './data/souvenirData';
 import showFood from '../components/showFood';
+import { createNewStaff, getStaff } from './data/staffData';
 import { createFood, getFood } from './data/foodData';
-import getStaff from './data/staffData';
 import { showStaff } from '../components/showStaff';
+import createStaff from '../components/forms/createStaff';
 import { createShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
@@ -39,6 +40,21 @@ const domEvents = (id) => {
         vegetarian: document.querySelector('#vegetarian').checked
       };
       createFood(foodObject, id).then((response) => showFood(response));
+    }
+
+    if (e.target.id.includes('add-newStaff-btn')) {
+      createStaff();
+    }
+
+    if (e.target.id.includes('submitNewStaff')) {
+      e.preventDefault();
+      const staffObject = {
+        first_name: document.querySelector('#staffFirstName').value,
+        staff_image: document.querySelector('#staffImage').value,
+        role: document.querySelector('#staffRole').value,
+        event_id: id
+      };
+      createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
     }
     if (e.target.id.includes('show-show-form')) {
       createShowForm();
