@@ -1,6 +1,6 @@
 import printShows from '../components/printShows';
 import { buildSouvenirs } from '../components/buildSouvenirs';
-import getSouvenirs from './data/souvenirData';
+import { getSouvenirs, createSouvenirs } from './data/souvenirData';
 import showFood from '../components/showFood';
 import { createNewStaff, getStaff } from './data/staffData';
 import { createFood, getFood } from './data/foodData';
@@ -9,6 +9,7 @@ import createStaff from '../components/forms/createStaff';
 import { createShow, getShows } from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
+import newSouvenirsForm from '../components/forms/newWaresForm';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -70,6 +71,20 @@ const domEvents = (id) => {
         event_id: id
       };
       createShow(showObject, id).then((showsArray) => printShows(showsArray));
+    }
+    if (e.target.id.includes('add-souvenir-btn')) {
+      newSouvenirsForm();
+    }
+    if (e.target.id.includes('submit-souvenirs')) {
+      e.preventDefault();
+      const souvenirsObject = {
+        souvenir_image: document.querySelector('#image').value,
+        name: document.querySelector('#title').value,
+        souvenir_price: document.querySelector('#price').value,
+        souvenir_description: document.querySelector('#description').value,
+        event_id: id
+      };
+      createSouvenirs(souvenirsObject, id).then((response) => buildSouvenirs(response));
     }
   });
 };
