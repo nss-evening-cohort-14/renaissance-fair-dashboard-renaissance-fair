@@ -166,6 +166,7 @@ const domEvents = (id) => {
         description: document.querySelector('#description').value,
       };
       updateShow(firebaseKey, showObject, id).then((showsArray) => printShows(showsArray));
+      $('#formModal').modal('toggle');
     }
     if (e.target.id.includes('food-edit-btn')) {
       const firebaseKey = e.target.id.split('--')[1];
