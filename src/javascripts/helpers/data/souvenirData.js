@@ -25,5 +25,21 @@ const deleteSouvenirs = (firebaseKey, id) => new Promise((resolve, reject) => {
     .then(() => getSouvenirs(id).then((souvenirResponse) => resolve(souvenirResponse)))
     .catch((error) => reject(error));
 });
+// RETRIEVE A SINGLE SOUVENIR IN ORDER TO EDIT/UPDATE
+const getSingleSouvenir = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/souvenirs/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+// UPDATE A SOUVENIR'S INFO IN REAL TIME
+const updateSouvenir = (firebaseKey, souvenirObject, id) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/souvenirs/${firebaseKey}.json`, souvenirObject)
+    .then(() => {
+      getSouvenirs(id).then((souvenirResponse) => resolve(souvenirResponse))
+        .catch((error) => reject(error));
+    });
+});
 
-export { getSouvenirs, createSouvenirs, deleteSouvenirs };
+export {
+  getSouvenirs, createSouvenirs, deleteSouvenirs, getSingleSouvenir, updateSouvenir
+};
