@@ -14,6 +14,7 @@ import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
 import headerTitle from '../components/headerTitle';
 import editSouvenirsForm from '../components/forms/editSouvenirsForm';
+import editFormModal from '../components/forms/editFormModal';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -113,8 +114,10 @@ const domEvents = (id) => {
     }
     if (e.target.id.includes('edit-souvenir')) {
       const firebaseKey = e.target.id.split('--')[1];
-      headerTitle('Edit Souvenir');
+      e.preventDefault();
+      editFormModal('Edit Souvenir');
       getSingleSouvenir(firebaseKey).then((souvenirObject) => editSouvenirsForm(souvenirObject));
+      $('#formModal').modal('toggle');
     }
     if (e.target.id.includes('update-souvenir')) {
       console.warn(e.target.id);
@@ -124,10 +127,11 @@ const domEvents = (id) => {
         souvenir_image: document.querySelector('#image').value,
         name: document.querySelector('#title').value,
         souvenir_price: document.querySelector('#price').value,
-        souvenir_description: document.querySelector('#description').value,
-        event_id: id
+        souvenir_description: document.querySelector('#description').value
       };
-      updateSouvenir(firebaseKey, souvenirObject).then((souvenirArray) => editSouvenirsForm(souvenirArray));
+      console.warn(souvenirObject);
+      updateSouvenir(firebaseKey, souvenirObject, id).then((souvenirArray) => showSouvenirs(souvenirArray));
+      $('#formModal').modal('toggle');
     }
     if (e.target.id.includes('food-delete-btn')) {
       // eslint-disable-next-line no-alert
