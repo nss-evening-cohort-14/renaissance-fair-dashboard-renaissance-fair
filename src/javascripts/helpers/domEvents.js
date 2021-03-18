@@ -3,7 +3,9 @@ import { showSouvenirs } from '../components/showSouvenirs';
 import { getSouvenirs, createSouvenirs, deleteSouvenirs } from './data/souvenirData';
 import showFood from '../components/showFood';
 import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
-import { createFood, deleteFood, getFood } from './data/foodData';
+import {
+  createFood, deleteFood, getFood, getSingleFood, updateFood
+} from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
 import {
@@ -15,6 +17,7 @@ import newSouvenirsForm from '../components/forms/newWaresForm';
 import headerTitle from '../components/headerTitle';
 import editFormModal from '../components/forms/editFormModal';
 import editShowForm from '../components/forms/editShowForm';
+import editFoodForm from '../components/forms/editFoodForm';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -141,6 +144,24 @@ const domEvents = (id) => {
         description: document.querySelector('#description').value,
       };
       updateShow(firebaseKey, showObject, id).then((showsArray) => printShows(showsArray));
+    }
+    if (e.target.id.includes('food-edit-btn')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      editFormModal('Edit Food');
+      getSingleFood(firebaseKey).then((response) => editFoodForm(response));
+    }
+    if (e.target.id.includes('submit-edit-food')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const foodObject = {
+        name: document.querySelector('#foodName').value,
+        description: document.querySelector('#foodDescription').value,
+        image: document.querySelector('#imageUrl').value,
+        price: document.querySelector('#price').value,
+        glutenFree: document.querySelector('#glutenFree').checked,
+        vegetarian: document.querySelector('#vegetarian').checked
+      };
+      updateFood(firebaseKey, foodObject, id).then((arr) => showFood(arr));
       $('#formModal').modal('toggle');
     }
   });

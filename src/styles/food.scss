@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
+
+.add-food-form {
+  width: 50%;
+}
+.food-card {
+  height: 30em;
+  margin: 20px;
+  img {
+    height: 35%;
+  }
+}
+.food-button-card {
+  background-image: url('../assets/renfaireFood.png');
+  background-position: center;
+  border-radius: 10px;
+  .card-title {
+   font-size: 48px;
+   color: white;
+  }
+  .card-body {
+    cursor: pointer;
+  }
+}
