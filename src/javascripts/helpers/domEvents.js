@@ -6,11 +6,15 @@ import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
 import { createFood, deleteFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
-import { createShow, deleteShow, getShows } from './data/showsData';
+import {
+  createShow, deleteShow, getShows, getSingleShow, updateShow
+} from './data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
 import headerTitle from '../components/headerTitle';
+import editFormModal from '../components/forms/editFormModal';
+import editShowForm from '../components/forms/editShowForm';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -118,9 +122,26 @@ const domEvents = (id) => {
     if (e.target.id.includes('delete-show')) {
       // eslint-disable-next-line no-alert
       if (window.confirm('Are you sure?')) {
-        const firebaseKey = e.target.id.split('^^')[1];
+        const firebaseKey = e.target.id.split('--')[1];
         deleteShow(firebaseKey, id).then((showsArray) => printShows(showsArray));
       }
+    }
+    if (e.target.id.includes('edit-show')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      editFormModal('Edit Show');
+      getSingleShow(firebaseKey).then((showObject) => editShowForm(showObject));
+    }
+    if (e.target.id.includes('update-show')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const showObject = {
+        name: document.querySelector('#showName').value,
+        image: document.querySelector('#image').value,
+        date: document.querySelector('#date').value,
+        description: document.querySelector('#description').value,
+      };
+      updateShow(firebaseKey, showObject, id).then((showsArray) => printShows(showsArray));
+      $('#formModal').modal('toggle');
     }
   });
 };
