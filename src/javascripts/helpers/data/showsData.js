@@ -26,8 +26,22 @@ const deleteShow = (firebaseKey, id) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const updateShow = (firebaseKey, showObject, id) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/shows/${firebaseKey}.json`, showObject)
+    .then(() => getShows(id)).then((showsArray) => resolve(showsArray))
+    .catch((error) => reject(error));
+});
+
+const getSingleShow = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/shows/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
 export {
   getShows,
   createShow,
-  deleteShow
+  deleteShow,
+  updateShow,
+  getSingleShow
 };

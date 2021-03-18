@@ -7,14 +7,14 @@ const printShows = (array) => {
 
   array.forEach((show) => {
     const domString = `
-    <div class="card" id="shows-card^^${show.firebaseKey}" style="width: 18rem;">
+    <div class="card" id="shows-card--${show.firebaseKey}" style="width: 18rem;">
   <img src="${show.image}" class="card-img-top" alt="show image">
   <div class="card-body-middle">
     <h5 class="card-title">${show.name}</h5>
-    <h6 id="date">${show.date}</h6>
+    <h6 id="card-date">${show.date}</h6>
     <p>${show.description}</p>
-    <button class="btn btn-danger" id="edit-show^^${show.firebaseKey}">Edit</button>
-    <button class="btn btn-danger" id="delete-show^^${show.firebaseKey}">Delete</button>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="edit-show--${show.firebaseKey}">Edit</button>
+    <button class="btn btn-danger" id="delete-show--${show.firebaseKey}">Delete</button>
   </div>
 </div>`;
     document.querySelector('#content-container').innerHTML += domString;
