@@ -1,5 +1,4 @@
 const editFoodForm = (foodObject) => {
-  console.warn(foodObject.glutenFree);
   document.querySelector('#edit-modal-body').innerHTML = `
   <form class="add-food-form">
     <div class="form-group">

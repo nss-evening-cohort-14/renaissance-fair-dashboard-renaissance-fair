@@ -133,7 +133,6 @@ const domEvents = (id) => {
     }
     if (e.target.id.includes('submit-edit-food')) {
       const firebaseKey = e.target.id.split('--')[1];
-      console.warn(firebaseKey);
       e.preventDefault();
       const foodObject = {
         name: document.querySelector('#foodName').value,
