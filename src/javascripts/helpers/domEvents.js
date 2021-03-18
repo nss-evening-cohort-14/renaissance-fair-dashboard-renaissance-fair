@@ -177,6 +177,7 @@ const domEvents = (id) => {
         role: document.querySelector('#staffRole').value,
       };
       updateStaff(firebaseKey, staffObject, id).then((staffArray) => showStaff(staffArray));
+      $('#formModal').modal('toggle');
     }
     if (e.target.id.includes('edit-show')) {
       const firebaseKey = e.target.id.split('--')[1];
