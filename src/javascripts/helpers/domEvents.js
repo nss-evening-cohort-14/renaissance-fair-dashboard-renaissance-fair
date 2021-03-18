@@ -4,9 +4,18 @@ import {
   getSouvenirs, createSouvenirs, deleteSouvenirs, getSingleSouvenir, updateSouvenir
 } from './data/souvenirData';
 import showFood from '../components/showFood';
-import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
 import {
-  createFood, deleteFood, getFood, getSingleFood, updateFood
+  createNewStaff,
+  getStaff, deleteStaff,
+  getSingleStaff,
+  updateStaff,
+} from './data/staffData';
+import {
+  createFood,
+  deleteFood,
+  getFood,
+  getSingleFood,
+  updateFood
 } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
@@ -17,6 +26,7 @@ import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
 import headerTitle from '../components/headerTitle';
+import updateStaffForm from '../components/forms/updateStaffForm';
 import editSouvenirsForm from '../components/forms/editSouvenirsForm';
 import editFoodForm from '../components/forms/editFoodForm';
 import editFormModal from '../components/forms/editFormModal';
@@ -70,14 +80,6 @@ const domEvents = (id) => {
         event_id: id
       };
       createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
-    }
-
-    if (e.target.id.includes('delete-staff')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Are you sure?')) {
-        deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
-      }
     }
 
     if (e.target.id.includes('show-show-form')) {
@@ -150,6 +152,32 @@ const domEvents = (id) => {
         const firebaseKey = e.target.id.split('--')[1];
         deleteShow(firebaseKey, id).then((showsArray) => printShows(showsArray));
       }
+    }
+    if (e.target.id.includes('delete-staff')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Are you sure?')) {
+        const firebaseKey = e.target.id.split('--')[1];
+        deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
+      }
+    }
+
+    if (e.target.id.includes('edit-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      editFormModal('Update Staff');
+      getSingleStaff(firebaseKey).then((staffObject) => updateStaffForm(staffObject));
+    }
+
+    if (e.target.id.includes('update-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const staffObject = {
+        first_name: document.querySelector('#staffFirstName').value,
+        last_name: document.querySelector('#staffLastName').value,
+        staff_image: document.querySelector('#staffImage').value,
+        role: document.querySelector('#staffRole').value,
+      };
+      updateStaff(firebaseKey, staffObject, id).then((staffArray) => showStaff(staffArray));
+      $('#formModal').modal('toggle');
     }
     if (e.target.id.includes('edit-show')) {
       const firebaseKey = e.target.id.split('--')[1];
