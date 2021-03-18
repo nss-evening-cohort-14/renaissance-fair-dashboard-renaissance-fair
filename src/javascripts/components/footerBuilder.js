@@ -2,17 +2,6 @@ const footerBuilder = () => {
   document.querySelector('#footer').innerHTML = `
   <footer class="navbar navbar-expand-lg footer">
   <div class="container-fluid d-flex justify-content-between">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="footer">
       <ul class="navbar-nav d-flex justify-content-around w-100">
         <li class="nav-item">
