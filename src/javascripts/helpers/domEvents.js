@@ -8,7 +8,13 @@ import {
   getSingleStaff,
   updateStaff,
 } from './data/staffData';
-import { createFood, deleteFood, getFood } from './data/foodData';
+import {
+  createFood,
+  deleteFood,
+  getFood,
+  getSingleFood,
+  updateFood
+} from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
 import { createShow, deleteShow, getShows } from './data/showsData';
@@ -17,6 +23,7 @@ import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
 import headerTitle from '../components/headerTitle';
 import updateStaffForm from '../components/forms/updateStaffForm';
+import editFoodForm from '../components/forms/editFoodForm';
 import editFormModal from '../components/forms/editFormModal';
 
 const domEvents = (id) => {
@@ -145,6 +152,24 @@ const domEvents = (id) => {
         role: document.querySelector('#staffRole').value,
       };
       updateStaff(firebaseKey, staffObject, id).then((staffArray) => showStaff(staffArray));
+    }
+    if (e.target.id.includes('food-edit-btn')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      editFormModal('Edit Food');
+      getSingleFood(firebaseKey).then((response) => editFoodForm(response));
+    }
+    if (e.target.id.includes('submit-edit-food')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const foodObject = {
+        name: document.querySelector('#foodName').value,
+        description: document.querySelector('#foodDescription').value,
+        image: document.querySelector('#imageUrl').value,
+        price: document.querySelector('#price').value,
+        glutenFree: document.querySelector('#glutenFree').checked,
+        vegetarian: document.querySelector('#vegetarian').checked
+      };
+      updateFood(firebaseKey, foodObject, id).then((arr) => showFood(arr));
       $('#formModal').modal('toggle');
     }
   });
