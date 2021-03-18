@@ -16,8 +16,20 @@ body {
   text-align: center;
   font-family: 'Alike', serif;
 }
+footer {
+  background-color: $secondarylightcolor;
+  ul {
+    a {
+      color: $maincolor;
+    }
+    a:hover {
+      color: $secondarycolor;
+      transition: 250ms;
+    }
+  }
+}
 .content-container {
-  margin-top: 100px;
+  margin: 100px 10px 50px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

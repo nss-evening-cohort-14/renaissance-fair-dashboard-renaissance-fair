@@ -2,26 +2,26 @@ import printShows from '../components/printShows';
 import { showSouvenirs } from '../components/showSouvenirs';
 import {
   getSouvenirs, createSouvenirs, deleteSouvenirs, getSingleSouvenir, updateSouvenir
-} from './data/souvenirData';
+} from '../helpers/data/souvenirData';
 import showFood from '../components/showFood';
 import {
   createNewStaff,
   getStaff, deleteStaff,
   getSingleStaff,
   updateStaff,
-} from './data/staffData';
+} from '../helpers/data/staffData';
 import {
   createFood,
   deleteFood,
   getFood,
   getSingleFood,
   updateFood
-} from './data/foodData';
+} from '../helpers/data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
 import {
   createShow, deleteShow, getShows, getSingleShow, updateShow
-} from './data/showsData';
+} from '../helpers/data/showsData';
 import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
@@ -31,22 +31,42 @@ import editSouvenirsForm from '../components/forms/editSouvenirsForm';
 import editFoodForm from '../components/forms/editFoodForm';
 import editFormModal from '../components/forms/editFormModal';
 import editShowForm from '../components/forms/editShowForm';
+import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
+import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadOnly';
+import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
+import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 
-const domEvents = (id) => {
+const domEvents = (id, user) => {
   document.querySelector('body').addEventListener('click', (e) => {
     if (e.target.id.includes('souvenir-view')) {
       headerTitle('Souvenirs');
-      getSouvenirs(id).then((souvenirArray) => showSouvenirs(souvenirArray));
+      if (user) {
+        getSouvenirs(id).then((souvenirArray) => showSouvenirs(souvenirArray));
+      } else {
+        getSouvenirs(id).then((souvenirArray) => showSouvenirsReadOnly(souvenirArray));
+      }
     }
     if (e.target.id.includes('food-view')) {
-      getFood(id).then((foodArray) => showFood(foodArray));
+      if (user) {
+        getFood(id).then((foodArray) => showFood(foodArray));
+      } else {
+        getFood(id).then((foodArray) => showFoodReadOnly(foodArray));
+      }
     }
     if (e.target.id.includes('staff-view')) {
       headerTitle('See Our Staff');
-      getStaff(id).then((staffArray) => showStaff(staffArray));
+      if (user) {
+        getStaff(id).then((staffArray) => showStaff(staffArray));
+      } else {
+        getStaff(id).then((staffArray) => showStaffReadOnly(staffArray));
+      }
     }
     if (e.target.id.includes('shows-view')) {
-      getShows(id).then((showsArray) => printShows(showsArray));
+      if (user) {
+        getShows(id).then((showsArray) => printShows(showsArray));
+      } else {
+        getShows(id).then((showsArray) => printShowsReadOnly(showsArray));
+      }
     }
     if (e.target.id.includes('create-food')) {
       createFoodForm();
