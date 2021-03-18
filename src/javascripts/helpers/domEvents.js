@@ -143,7 +143,7 @@ const domEvents = (id) => {
         vegetarian: document.querySelector('#vegetarian').checked
       };
       updateFood(firebaseKey, foodObject, id).then((arr) => showFood(arr));
-      $('#editFormModal').modal('toggle');
+      $('#formModal').modal('toggle');
     }
   });
 };
