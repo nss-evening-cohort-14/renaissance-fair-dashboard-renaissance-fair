@@ -1,4 +1,4 @@
-const buildSouvenirs = (array) => {
+const showSouvenirs = (array) => {
   document.querySelector('#content-container').innerHTML = '<button class="btn btn-success btn-lg mb-4" id="add-souvenir-btn">Add A Souvenir</button>';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="item">
@@ -24,4 +24,4 @@ const emptySouvenirs = () => {
   document.querySelector('#content-container').innerHTML = '<h1>No souvenirs</h1>';
 };
 
-export { buildSouvenirs, emptySouvenirs };
+export { showSouvenirs, emptySouvenirs };

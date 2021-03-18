@@ -18,5 +18,10 @@ const createFood = (foodObject, id) => new Promise((resolve, reject) => {
         .catch((error) => reject(error));
     });
 });
+const deleteFood = (firebaseKey, id) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/food/${firebaseKey}.json`)
+    .then(() => getFood(id).then((array) => resolve(array)))
+    .catch((error) => reject(error));
+});
 
-export { createFood, getFood };
+export { createFood, getFood, deleteFood };
