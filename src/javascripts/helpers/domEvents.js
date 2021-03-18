@@ -2,7 +2,12 @@ import printShows from '../components/printShows';
 import { showSouvenirs } from '../components/showSouvenirs';
 import { getSouvenirs, createSouvenirs, deleteSouvenirs } from './data/souvenirData';
 import showFood from '../components/showFood';
-import { createNewStaff, getStaff, deleteStaff } from './data/staffData';
+import {
+  createNewStaff,
+  getStaff, deleteStaff,
+  getSingleStaff,
+  updateStaff,
+} from './data/staffData';
 import { createFood, deleteFood, getFood } from './data/foodData';
 import { showStaff } from '../components/showStaff';
 import createStaff from '../components/forms/createStaff';
@@ -11,6 +16,8 @@ import createFoodForm from '../components/forms/createFoodForm';
 import createShowForm from '../components/forms/createShowForm';
 import newSouvenirsForm from '../components/forms/newWaresForm';
 import headerTitle from '../components/headerTitle';
+import updateStaffForm from '../components/forms/updateStaffForm';
+import editFormModal from '../components/forms/editFormModal';
 
 const domEvents = (id) => {
   document.querySelector('body').addEventListener('click', (e) => {
@@ -120,6 +127,25 @@ const domEvents = (id) => {
         const firebaseKey = e.target.id.split('--')[1];
         deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
       }
+    }
+
+    if (e.target.id.includes('edit-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      editFormModal('Update Staff');
+      getSingleStaff(firebaseKey).then((staffObject) => updateStaffForm(staffObject));
+    }
+
+    if (e.target.id.includes('update-staff')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      e.preventDefault();
+      const staffObject = {
+        first_name: document.querySelector('#staffFirstName').value,
+        last_name: document.querySelector('#staffLastName').value,
+        staff_image: document.querySelector('#staffImage').value,
+        role: document.querySelector('#staffRole').value,
+      };
+      updateStaff(firebaseKey, staffObject, id).then((staffArray) => showStaff(staffArray));
+      $('#formModal').modal('toggle');
     }
   });
 };
