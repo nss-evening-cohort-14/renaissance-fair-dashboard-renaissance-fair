@@ -7,9 +7,9 @@ const showSouvenirs = (array) => {
       <div class="middle">
         <a href="#" id="show-title"><h5 id="souvenir-title--${item.firebaseKey}" class="card-title mt-5 text-center">${item.name}</h5></a>
         <div class="text-center">
-        <p class="card-text bold price" id="price">${item.souvenir_price}</p>
+        <p class="card-text bold price" id="show-price">${item.souvenir_price}</p>
         <hr>
-        <p class="card-text description" id="description">${item.souvenir_description}</p>
+        <p class="card-text description" id="show-description">${item.souvenir_description}</p>
         <button class="btn btn-danger btn-lg" id="edit-souvenir--${item.firebaseKey}" data-toggle="modal" data-target="#formModal">Edit</button>
         <button class="btn btn-danger btn-lg" id="delete-souvenir--${item.firebaseKey}">Delete</button>
         <br>

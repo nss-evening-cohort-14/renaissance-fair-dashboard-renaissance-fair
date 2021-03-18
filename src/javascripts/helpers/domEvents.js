@@ -123,7 +123,6 @@ const domEvents = (id) => {
       $('#formModal').modal('toggle');
     }
     if (e.target.id.includes('update-souvenir')) {
-      console.warn(e.target.id);
       const firebaseKey = e.target.id.split('--')[1];
       e.preventDefault();
       const souvenirObject = {
@@ -132,7 +131,6 @@ const domEvents = (id) => {
         souvenir_price: document.querySelector('#price').value,
         souvenir_description: document.querySelector('#description').value
       };
-      console.warn(souvenirObject);
       updateSouvenir(firebaseKey, souvenirObject, id).then((souvenirArray) => showSouvenirs(souvenirArray));
       $('#formModal').modal('toggle');
     }

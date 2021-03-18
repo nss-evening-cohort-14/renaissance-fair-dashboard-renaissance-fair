@@ -21,7 +21,6 @@ const createSouvenirs = (souvenirObject, id) => new Promise((resolve, reject) =>
 });
 // DELETE SOUVENIR
 const deleteSouvenirs = (firebaseKey, id) => new Promise((resolve, reject) => {
-  console.warn(firebaseKey);
   axios.delete(`${dbUrl}/souvenirs/${firebaseKey}.json`)
     .then(() => getSouvenirs(id).then((souvenirResponse) => resolve(souvenirResponse)))
     .catch((error) => reject(error));
