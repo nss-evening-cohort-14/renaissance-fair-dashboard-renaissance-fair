@@ -1,3 +1,5 @@
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import printShows from '../components/printShows';
 import { showSouvenirs } from '../components/showSouvenirs';
 import {
@@ -35,46 +37,64 @@ import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
 import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadOnly';
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
+import getEvents from '../helpers/data/eventsData';
 
-const domEvents = (id, user) => {
-  document.querySelector('body').addEventListener('click', (e) => {
-    if (e.target.id.includes('souvenir-view')) {
-      headerTitle('Souvenirs');
-      if (user) {
-        getSouvenirs(id).then((souvenirArray) => showSouvenirs(souvenirArray));
-      } else {
-        getSouvenirs(id).then((souvenirArray) => showSouvenirsReadOnly(souvenirArray));
-      }
+const eventListeners = (e) => {
+  const user = firebase.auth().currentUser;
+  if (e.target.id.includes('souvenir-view')) {
+    headerTitle('Souvenirs');
+    if (user) {
+      getEvents().then((x) => {
+        getSouvenirs(x.firebaseKey).then((souvenirArray) => showSouvenirs(souvenirArray));
+      });
+    } else {
+      getEvents().then((x) => {
+        getSouvenirs(x.firebaseKey).then((souvenirArray) => showSouvenirsReadOnly(souvenirArray));
+      });
     }
-    if (e.target.id.includes('food-view')) {
-      if (user) {
-        getFood(id).then((foodArray) => showFood(foodArray));
-      } else {
-        getFood(id).then((foodArray) => showFoodReadOnly(foodArray));
-      }
+  }
+  if (e.target.id.includes('food-view')) {
+    if (user) {
+      getEvents().then((x) => {
+        getFood(x.firebaseKey).then((foodArray) => showFood(foodArray));
+      });
+    } else {
+      getEvents().then((x) => {
+        getFood(x.firebaseKey).then((foodArray) => showFoodReadOnly(foodArray));
+      });
     }
-    if (e.target.id.includes('staff-view')) {
-      headerTitle('See Our Staff');
-      if (user) {
-        getStaff(id).then((staffArray) => showStaff(staffArray));
-      } else {
-        getStaff(id).then((staffArray) => showStaffReadOnly(staffArray));
-      }
+  }
+  if (e.target.id.includes('staff-view')) {
+    headerTitle('See Our Staff');
+    if (user) {
+      getEvents().then((x) => {
+        getStaff(x.firebaseKey).then((staffArray) => showStaff(staffArray));
+      });
+    } else {
+      getEvents().then((x) => {
+        getStaff(x.firebaseKey).then((staffArray) => showStaffReadOnly(staffArray));
+      });
     }
-    if (e.target.id.includes('shows-view')) {
-      if (user) {
-        getShows(id).then((showsArray) => printShows(showsArray));
-      } else {
-        getShows(id).then((showsArray) => printShowsReadOnly(showsArray));
-      }
+  }
+  if (e.target.id.includes('shows-view')) {
+    if (user) {
+      getEvents().then((x) => {
+        getShows(x.firebaseKey).then((showsArray) => printShows(showsArray));
+      });
+    } else {
+      getEvents().then((x) => {
+        getShows(x.firebaseKey).then((showsArray) => printShowsReadOnly(showsArray));
+      });
     }
-    if (e.target.id.includes('create-food')) {
-      createFoodForm();
-    }
-    if (e.target.id.includes('submit-food')) {
-      e.preventDefault();
+  }
+  if (e.target.id.includes('create-food')) {
+    createFoodForm();
+  }
+  if (e.target.id.includes('submit-food')) {
+    e.preventDefault();
+    getEvents().then((x) => {
       const foodObject = {
-        event_id: id,
+        event_id: x.firebaseKey,
         name: document.querySelector('#foodName').value,
         description: document.querySelector('#foodDescription').value,
         image: document.querySelector('#imageUrl').value,
@@ -82,148 +102,169 @@ const domEvents = (id, user) => {
         glutenFree: document.querySelector('#glutenFree').checked,
         vegetarian: document.querySelector('#vegetarian').checked
       };
-      createFood(foodObject, id).then((response) => showFood(response));
-    }
+      createFood(foodObject, x.firebaseKey).then((response) => showFood(response));
+    });
+  }
 
-    if (e.target.id.includes('add-newStaff-btn')) {
-      headerTitle('Add Staff');
-      createStaff();
-    }
+  if (e.target.id.includes('add-newStaff-btn')) {
+    headerTitle('Add Staff');
+    createStaff();
+  }
 
-    if (e.target.id.includes('submitNewStaff')) {
+  if (e.target.id.includes('submitNewStaff')) {
+    getEvents().then((x) => {
       e.preventDefault();
       const staffObject = {
         first_name: document.querySelector('#staffFirstName').value,
         last_name: document.querySelector('#staffLastName').value,
         staff_image: document.querySelector('#staffImage').value,
         role: document.querySelector('#staffRole').value,
-        event_id: id
+        event_id: x.firebaseKey
       };
-      createNewStaff(staffObject, id).then((staffArray) => showStaff(staffArray));
-    }
+      createNewStaff(staffObject, x.firebaseKey).then((staffArray) => showStaff(staffArray));
+    });
+  }
 
-    if (e.target.id.includes('show-show-form')) {
-      createShowForm();
-    }
-    if (e.target.id.includes('submit-show')) {
-      e.preventDefault();
-
+  if (e.target.id.includes('show-show-form')) {
+    createShowForm();
+  }
+  if (e.target.id.includes('submit-show')) {
+    e.preventDefault();
+    getEvents().then((x) => {
       const showObject = {
         name: document.querySelector('#showName').value,
         image: document.querySelector('#image').value,
         date: document.querySelector('#date').value,
         description: document.querySelector('#description').value,
-        event_id: id
+        event_id: x.firebaseKey
       };
-      createShow(showObject, id).then((showsArray) => printShows(showsArray));
-    }
-    if (e.target.id.includes('add-souvenir-btn')) {
-      headerTitle('Souvenirs');
-      newSouvenirsForm();
-    }
-    if (e.target.id.includes('submit-souvenirs')) {
-      e.preventDefault();
+      createShow(showObject, x.firebaseKey).then((showsArray) => printShows(showsArray));
+    });
+  }
+  if (e.target.id.includes('add-souvenir-btn')) {
+    headerTitle('Souvenirs');
+    newSouvenirsForm();
+  }
+  if (e.target.id.includes('submit-souvenirs')) {
+    e.preventDefault();
+    getEvents().then((x) => {
       const souvenirsObject = {
         souvenir_image: document.querySelector('#image').value,
         name: document.querySelector('#title').value,
         souvenir_price: document.querySelector('#price').value,
         souvenir_description: document.querySelector('#description').value,
-        event_id: id
+        event_id: x.firebaseKey
       };
-      createSouvenirs(souvenirsObject, id).then((souvenirArray) => showSouvenirs(souvenirArray));
-    }
-    // DELETE SOUVENIR
-    if (e.target.id.includes('delete-souvenir')) {
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Are you sure?')) {
-        const firebaseKey = e.target.id.split('--')[1];
-        deleteSouvenirs(firebaseKey, id).then((souvenirArray) => showSouvenirs(souvenirArray));
-      }
-    }
-    if (e.target.id.includes('edit-souvenir')) {
+      createSouvenirs(souvenirsObject, x.firebaseKey).then((souvenirArray) => showSouvenirs(souvenirArray));
+    });
+  }
+  // DELETE SOUVENIR
+  if (e.target.id.includes('delete-souvenir')) {
+  // eslint-disable-next-line no-alert
+    if (window.confirm('Are you sure?')) {
       const firebaseKey = e.target.id.split('--')[1];
-      e.preventDefault();
-      editFormModal('Edit Souvenir');
-      getSingleSouvenir(firebaseKey).then((souvenirObject) => editSouvenirsForm(souvenirObject));
-      $('#formModal').modal('toggle');
+      getEvents().then((x) => {
+        deleteSouvenirs(firebaseKey, x.firebaseKey).then((souvenirArray) => showSouvenirs(souvenirArray));
+      });
     }
-    if (e.target.id.includes('update-souvenir')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      e.preventDefault();
+  }
+  if (e.target.id.includes('edit-souvenir')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    e.preventDefault();
+    editFormModal('Edit Souvenir');
+    getSingleSouvenir(firebaseKey).then((souvenirObject) => editSouvenirsForm(souvenirObject));
+    $('#formModal').modal('toggle');
+  }
+  if (e.target.id.includes('update-souvenir')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    e.preventDefault();
+    getEvents().then((x) => {
       const souvenirObject = {
         souvenir_image: document.querySelector('#image').value,
         name: document.querySelector('#title').value,
         souvenir_price: document.querySelector('#price').value,
         souvenir_description: document.querySelector('#description').value
       };
-      updateSouvenir(firebaseKey, souvenirObject, id).then((souvenirArray) => showSouvenirs(souvenirArray));
+      updateSouvenir(firebaseKey, souvenirObject, x.firebaseKey).then((souvenirArray) => showSouvenirs(souvenirArray));
       $('#formModal').modal('toggle');
-    }
-    if (e.target.id.includes('food-delete-btn')) {
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Are you sure?')) {
-        const firebaseKey = e.target.id.split('--')[1];
-        deleteFood(firebaseKey, id).then((foodArray) => showFood(foodArray));
-      }
-    }
-    if (e.target.id.includes('delete-show')) {
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Are you sure?')) {
-        const firebaseKey = e.target.id.split('--')[1];
-        deleteShow(firebaseKey, id).then((showsArray) => printShows(showsArray));
-      }
-    }
-    if (e.target.id.includes('delete-staff')) {
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Are you sure?')) {
-        const firebaseKey = e.target.id.split('--')[1];
-        deleteStaff(firebaseKey, id).then((staffArray) => showStaff(staffArray));
-      }
-    }
-
-    if (e.target.id.includes('edit-staff')) {
+    });
+  }
+  if (e.target.id.includes('food-delete-btn')) {
+  // eslint-disable-next-line no-alert
+    if (window.confirm('Are you sure?')) {
       const firebaseKey = e.target.id.split('--')[1];
-      editFormModal('Update Staff');
-      getSingleStaff(firebaseKey).then((staffObject) => updateStaffForm(staffObject));
+      getEvents().then((x) => {
+        deleteFood(firebaseKey, x.firebaseKey).then((foodArray) => showFood(foodArray));
+      });
     }
-
-    if (e.target.id.includes('update-staff')) {
+  }
+  if (e.target.id.includes('delete-show')) {
+  // eslint-disable-next-line no-alert
+    if (window.confirm('Are you sure?')) {
       const firebaseKey = e.target.id.split('--')[1];
-      e.preventDefault();
+      getEvents().then((x) => {
+        deleteShow(firebaseKey, x.firebaseKey).then((showsArray) => printShows(showsArray));
+      });
+    }
+  }
+  if (e.target.id.includes('delete-staff')) {
+  // eslint-disable-next-line no-alert
+    if (window.confirm('Are you sure?')) {
+      const firebaseKey = e.target.id.split('--')[1];
+      getEvents().then((x) => {
+        deleteStaff(firebaseKey, x.firebaseKey).then((staffArray) => showStaff(staffArray));
+      });
+    }
+  }
+
+  if (e.target.id.includes('edit-staff')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    editFormModal('Update Staff');
+    getSingleStaff(firebaseKey).then((staffObject) => updateStaffForm(staffObject));
+  }
+
+  if (e.target.id.includes('update-staff')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    e.preventDefault();
+    getEvents().then((x) => {
       const staffObject = {
         first_name: document.querySelector('#staffFirstName').value,
         last_name: document.querySelector('#staffLastName').value,
         staff_image: document.querySelector('#staffImage').value,
         role: document.querySelector('#staffRole').value,
       };
-      updateStaff(firebaseKey, staffObject, id).then((staffArray) => showStaff(staffArray));
+      updateStaff(firebaseKey, staffObject, x.firebaseKey).then((staffArray) => showStaff(staffArray));
       $('#formModal').modal('toggle');
-    }
-    if (e.target.id.includes('edit-show')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      editFormModal('Edit Show');
-      getSingleShow(firebaseKey).then((showObject) => editShowForm(showObject));
-    }
-    if (e.target.id.includes('update-show')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      e.preventDefault();
+    });
+  }
+  if (e.target.id.includes('edit-show')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    editFormModal('Edit Show');
+    getSingleShow(firebaseKey).then((showObject) => editShowForm(showObject));
+  }
+  if (e.target.id.includes('update-show')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    e.preventDefault();
+    getEvents().then((x) => {
       const showObject = {
         name: document.querySelector('#showName').value,
         image: document.querySelector('#image').value,
         date: document.querySelector('#date').value,
         description: document.querySelector('#description').value,
       };
-      updateShow(firebaseKey, showObject, id).then((showsArray) => printShows(showsArray));
+      updateShow(firebaseKey, showObject, x.preventDefault).then((showsArray) => printShows(showsArray));
       $('#formModal').modal('toggle');
-    }
-    if (e.target.id.includes('food-edit-btn')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      editFormModal('Edit Food');
-      getSingleFood(firebaseKey).then((response) => editFoodForm(response));
-    }
-    if (e.target.id.includes('submit-edit-food')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      e.preventDefault();
+    });
+  }
+  if (e.target.id.includes('food-edit-btn')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    editFormModal('Edit Food');
+    getSingleFood(firebaseKey).then((response) => editFoodForm(response));
+  }
+  if (e.target.id.includes('submit-edit-food')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    e.preventDefault();
+    getEvents().then((x) => {
       const foodObject = {
         name: document.querySelector('#foodName').value,
         description: document.querySelector('#foodDescription').value,
@@ -232,10 +273,13 @@ const domEvents = (id, user) => {
         glutenFree: document.querySelector('#glutenFree').checked,
         vegetarian: document.querySelector('#vegetarian').checked
       };
-      updateFood(firebaseKey, foodObject, id).then((arr) => showFood(arr));
+      updateFood(firebaseKey, foodObject, x.firebaseKey).then((arr) => showFood(arr));
       $('#formModal').modal('toggle');
-    }
-  });
+    });
+  }
+};
+const domEvents = () => {
+  document.querySelector('body').addEventListener('click', eventListeners);
 };
 
-export default domEvents;
+export { eventListeners, domEvents };
