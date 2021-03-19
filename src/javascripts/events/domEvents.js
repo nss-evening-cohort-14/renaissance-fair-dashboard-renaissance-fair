@@ -38,6 +38,7 @@ import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadO
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 import getEvents from '../helpers/data/eventsData';
+import deleteConfirm from '../components/forms/deleteConfirm';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -198,14 +199,18 @@ const eventListeners = (e) => {
       });
     }
   }
+  if (e.target.id.includes('delete-modal')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    e.preventDefault();
+    editFormModal('Delete');
+    getSingleShow(firebaseKey).then((showsObject) => deleteConfirm(showsObject));
+  }
   if (e.target.id.includes('delete-show')) {
-  // eslint-disable-next-line no-alert
-    if (window.confirm('Are you sure?')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      getEvents().then((x) => {
-        deleteShow(firebaseKey, x.firebaseKey).then((showsArray) => printShows(showsArray));
-      });
-    }
+    const firebaseKey = e.target.id.split('--')[1];
+    getEvents().then((x) => {
+      deleteShow(firebaseKey, x.firebaseKey).then((showsArray) => printShows(showsArray));
+      $('#formModal').modal('toggle');
+    });
   }
   if (e.target.id.includes('delete-staff')) {
   // eslint-disable-next-line no-alert
