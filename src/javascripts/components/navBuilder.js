@@ -3,7 +3,7 @@ const buildNav = () => {
   <nav class="navbar navbar-expand-lg menu">
   <div class="container-fluid">
     <div class="collapse navbar-collapse sidenav" id="navbarNavigation">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav text-left">
       <li class ="nav-item">
       <img src="src/assets/Freelancer - Logo (2).png" id="logo">
       </li>
