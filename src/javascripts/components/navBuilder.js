@@ -6,7 +6,7 @@ const buildNav = () => {
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavigation" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavigation">
+    <div class="collapse navbar-collapse sidenav" id="navbarNavigation">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link active" id="shows-link" aria-current="page" href="#">Shows</a>
