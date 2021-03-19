@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
 @import './staff.scss';
 @import './food.scss';
+@import './souvenirs.scss';
 
 $mainfontcolor: #97A0A2;
 $secondaryfontcolor: #D7DCA8;
@@ -15,6 +16,7 @@ body {
   color: $maincolor;
   text-align: center;
   font-family: 'Alike', serif;
+  margin: 0;
 }
 footer {
   background-color: $secondarylightcolor;
@@ -64,4 +66,32 @@ footer {
 }
 #auth-button {
   margin-left: auto;
+}
+.top {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color:#CACACA;
+  color: #251617;
+  font-weight: 700;
+}
+.card:hover .top {
+  opacity: 0.3;
+}
+.card:hover .middle {
+  opacity: 1;
 }

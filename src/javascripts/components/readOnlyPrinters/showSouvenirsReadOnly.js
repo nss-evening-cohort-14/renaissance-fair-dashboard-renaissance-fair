@@ -2,8 +2,8 @@ const showSouvenirsReadOnly = (array) => {
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="item">
-    <div class="souvenir-container top m-3" style="width: 20rem">
-      <img src='${item.souvenir_image}' class="card-img-top rounded mx-auto d-block" id='card-img'></img>
+    <div class="souvenir-container m-3" style="width: 20rem">
+      <img src='${item.souvenir_image}' class="card-img-top rounded mx-auto d-block top" id='card-img'></img>
       <div class="middle">
         <a href="#" id="show-title"><h5 id="souvenir-title--${item.firebaseKey}" class="card-title mt-5 text-center">${item.name}</h5></a>
         <div class="text-center">
