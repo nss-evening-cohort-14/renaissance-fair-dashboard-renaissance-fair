@@ -6,7 +6,7 @@
 @import './souvenirs.scss';
 
 $mainfontcolor: #97A0A2;
-$secondaryfontcolor: #D7DCA8;
+$secondaryfontcolor: hsl(66, 43%, 76%);
 $maincolor: #1A1F14;
 $secondarycolor: #628541;
 $secondarylightcolor: #9DBE77;
@@ -58,11 +58,39 @@ footer {
   width: 40em;
   margin: 50px 0;
 }
-#nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
+// #nav {
+//   position: fixed;
+//   width: 100%;
+//   top: 0;
+//   z-index: 9999;
+// }
+.menu{
+	background-color: #1A1F14;
+  color: $secondarycolor;
+	height:100vh;
+	width: 15%;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	outline:none;
+  text-decoration: none;
+  ul{
+		list-style:none;
+    display: block;
+		padding:0.5em 0;
+		margin:0;
+		li{
+			padding:0.5em 1em 0.5em 3em;
+			font-size:0.95em;
+			font-weight:regular;
+			background-repeat:no-repeat;
+			background-position:left center;
+			background-size:auto 20px;
+			transition:all 0.15s linear;
+			cursor:pointer;
+    }
+  }
 }
 #auth-button {
   margin-left: auto;
