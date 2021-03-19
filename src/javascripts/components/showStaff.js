@@ -3,8 +3,8 @@ const showStaff = (array) => {
   document.querySelector('#content-container').innerHTML = '<button class="btn btn-primary" id="add-newStaff-btn">Add A New Staff</button>';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `
-    <div id="staffContainer" class="card top" style="width: 20rem;">
-      <img class="card-img-top pinImg" src="${item.staff_image}" alt="${item.first_name}">
+    <div id="staffContainer" class="card" style="width: 20rem;">
+      <img class="card-img-top pinImg top" src="${item.staff_image}" alt="${item.first_name}">
       <div class="card-body staffInfo middle">
         <h5 class="card-title text-dark">${item.first_name}</h5>
         <p class="staffDescription">${item.role}</p>
