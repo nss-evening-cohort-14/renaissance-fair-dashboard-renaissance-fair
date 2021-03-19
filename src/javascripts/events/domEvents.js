@@ -252,7 +252,7 @@ const eventListeners = (e) => {
         date: document.querySelector('#date').value,
         description: document.querySelector('#description').value,
       };
-      updateShow(firebaseKey, showObject, x.preventDefault).then((showsArray) => printShows(showsArray));
+      updateShow(firebaseKey, showObject, x.firebaseKey).then((showsArray) => printShows(showsArray));
       $('#formModal').modal('toggle');
     });
   }
