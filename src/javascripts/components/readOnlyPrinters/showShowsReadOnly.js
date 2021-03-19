@@ -5,7 +5,7 @@ const printShowsReadOnly = (array) => {
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((show) => {
     const domString = `
-    <div class="card" id="shows-card--${show.firebaseKey}" style="width: 18rem;">
+    <div class="item card border-0 bg-transparent" id="shows-card--${show.firebaseKey}" style="width: 18rem;">
   <img src="${show.image}" class="card-img-top top" alt="show image">
   <div class="card-body-middle middle">
     <h5 class="card-title">${show.name}</h5>

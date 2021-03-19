@@ -4,7 +4,7 @@ const showFoodReadOnly = (array) => {
   headerTitle('Food Shoppes');
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((food) => {
-    const domString = `<div class="card food-card" style="width: 18rem;">
+    const domString = `<div class="food-card item card border-0 bg-transparent" style="width: 18rem;">
     <img src="${food.image}" class="card-img-top top" alt="...">
     <div class="card-body middle">
       <h5 class="card-title" id="food-card-title--${food.firebaseKey}">${food.name}</h5>
