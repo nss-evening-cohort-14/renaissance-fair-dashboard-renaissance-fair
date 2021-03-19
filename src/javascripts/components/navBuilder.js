@@ -1,9 +1,12 @@
 const buildNav = () => {
   document.querySelector('#nav').innerHTML = `
-  <nav class="navbar navbar-expand-lg menu" tabindex="0">
+  <nav class="navbar navbar-expand-lg menu">
   <div class="container-fluid">
     <div class="collapse navbar-collapse sidenav" id="navbarNavigation">
-      <ul class="navbar-nav">
+    <ul class="navbar-nav">
+      <li class ="nav-item">
+      <img src="src/assets/Freelancer - Logo (2).png" id="logo">
+      </li>
       <li class="nav-item">
       <a class="navbar-brand" href="#" id="home">Freelancer</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavigation" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
