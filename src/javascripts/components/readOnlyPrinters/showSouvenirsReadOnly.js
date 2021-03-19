@@ -1,7 +1,7 @@
 const showSouvenirsReadOnly = (array) => {
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((item) => {
-    document.querySelector('#content-container').innerHTML += `<div class="item">
+    document.querySelector('#content-container').innerHTML += `<div class="item card">
     <div class="souvenir-container m-3" style="width: 20rem">
       <img src='${item.souvenir_image}' class="card-img-top rounded mx-auto d-block top" id='card-img'></img>
       <div class="middle">
