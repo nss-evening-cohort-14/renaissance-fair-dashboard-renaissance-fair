@@ -3,7 +3,6 @@
 
 #add-newStaff-btn {
   background-color: $maincolor;
-  opacity: 0.6;
   color: $secondaryfontcolor;
   padding: 1.2rem 4rem;
   font-size: 1.2rem;
@@ -16,6 +15,27 @@
 }
 
 #add-newStaff-btn:hover {
-  background-color: $maincolor;
-  opacity: 1;
+  opacity: 0.7;
+}
+
+.editStaff {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.editStaff:hover {
+  opacity: 0.8;
+  color: $mainfontcolor;
+}
+
+.deleteStaff {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.deleteStaff:hover {
+  opacity: 0.8;
+  color: $mainfontcolor;
 }
