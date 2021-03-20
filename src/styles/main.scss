@@ -61,16 +61,9 @@ footer {
 .nav-cards {
   display: flex;
   justify-content: flex-start;
-  width: 40em;
-  height: 430px;
-  margin: 50px 50px;
+  flex-wrap:wrap;
 }
-.nav-cards-left {
-  display: flex;
-  justify-content: flex-end;
-  width: 40em;
-  margin: 50px 0;
-}
+
 nav {
   color: $secondarycolor !important;
 }
@@ -123,12 +116,19 @@ a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.
 #auth-button {
   margin-left: auto;
 }
+.card {
+  height: 28rem;
+  margin: 10px;
+  img {
+    object-fit: cover;
+    height: 28rem;
+  }
+}
 
 .top {
   opacity: 1;
   display: block;
   width: 100%;
-  height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -138,7 +138,6 @@ a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.
   bottom: 0;
   left: 0;
   right: 0;
-  height: auto;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -148,14 +147,9 @@ a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.
 }
 .card:hover .top {
   opacity: 0.3;
-  height: auto;
 }
 .card:hover .middle {
   opacity: 1;
-  height: auto;
-}
-#eowyn {
-  height: 440px;
 }
 
 .add-button-container {
