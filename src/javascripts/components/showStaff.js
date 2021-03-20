@@ -9,7 +9,7 @@ const showStaff = (array) => {
         <h5 class="card-title text-dark">${item.first_name}</h5>
         <p class="staffDescription">${item.role}</p>
         <button class="btn btn-info" data-toggle="modal" data-target="#formModal" id="edit-staff-btn--${item.firebaseKey}">Edit</button>
-        <button class="btn btn-danger" id="delete-staff--${item.firebaseKey}">Delete <i class="fas fa-trash-alt"></i></button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="delete-modal-staff--${item.firebaseKey}">Delete <i class="fas fa-trash-alt"></i></button>
       </div>
     </div>`;
   });

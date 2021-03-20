@@ -13,7 +13,7 @@ const showFood = (array) => {
       <p class="card-text">${food.description}</p>
       <p class="card-text">Price: ${food.price}</p>
       <button type="button" class="btn btn-danger" id="food-edit-btn--${food.firebaseKey}" data-toggle="modal" data-target="#formModal">Edit</button>
-      <a href="#" class="btn btn-danger" id="food-delete-btn--${food.firebaseKey}">Delete</a>
+      <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="delete-modal-food--${food.firebaseKey}">Delete</button>
     </div>
   </div>
   `;

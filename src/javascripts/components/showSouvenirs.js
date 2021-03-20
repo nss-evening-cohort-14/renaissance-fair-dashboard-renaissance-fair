@@ -11,7 +11,7 @@ const showSouvenirs = (array) => {
         <hr>
         <p class="card-text description scroller" id="show-description">${item.souvenir_description}</p>
         <button class="btn btn-danger btn-lg" id="edit-souvenir--${item.firebaseKey}" data-toggle="modal" data-target="#formModal">Edit</button>
-        <button class="btn btn-danger btn-lg" id="delete-souvenir--${item.firebaseKey}">Delete</button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="delete-modal-souvenir--${item.firebaseKey}">Delete</button>
         <br>
     </div>
   </div>

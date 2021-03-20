@@ -31,7 +31,7 @@ import headerTitle from '../components/headerTitle';
 import updateStaffForm from '../components/forms/updateStaffForm';
 import editSouvenirsForm from '../components/forms/editSouvenirsForm';
 import editFoodForm from '../components/forms/editFoodForm';
-import editFormModal from '../components/forms/editFormModal';
+import formModal from '../components/forms/formModal';
 import editShowForm from '../components/forms/editShowForm';
 import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
 import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadOnly';
@@ -161,18 +161,16 @@ const eventListeners = (e) => {
   }
   // DELETE SOUVENIR
   if (e.target.id.includes('delete-souvenir')) {
-  // eslint-disable-next-line no-alert
-    if (window.confirm('Are you sure?')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      getEvents().then((x) => {
-        deleteSouvenirs(firebaseKey, x.firebaseKey).then((souvenirArray) => showSouvenirs(souvenirArray));
-      });
-    }
+    const firebaseKey = e.target.id.split('--')[1];
+    getEvents().then((x) => {
+      deleteSouvenirs(firebaseKey, x.firebaseKey).then((souvenirArray) => showSouvenirs(souvenirArray));
+    });
+    $('#formModal').modal('toggle');
   }
   if (e.target.id.includes('edit-souvenir')) {
     const firebaseKey = e.target.id.split('--')[1];
     e.preventDefault();
-    editFormModal('Edit Souvenir');
+    formModal('Edit Souvenir');
     getSingleSouvenir(firebaseKey).then((souvenirObject) => editSouvenirsForm(souvenirObject));
     $('#formModal').modal('toggle');
   }
@@ -190,20 +188,29 @@ const eventListeners = (e) => {
       $('#formModal').modal('toggle');
     });
   }
-  if (e.target.id.includes('food-delete-btn')) {
-  // eslint-disable-next-line no-alert
-    if (window.confirm('Are you sure?')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      getEvents().then((x) => {
-        deleteFood(firebaseKey, x.firebaseKey).then((foodArray) => showFood(foodArray));
-      });
-    }
+  if (e.target.id.includes('delete-food')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    getEvents().then((x) => {
+      deleteFood(firebaseKey, x.firebaseKey).then((foodArray) => showFood(foodArray));
+      $('#formModal').modal('toggle');
+    });
   }
   if (e.target.id.includes('delete-modal')) {
     const firebaseKey = e.target.id.split('--')[1];
     e.preventDefault();
-    editFormModal('Delete');
-    getSingleShow(firebaseKey).then((showsObject) => deleteConfirm(showsObject));
+    formModal('Are you sure?');
+    if (e.target.id.includes('show')) {
+      getSingleShow(firebaseKey).then((showsObject) => deleteConfirm(showsObject, 'show'));
+    }
+    if (e.target.id.includes('food')) {
+      getSingleFood(firebaseKey).then((foodObject) => deleteConfirm(foodObject, 'food'));
+    }
+    if (e.target.id.includes('souvenir')) {
+      getSingleSouvenir(firebaseKey).then((souvenirObject) => deleteConfirm(souvenirObject, 'souvenir'));
+    }
+    if (e.target.id.includes('staff')) {
+      getSingleStaff(firebaseKey).then((staffObject) => deleteConfirm(staffObject, 'staff'));
+    }
   }
   if (e.target.id.includes('delete-show')) {
     const firebaseKey = e.target.id.split('--')[1];
@@ -213,18 +220,16 @@ const eventListeners = (e) => {
     });
   }
   if (e.target.id.includes('delete-staff')) {
-  // eslint-disable-next-line no-alert
-    if (window.confirm('Are you sure?')) {
-      const firebaseKey = e.target.id.split('--')[1];
-      getEvents().then((x) => {
-        deleteStaff(firebaseKey, x.firebaseKey).then((staffArray) => showStaff(staffArray));
-      });
-    }
+    const firebaseKey = e.target.id.split('--')[1];
+    getEvents().then((x) => {
+      deleteStaff(firebaseKey, x.firebaseKey).then((staffArray) => showStaff(staffArray));
+    });
+    $('#formModal').modal('toggle');
   }
 
   if (e.target.id.includes('edit-staff')) {
     const firebaseKey = e.target.id.split('--')[1];
-    editFormModal('Update Staff');
+    formModal('Update Staff');
     getSingleStaff(firebaseKey).then((staffObject) => updateStaffForm(staffObject));
   }
 
@@ -244,7 +249,7 @@ const eventListeners = (e) => {
   }
   if (e.target.id.includes('edit-show')) {
     const firebaseKey = e.target.id.split('--')[1];
-    editFormModal('Edit Show');
+    formModal('Edit Show');
     getSingleShow(firebaseKey).then((showObject) => editShowForm(showObject));
   }
   if (e.target.id.includes('update-show')) {
@@ -263,7 +268,7 @@ const eventListeners = (e) => {
   }
   if (e.target.id.includes('food-edit-btn')) {
     const firebaseKey = e.target.id.split('--')[1];
-    editFormModal('Edit Food');
+    formModal('Edit Food');
     getSingleFood(firebaseKey).then((response) => editFoodForm(response));
   }
   if (e.target.id.includes('submit-edit-food')) {
