@@ -16,7 +16,7 @@ const startApp = (user) => {
     buildNav();
     navEvents(response.firebaseKey, user);
     buttonBuilder();
-    headerTitle('Welcome to ye ol\' site');
+    headerTitle('WELCOME');
     footerBuilder();
     if (user) {
       logoutButton();
