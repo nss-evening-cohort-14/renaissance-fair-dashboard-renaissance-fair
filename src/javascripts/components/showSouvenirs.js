@@ -4,7 +4,7 @@ const showSouvenirs = (array) => {
   document.querySelector('#add-button-container').innerHTML = '<button class="btn btn-lg" id="add-souvenir-btn">Add A Souvenir</button>';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="item card border-0 bg-transparent">
-    <div class="souvenir-container m-3" style="width: 20rem">
+    <div class="souvenir-container m-3" style="width: 20rem;">
       <img src='${item.souvenir_image}' class="card-img-top rounded mx-auto d-block image top" id='card-img'></img>
       <div class="middle">
         <a href="#" id="show-title"><h5 id="souvenir-title--${item.firebaseKey}" class="card-title mt-5 text-center">${item.name}</h5></a>
