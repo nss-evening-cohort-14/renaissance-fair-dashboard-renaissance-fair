@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
-
+$maincolor: #1A1F14;
 .add-food-form {
   width: 50%;
 }
 .food-card {
-  height: 30em;
+  height: auto;
   margin: 20px;
   img {
-    height: 35%;
+    height: auto;
   }
+}
+#create-food {
+  border: #9DBE77;
+  background-color: $maincolor;
+  color: #9DBE77;
 }
 .food-button-card {
   background-image: url('../assets/renfaireFood.png');

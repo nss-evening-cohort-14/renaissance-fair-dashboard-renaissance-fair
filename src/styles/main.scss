@@ -16,7 +16,7 @@ body {
   color: $maincolor;
   text-align: center;
   font-family: 'Alike', serif;
-  margin: 0;
+  margin-left: 17%;
 }
 .jumbotron {
   background-color: $secondarylightcolor;
@@ -44,7 +44,6 @@ footer {
 }
 .content-container {
   margin: 100px 10px 50px 10px;
-  padding-left: 15%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -81,7 +80,6 @@ nav {
 }
 .head-title {
   text-align: center;
-  margin-left: 230px;
   padding: 40px;
 }
 .menu{
