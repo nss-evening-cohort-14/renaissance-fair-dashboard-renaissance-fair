@@ -20,6 +20,12 @@ body {
 }
 .jumbotron {
   background-color: $secondarylightcolor;
+  height: 20%;
+}
+#logo {
+  margin-right: -50px;
+  margin-top: -100px;
+  width: 100%;
 }
 footer {
   background-color: $secondarylightcolor;
@@ -34,7 +40,7 @@ footer {
   }
 }
 #copyright {
-  padding-left: 50px;
+  padding-left: 90px;
 }
 .content-container {
   margin: 100px 10px 50px 10px;
@@ -66,11 +72,23 @@ footer {
 nav {
   color: $secondarycolor !important;
 }
+.navbar-brand {
+  font-size: 24px;
+}
+.navbar-brand:hover {
+  background-color: #333f1d;
+  color: $mainfontcolor;
+}
+.head-title {
+  text-align: center;
+  margin-left: 230px;
+  padding: 40px;
+}
 .menu{
 	background-color: #1A1F14;
   color: $secondarycolor;
 	height:100%;
-	width: 15%;
+	width: 17%;
 	position:fixed;
 	top:0;
 	left:0;
@@ -84,9 +102,9 @@ nav {
 		padding:0.5em 0;
 		margin:0;
 		li{
-			padding:0.5em 1em 0.5em 3em;
+			// padding:0.5em 1em 0.5em 3em;
       color: $secondarycolor;
-			font-size:0.95em;
+			font-size: 24px;
 			font-weight:regular;
 			background-repeat:no-repeat;
 			background-position:left center;
@@ -131,4 +149,11 @@ nav {
 }
 #eowyn {
   height: 440px;
+}
+a:nav-link {
+  color: $secondaryfontcolor !important;
+}
+a.nav-link:hover {
+  background-color: #333f1d;
+  color: $mainfontcolor;
 }
