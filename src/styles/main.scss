@@ -15,8 +15,13 @@ body {
   margin-left: 17%;
 }
 .jumbotron {
+  padding-top: 0%;
+  padding-bottom: 0%;
   background-color: $secondarylightcolor;
-  height: 20%;
+}
+video {
+  object-fit: fill;
+  align-content: center;
 }
 #logo {
   margin-right: -50px;
@@ -57,19 +62,13 @@ footer {
 .nav-cards {
   display: flex;
   justify-content: flex-start;
-  width: 40em;
-  height: 430px;
-  margin: 50px 50px;
+  flex-wrap:wrap;
 }
-.nav-cards-left {
-  display: flex;
-  justify-content: flex-end;
-  width: 40em;
-  margin: 50px 0;
-}
+
 nav {
   color: $secondarycolor !important;
 }
+
 .navbar-brand {
   font-size: 24px;
 }
@@ -111,6 +110,9 @@ nav {
     }
   }
 }
+a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.nav-link, a#food-link.nav-link {
+  color:$mainfontcolor;
+}
 #auth-button {
   margin-left: auto;
 }
@@ -141,6 +143,14 @@ nav {
   opacity: 0.8;
   color: $secondarylightcolor;
 }
+  .card {
+  height: 28rem;
+  margin: 10px;
+  img {
+    object-fit: cover;
+    height: 28rem;
+  }
+}
 
 .delete-btn {
   background-color: $secondarycolor;
@@ -156,7 +166,6 @@ nav {
   opacity: 1;
   display: block;
   width: 100%;
-  height: auto;
   transition: .5s ease;
   backface-visibility: hidden;
 }
@@ -166,7 +175,6 @@ nav {
   bottom: 0;
   left: 0;
   right: 0;
-  height: auto;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
@@ -176,14 +184,9 @@ nav {
 }
 .card:hover .top {
   opacity: 0.3;
-  height: auto;
 }
 .card:hover .middle {
   opacity: 1;
-  height: auto;
-}
-#eowyn {
-  height: 440px;
 }
 a:nav-link {
   color: $secondaryfontcolor !important;
