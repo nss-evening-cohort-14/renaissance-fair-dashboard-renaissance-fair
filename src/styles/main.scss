@@ -69,6 +69,7 @@ footer {
 nav {
   color: $secondarycolor !important;
 }
+
 .navbar-brand {
   font-size: 24px;
 }
@@ -110,6 +111,9 @@ nav {
 			cursor:pointer;
     }
   }
+}
+a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.nav-link, a#food-link.nav-link {
+  color:$mainfontcolor;
 }
 #auth-button {
   margin-left: auto;
