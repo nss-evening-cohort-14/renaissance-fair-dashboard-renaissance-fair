@@ -1,6 +1,7 @@
 import headerTitle from '../headerTitle';
 
 const createFoodForm = () => {
+  document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
   headerTitle('Add food');
   document.querySelector('#content-container').innerHTML = `

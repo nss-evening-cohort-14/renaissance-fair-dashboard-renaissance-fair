@@ -4,6 +4,7 @@ import souvenirsButton from './souvenirButton';
 import staffButton from './staffButton';
 
 const buttonBuilder = () => {
+  document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML += foodButton();
   document.querySelector('#content-container').innerHTML += souvenirsButton();

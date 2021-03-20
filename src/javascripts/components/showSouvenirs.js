@@ -1,5 +1,7 @@
 const showSouvenirs = (array) => {
-  document.querySelector('#content-container').innerHTML = '<button class="btn btn-lg" id="add-souvenir-btn">Add A Souvenir</button>';
+  document.querySelector('#content-container').innerHTML = '';
+  document.querySelector('#add-button-container').innerHTML = '';
+  document.querySelector('#add-button-container').innerHTML = '<button class="btn btn-lg" id="add-souvenir-btn">Add A Souvenir</button>';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="item card border-0 bg-transparent">
     <div class="souvenir-container m-3" style="width: 20rem">

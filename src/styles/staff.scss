@@ -1,1 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
+@import './vars.scss';
+
+#add-newStaff-btn {
+  background-color: $maincolor;
+  color: $secondaryfontcolor;
+  padding: 1.2rem 4rem;
+  font-size: 1.2rem;
+  border-radius: 2;
+  cursor: pointer;
+}
+
+#add-newStaff-btn .button-icon {
+  padding-left: 15px;
+}
+
+#add-newStaff-btn:hover {
+  opacity: 0.7;
+}
+
+.editStaff {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.editStaff:hover {
+  opacity: 0.8;
+  color: $secondarylightcolor;
+}
+
+.deleteStaff {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.deleteStaff:hover {
+  opacity: 0.8;
+  color: $mainfontcolor;
+}
