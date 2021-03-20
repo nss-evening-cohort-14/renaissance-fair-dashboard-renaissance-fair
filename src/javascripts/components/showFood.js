@@ -4,7 +4,7 @@ const showFood = (array) => {
   headerTitle('Food Shoppes');
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
-  document.querySelector('#add-button-container').innerHTML = '<div class="create-food-btn" id="createFoodButton"><button type="button" class="btn btn-primary" id="create-food">Primary</button></div>';
+  document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="create-food-form">Add Food<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';
   array.forEach((food) => {
     const domString = `<div class="food-card item card border-0 bg-transparent" style="width: 18rem;">
     <img src="${food.image}" class="card-img-top top" alt="...">
@@ -12,8 +12,8 @@ const showFood = (array) => {
       <h5 class="card-title" id="food-card-title--${food.firebaseKey}">${food.name}</h5>
       <p class="card-text">${food.description}</p>
       <p class="card-text">Price: ${food.price}</p>
-      <button type="button" class="btn btn-danger" id="food-edit-btn--${food.firebaseKey}" data-toggle="modal" data-target="#formModal">Edit</button>
-      <a href="#" class="btn btn-danger" id="food-delete-btn--${food.firebaseKey}">Delete</a>
+      <button type="button" class="btn edit-btn" id="food-edit-btn--${food.firebaseKey}" data-toggle="modal" data-target="#formModal"><i id="food-edit-btn--${food.firebaseKey}" class="fas fa-edit fa-lg"></i></button>
+      <button class="btn delete-btn" data-toggle="modal" data-target="#formModal" id="delete-modal-food--${food.firebaseKey}"><i class="fas fa-trash-alt" id="delete-modal-food--${food.firebaseKey}"></i></button>
     </div>
   </div>
   `;

@@ -15,6 +15,7 @@ import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouven
 
 const navEvents = (id, user) => {
   document.querySelector('#shows-link').addEventListener('click', () => {
+    $('.create-food-btn').empty();
     if (user) {
       getShows(id).then((showsArray) => printShows(showsArray));
     } else {
@@ -23,6 +24,7 @@ const navEvents = (id, user) => {
   });
 
   document.querySelector('#souvenirs-link').addEventListener('click', () => {
+    $('.create-food-btn').empty();
     headerTitle('Souvenirs');
     if (user) {
       getSouvenirs(id).then((souvenirArray) => showSouvenirs(souvenirArray));
@@ -32,6 +34,7 @@ const navEvents = (id, user) => {
   });
 
   document.querySelector('#court-link').addEventListener('click', () => {
+    $('.create-food-btn').empty();
     headerTitle('See Our Staff');
     if (user) {
       getStaff(id).then((staffArray) => showStaff(staffArray));
@@ -48,6 +51,7 @@ const navEvents = (id, user) => {
     }
   });
   document.querySelector('#home').addEventListener('click', () => {
+    $('.create-food-btn').empty();
     buttonBuilder();
     headerTitle('Welcome to ye ol\' home');
   });

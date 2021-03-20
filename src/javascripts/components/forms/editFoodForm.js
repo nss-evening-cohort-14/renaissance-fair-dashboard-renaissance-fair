@@ -1,6 +1,6 @@
 const editFoodForm = (foodObject) => {
   document.querySelector('#edit-modal-body').innerHTML = `
-  <form class="add-food-form">
+  <form class="edit-food-form">
     <div class="form-group">
       <label for="foodName">Food name</label>
       <input type="text" class="form-control" id="foodName" aria-describedby="name" value="${foodObject.name}">

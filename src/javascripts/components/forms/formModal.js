@@ -1,4 +1,4 @@
-const editFormModal = (modalTitle) => {
+const formModal = (modalTitle) => {
   document.querySelector('#edit-form-container').innerHTML = `
   <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -15,4 +15,4 @@ const editFormModal = (modalTitle) => {
   </div>`;
 };
 // CREATED NEW MODAL FOR UPDATE/EDIT FUNCTIONALITY - WON'T WORK WITH OTHER MODAL
-export default editFormModal;
+export default formModal;

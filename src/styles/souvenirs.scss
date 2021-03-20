@@ -3,21 +3,6 @@
 * {
   box-sizing: border-box;
 }
-#add-souvenir-btn {
-  background-color: #1A1F14;
-  border: none;
-  color: #9DBE77;
-  padding: 16px 32px;
-  text-align: center;
-  font-size: 16px;
-  margin: 4px 2px;
-  opacity: 0.6;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  cursor: pointer;
-}
-#add-souvenir-btn:hover {opacity: 1};
 .souvenir-container {
   height: 30em;
 }

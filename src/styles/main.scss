@@ -12,7 +12,10 @@ body {
   color: $maincolor;
   text-align: center;
   font-family: 'Alike', serif;
-  margin: 0;
+  margin-left: 17%;
+}
+#auth-button {
+  color: #9DBE77;
 }
 .jumbotron {
   padding-top: 0%;
@@ -30,7 +33,6 @@ video {
 }
 footer {
   background-color: $secondarylightcolor;
-  margin-left: 15%;
   ul {
     a {
       color: $maincolor;
@@ -41,12 +43,14 @@ footer {
     }
   }
 }
+.modal {
+  margin-left: 5%;
+}
 #copyright {
   padding-left: 90px;
 }
 .content-container {
   margin: 100px 10px 50px 10px;
-  padding-left: 15%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -77,7 +81,6 @@ nav {
 }
 .head-title {
   text-align: center;
-  margin-left: 15%;
   padding: 40px;
 }
 .menu{
@@ -116,7 +119,34 @@ a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.
 #auth-button {
   margin-left: auto;
 }
-.card {
+.add-new-form-btn {
+  background-color: $maincolor;
+  color: $secondaryfontcolor;
+  padding: 1.2rem 4rem;
+  font-size: 1.2rem;
+  border-radius: 2;
+  cursor: pointer;
+}
+.add-new-form-btn:hover {
+  transition: 200ms;
+  color: #9DBE77;
+  opacity: 0.7;
+}
+
+.add-new-form-btn .button-icon {
+  padding-left: 15px;
+}
+.edit-btn {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.edit-btn:hover {
+  opacity: 0.8;
+  color: $secondarylightcolor;
+}
+  .card {
   height: 28rem;
   margin: 10px;
   img {
@@ -125,6 +155,16 @@ a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.
   }
 }
 
+.delete-btn {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.delete-btn:hover {
+  opacity: 0.8;
+  color: $mainfontcolor;
+}
 .top {
   opacity: 1;
   display: block;
@@ -151,15 +191,62 @@ a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.
 .card:hover .middle {
   opacity: 1;
 }
-
-.add-button-container {
-  padding-left: 15%;
-}
-
 a:nav-link {
   color: $secondaryfontcolor !important;
 }
 a.nav-link:hover {
   background-color: #333f1d;
   color: $mainfontcolor;
+}
+.module-btn {
+  cursor: pointer;
+}
+@media only screen and (max-width: 993px) {
+  body {
+    margin: 0
+  };
+  video {
+    width: 100%;
+    margin-top: 100px;
+  }
+  #logo {
+    width: 0;
+    height: 0;
+  }
+  .navbar-toggler {
+    color: white;
+  }
+  .collapsed {
+    color: white;
+  }
+  .menu{
+    background-color: #1A1F14;
+    color: $secondarycolor;
+    height: 100px;
+    width: 100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:5;
+    outline:none;
+    text-decoration: none;
+    ul{
+      list-style:none;
+      display: block;
+      justify-content: left;
+      padding:0.5em 0;
+      margin:0;
+      li{
+        // padding:0.5em 1em 0.5em 3em;
+        color: $secondarycolor;
+        font-size: 24px;
+        font-weight:regular;
+        background-repeat:no-repeat;
+        background-position:left center;
+        background-size:auto 20px;
+        transition:all 0.15s linear;
+        cursor:pointer;
+      }
+    }
+  }
 }
