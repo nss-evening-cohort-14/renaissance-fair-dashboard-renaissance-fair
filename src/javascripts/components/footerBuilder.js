@@ -5,7 +5,7 @@ const footerBuilder = () => {
     <div class="collapse navbar-collapse" id="footer">
       <ul class="navbar-nav d-flex justify-content-around w-100">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#"
+          <a class="nav-link" aria-current="page" href="#" id="copyright"
             >© 2021 Freelancer, LLC.</a
           >
         </li>

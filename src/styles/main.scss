@@ -12,11 +12,20 @@ $secondarycolor: #628541;
 $secondarylightcolor: #9DBE77;
 
 body {
-  background-color: $secondaryfontcolor;
+  background-color: $secondarycolor;
   color: $maincolor;
   text-align: center;
   font-family: 'Alike', serif;
   margin: 0;
+}
+.jumbotron {
+  background-color: $secondarylightcolor;
+  height: 20%;
+}
+#logo {
+  margin-right: -50px;
+  margin-top: -100px;
+  width: 100%;
 }
 footer {
   background-color: $secondarylightcolor;
@@ -30,8 +39,12 @@ footer {
     }
   }
 }
+#copyright {
+  padding-left: 90px;
+}
 .content-container {
   margin: 100px 10px 50px 10px;
+  padding-left: 15%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -43,13 +56,11 @@ footer {
   transform: scale(1.1);
   transition-duration: 500ms;
 }
-.header-container {
-  margin-top: 100px;
-}
 .nav-cards {
   display: flex;
   justify-content: flex-start;
   width: 40em;
+  height: 430px;
   margin: 50px 50px;
 }
 .nav-cards-left {
@@ -58,11 +69,50 @@ footer {
   width: 40em;
   margin: 50px 0;
 }
-#nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
+nav {
+  color: $secondarycolor !important;
+}
+.navbar-brand {
+  font-size: 24px;
+}
+.navbar-brand:hover {
+  background-color: #333f1d;
+  color: $mainfontcolor;
+}
+.head-title {
+  text-align: center;
+  margin-left: 230px;
+  padding: 40px;
+}
+.menu{
+	background-color: #1A1F14;
+  color: $secondarycolor;
+	height:100%;
+	width: 17%;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	outline:none;
+  text-decoration: none;
+  ul{
+		list-style:none;
+    display: block;
+    justify-content: left;
+		padding:0.5em 0;
+		margin:0;
+		li{
+			// padding:0.5em 1em 0.5em 3em;
+      color: $secondarycolor;
+			font-size: 24px;
+			font-weight:regular;
+			background-repeat:no-repeat;
+			background-position:left center;
+			background-size:auto 20px;
+			transition:all 0.15s linear;
+			cursor:pointer;
+    }
+  }
 }
 #auth-button {
   margin-left: auto;
@@ -85,13 +135,25 @@ footer {
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background-color:#CACACA;
-  color: #251617;
+  background-color: #1A1F14;
+  color: #9DBE77;
   font-weight: 700;
 }
 .card:hover .top {
   opacity: 0.3;
+  height: auto;
 }
 .card:hover .middle {
   opacity: 1;
+  height: auto;
+}
+#eowyn {
+  height: 440px;
+}
+a:nav-link {
+  color: $secondaryfontcolor !important;
+}
+a.nav-link:hover {
+  background-color: #333f1d;
+  color: $mainfontcolor;
 }
