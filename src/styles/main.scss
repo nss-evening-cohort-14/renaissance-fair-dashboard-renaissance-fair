@@ -15,8 +15,13 @@ body {
   margin: 0;
 }
 .jumbotron {
+  padding-top: 0%;
+  padding-bottom: 0%;
   background-color: $secondarylightcolor;
-  height: 20%;
+}
+video {
+  object-fit: fill;
+  align-content: center;
 }
 #logo {
   margin-right: -50px;
