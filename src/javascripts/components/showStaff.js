@@ -1,6 +1,7 @@
 const showStaff = (array) => {
   document.querySelector('#content-container').innerHTML = '';
-  document.querySelector('#content-container').innerHTML = '<button class="btn btn-primary" id="add-newStaff-btn">Add A New Staff</button>';
+  document.querySelector('#add-button-container').innerHTML = '';
+  document.querySelector('#add-button-container').innerHTML = '<button class="btn" id="add-newStaff-btn">Add A New Staff</button>';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `
     <div id="staffContainer" class="item card border-0 bg-transparent" style="width: 20rem;">
