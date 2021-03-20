@@ -1,6 +1,7 @@
 import headerTitle from '../headerTitle';
 
 const newSouvenirsForm = () => {
+  document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
   headerTitle('Add Souvenir');
   document.querySelector('#content-container').innerHTML = `

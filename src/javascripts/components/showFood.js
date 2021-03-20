@@ -4,7 +4,12 @@ const showFood = (array) => {
   headerTitle('Food Shoppes');
   $('.create-food-btn').empty();
   document.querySelector('#content-container').innerHTML = '';
+<<<<<<< HEAD
   $('<div class="create-food-btn" id="createFoodButton"><button type="button" class="btn btn-primary" id="create-food">Add Food</button></div>').insertAfter(('.header-container'));
+=======
+  document.querySelector('#add-button-container').innerHTML = '';
+  document.querySelector('#add-button-container').innerHTML = '<div class="create-food-btn" id="createFoodButton"><button type="button" class="btn btn-primary" id="create-food">Primary</button></div>';
+>>>>>>> development
   array.forEach((food) => {
     const domString = `<div class="food-card item card border-0 bg-transparent" style="width: 18rem;">
     <img src="${food.image}" class="card-img-top top" alt="...">
