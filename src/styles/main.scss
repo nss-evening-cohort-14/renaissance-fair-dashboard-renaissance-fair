@@ -198,3 +198,52 @@ a.nav-link:hover {
 .module-btn {
   cursor: pointer;
 }
+@media only screen and (max-width: 993px) {
+  body {
+    margin: 0
+  };
+  video {
+    width: 100%;
+    margin-top: 100px;
+  }
+  #logo {
+    width: 0;
+    height: 0;
+  }
+  .navbar-toggler {
+    color: white;
+  }
+  .collapsed {
+    color: white;
+  }
+  .menu{
+    background-color: #1A1F14;
+    color: $secondarycolor;
+    height: 100px;
+    width: 100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:5;
+    outline:none;
+    text-decoration: none;
+    ul{
+      list-style:none;
+      display: block;
+      justify-content: left;
+      padding:0.5em 0;
+      margin:0;
+      li{
+        // padding:0.5em 1em 0.5em 3em;
+        color: $secondarycolor;
+        font-size: 24px;
+        font-weight:regular;
+        background-repeat:no-repeat;
+        background-position:left center;
+        background-size:auto 20px;
+        transition:all 0.15s linear;
+        cursor:pointer;
+      }
+    }
+  }
+}
