@@ -25,7 +25,6 @@ body {
 }
 footer {
   background-color: $secondarylightcolor;
-  margin-left: 15%;
   ul {
     a {
       color: $maincolor;
@@ -80,7 +79,6 @@ nav {
 }
 .head-title {
   text-align: center;
-  margin-left: 15%;
   padding: 40px;
 }
 .menu{
@@ -116,7 +114,44 @@ nav {
 #auth-button {
   margin-left: auto;
 }
+.add-new-form-btn {
+  background-color: $maincolor;
+  color: $secondaryfontcolor;
+  padding: 1.2rem 4rem;
+  font-size: 1.2rem;
+  border-radius: 2;
+  cursor: pointer;
+}
+.add-new-form-btn:hover {
+  transition: 200ms;
+  color: #9DBE77;
+  opacity: 0.7;
+}
 
+.add-new-form-btn .button-icon {
+  padding-left: 15px;
+}
+.edit-btn {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.edit-btn:hover {
+  opacity: 0.8;
+  color: $secondarylightcolor;
+}
+
+.delete-btn {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.delete-btn:hover {
+  opacity: 0.8;
+  color: $mainfontcolor;
+}
 .top {
   opacity: 1;
   display: block;
@@ -150,13 +185,13 @@ nav {
 #eowyn {
   height: 440px;
 }
-.add-button-container {
-  padding-left: 15%;
-}
 a:nav-link {
   color: $secondaryfontcolor !important;
 }
 a.nav-link:hover {
   background-color: #333f1d;
   color: $mainfontcolor;
+}
+.module-btn {
+  cursor: pointer;
 }

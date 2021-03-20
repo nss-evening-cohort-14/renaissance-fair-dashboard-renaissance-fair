@@ -1,7 +1,7 @@
 const showSouvenirs = (array) => {
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
-  document.querySelector('#add-button-container').innerHTML = '<button class="btn btn-lg" id="add-souvenir-btn">Add A Souvenir</button>';
+  document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="add-souvenir-btn">Add Wares<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="item card border-0 bg-transparent">
     <div class="souvenir-container m-3" style="width: 20rem">
@@ -12,8 +12,8 @@ const showSouvenirs = (array) => {
         <p class="card-text bold price" id="show-price">${item.souvenir_price}</p>
         <hr>
         <p class="card-text description scroller" id="show-description">${item.souvenir_description}</p>
-        <button class="btn btn-danger btn-lg" id="edit-souvenir--${item.firebaseKey}" data-toggle="modal" data-target="#formModal">Edit</button>
-        <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="delete-modal-souvenir--${item.firebaseKey}">Delete</button>
+        <button class="btn edit-btn" id="edit-souvenir--${item.firebaseKey}" data-toggle="modal" data-target="#formModal"><i id="edit-souvenir--${item.firebaseKey}" class="fas fa-edit fa-lg"></i></button>
+        <button class="btn delete-btn" data-toggle="modal" data-target="#formModal" id="delete-modal-souvenir--${item.firebaseKey}"><i class="fas fa-trash-alt" id="delete-modal-souvenir--${item.firebaseKey}"></i></button>
         <br>
     </div>
   </div>

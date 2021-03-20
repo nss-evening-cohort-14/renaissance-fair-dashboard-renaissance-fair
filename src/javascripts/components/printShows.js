@@ -4,7 +4,7 @@ const printShows = (array) => {
   headerTitle('Watch a Show');
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
-  document.querySelector('#add-button-container').innerHTML = '<button type="submit" id="show-show-form" class="btn btn-primary">Add Show</button>';
+  document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="show-show-form">Add Shows<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';
 
   array.forEach((show) => {
     const domString = `
@@ -14,8 +14,8 @@ const printShows = (array) => {
     <h5 class="card-title">${show.name}</h5>
     <h6 id="card-date">${show.date}</h6>
     <p>${show.description}</p>
-    <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="edit-show--${show.firebaseKey}">Edit</button>
-    <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="delete-modal-show--${show.firebaseKey}">Delete</button>
+    <button class="btn edit-btn" data-toggle="modal" data-target="#formModal" id="edit-show--${show.firebaseKey}"><i id="edit-show--${show.firebaseKey}" class="fas fa-edit fa-lg"></i></button>
+    <button class="btn delete-btn" data-toggle="modal" data-target="#formModal" id="delete-modal-show--${show.firebaseKey}"><i class="fas fa-trash-alt" id="delete-modal-show--${show.firebaseKey}"></i></button>
   </div>
 </div>`;
     document.querySelector('#content-container').innerHTML += domString;
