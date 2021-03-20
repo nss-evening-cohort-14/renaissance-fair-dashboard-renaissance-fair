@@ -1,3 +1,5 @@
+import logo from '../../assets/fl.png';
+
 const buildNav = () => {
   document.querySelector('#nav').innerHTML = `
   <nav class="navbar navbar-expand-lg menu">
@@ -5,7 +7,7 @@ const buildNav = () => {
     <div class="collapse navbar-collapse sidenav" id="navbarNavigation">
     <ul class="navbar-nav text-left">
       <li class="nav-item">
-      <img src="src/assets/fl.png" id="logo">
+      <img src="${logo}" id="logo">
       </li>
       <li class="nav-item">
       <a class="nav-link" href="#" id="home">FREELANCER</a>
