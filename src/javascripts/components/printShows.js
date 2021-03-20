@@ -15,7 +15,7 @@ const printShows = (array) => {
     <h6 id="card-date">${show.date}</h6>
     <p>${show.description}</p>
     <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="edit-show--${show.firebaseKey}">Edit</button>
-    <button class="btn btn-danger" id="delete-show--${show.firebaseKey}">Delete</button>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#formModal" id="delete-modal--${show.firebaseKey}">Delete</button>
   </div>
 </div>`;
     document.querySelector('#content-container').innerHTML += domString;
