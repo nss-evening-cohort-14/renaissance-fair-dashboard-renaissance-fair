@@ -2,55 +2,251 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
 @import './staff.scss';
+@import './food.scss';
+@import './souvenirs.scss';
+@import './show.scss';
+@import './vars.scss';
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: $secondarycolor;
+  color: $maincolor;
   text-align: center;
   font-family: 'Alike', serif;
+  margin-left: 17%;
+}
+#auth-button {
+  color: #9DBE77;
+}
+.jumbotron {
+  padding-top: 0%;
+  padding-bottom: 0%;
+  background-color: $secondarylightcolor;
+}
+video {
+  object-fit: fill;
+  align-content: center;
+}
+#logo {
+  margin-right: -50px;
+  margin-top: -100px;
+  width: 100%;
+}
+footer {
+  background-color: $secondarylightcolor;
+  ul {
+    a {
+      color: $maincolor;
+    }
+    a:hover {
+      color: $secondarycolor;
+      transition: 250ms;
+    }
+  }
+}
+.modal {
+  margin-left: 5%;
+}
+#copyright {
+  padding-left: 90px;
 }
 .content-container {
-  background-color: aqua;
-  margin-top: 100px;
+  margin: 100px 10px 50px 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.header-container {
-  margin-top: 100px;
+.button-card {
+  border-radius: 10px;
 }
-.add-food-form {
-  width: 50%;
+.button-card:hover {
+  transform: scale(1.1);
+  transition-duration: 500ms;
 }
 .nav-cards {
   display: flex;
   justify-content: flex-start;
-  width: 40em;
-  margin: 50px 50px;
+  flex-wrap:wrap;
 }
-.nav-cards-left {
-  display: flex;
-  justify-content: flex-end;
-  width: 40em;
-  margin: 50px 0;
+
+nav {
+  color: $secondarycolor !important;
 }
-// .food-button-card {
-// }
-.food-card {
-  height: 30em;
-  margin: 20px;
-  img {
-    height: 35%;
+
+.navbar-brand {
+  font-size: 24px;
+}
+.navbar-brand:hover {
+  background-color: #333f1d;
+  color: $mainfontcolor;
+}
+.head-title {
+  text-align: center;
+  padding: 40px;
+}
+.menu{
+	background-color: #1A1F14;
+  color: $secondarycolor;
+	height:100%;
+	width: 17%;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:5;
+	outline:none;
+  text-decoration: none;
+  ul{
+		list-style:none;
+    display: block;
+    justify-content: left;
+		padding:0.5em 0;
+		margin:0;
+		li{
+			// padding:0.5em 1em 0.5em 3em;
+      color: $secondarycolor;
+			font-size: 24px;
+			font-weight:regular;
+			background-repeat:no-repeat;
+			background-position:left center;
+			background-size:auto 20px;
+			transition:all 0.15s linear;
+			cursor:pointer;
+    }
   }
 }
-#nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
+a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.nav-link, a#food-link.nav-link {
+  color:$mainfontcolor;
 }
 #auth-button {
   margin-left: auto;
 }
+.add-new-form-btn {
+  background-color: $maincolor;
+  color: $secondaryfontcolor;
+  padding: 1.2rem 4rem;
+  font-size: 1.2rem;
+  border-radius: 2;
+  cursor: pointer;
+}
+.add-new-form-btn:hover {
+  transition: 200ms;
+  color: #9DBE77;
+  opacity: 0.7;
+}
 
-// .staff-button-card {
-// }
+.add-new-form-btn .button-icon {
+  padding-left: 15px;
+}
+.edit-btn {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.edit-btn:hover {
+  opacity: 0.8;
+  color: $secondarylightcolor;
+}
+  .card {
+  height: 28rem;
+  margin: 10px;
+  img {
+    object-fit: cover;
+    height: 28rem;
+  }
+}
+
+.delete-btn {
+  background-color: $secondarycolor;
+  color: $secondaryfontcolor;
+  padding: 0.8rem;
+}
+
+.delete-btn:hover {
+  opacity: 0.8;
+  color: $mainfontcolor;
+}
+.top {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+.middle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #1A1F14;
+  color: #9DBE77;
+  font-weight: 700;
+}
+.card:hover .top {
+  opacity: 0.3;
+}
+.card:hover .middle {
+  opacity: 1;
+}
+a:nav-link {
+  color: $secondaryfontcolor !important;
+}
+a.nav-link:hover {
+  background-color: #333f1d;
+  color: $mainfontcolor;
+}
+.module-btn {
+  cursor: pointer;
+}
+@media only screen and (max-width: 993px) {
+  body {
+    margin: 0
+  };
+  video {
+    width: 100%;
+    margin-top: 100px;
+  }
+  #logo {
+    width: 0;
+    height: 0;
+  }
+  .navbar-toggler {
+    color: white;
+  }
+  .collapsed {
+    color: white;
+  }
+  .menu{
+    background-color: #1A1F14;
+    color: $secondarycolor;
+    height: 100px;
+    width: 100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:5;
+    outline:none;
+    text-decoration: none;
+    ul{
+      list-style:none;
+      display: block;
+      justify-content: left;
+      padding:0.5em 0;
+      margin:0;
+      li{
+        // padding:0.5em 1em 0.5em 3em;
+        color: $secondarycolor;
+        font-size: 24px;
+        font-weight:regular;
+        background-repeat:no-repeat;
+        background-position:left center;
+        background-size:auto 20px;
+        transition:all 0.15s linear;
+        cursor:pointer;
+      }
+    }
+  }
+}

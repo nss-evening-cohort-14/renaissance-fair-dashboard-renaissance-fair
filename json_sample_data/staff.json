@@ -24,7 +24,7 @@
     "last_name": "",
     "staff_image": "https://images.unsplash.com/photo-1517423738875-5ce310acd3da?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTA5fHxjb3NwbGF5fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
     "years_worked": 1,
-    "role": "Representer of greed, ambition, cleverness and goodness"
+    "role": "Representer of greed, ambition, cleverness and goodness (and the cutest of us all)"
   },
   "-CSdP5J71Trra6tpmuDl": {
     "firebaseKey": "-CSdP5J71Trra6tpmuDl",
@@ -33,7 +33,7 @@
     "last_name": "",
     "staff_image": "https://images.unsplash.com/photo-1614578595532-a9e522ffb0fb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjZ8fGNvc3BsYXl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
     "years_worked": 8,
-    "role": "Most powerful elves in the entire realm of Middle Earth"
+    "role": "Most powerful elf in the entire realm of Middle Earth"
   },
   "-CSCPwAIAg2hTA1XULGc": {
     "firebaseKey": "-CSCPwAIAg2hTA1XULGc",
@@ -53,14 +53,14 @@
     "years_worked": 7,
     "role": "The rightful king of Gondor and the heir of Isildur"
   },
-  "-CSGGHGJOL65eYmUxskn": {
-    "firebaseKey": "-CSYGGHGJOL65eYmUxskn",
+  "-CSNFup34oXLq9fbcXnk": {
+    "firebaseKey": "-CSNFup34oXLq9fbcXnk",
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "first_name": "Treebeard",
     "last_name": "",
-    "staff_image": "https://images.unsplash.com/photo-1560343776-97e7d202ff0e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3Jvb3R8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
-    "years_worked": 11,
-    "role": "Gentle Giant"
+    "staff_image": "https://cnet1.cbsistatic.com/img/7AeDa-EPcic28Uj1KF-I8Jnnjgs=/940x0/2017/05/07/35276ddf-5d7a-448c-9c7c-d675e3c61aa7/grootpushingbutton.jpg",
+    "years_worked": 120,
+    "role": "Gentle Giant. Nobody has seen them nor talked to them until today, but you might be the lucky one."
   },
   "-CS8TBPUiwbjKRhvG5Uz": {
     "firebaseKey": "-CS8TBPUiwbjKRhvG5Uz",
@@ -80,13 +80,13 @@
     "years_worked": 1,
     "role": "Noblewoman who bears the weight of destiny"
   },
-  "-CSYIAMmcIlrvY2o088HM": {
-    "firebaseKey": "-CSIAMmcIlrvY2o088HM",
+  "-CSNFup34oXLq9bbdXnk": {
+    "firebaseKey": "-CSNFup34oXLq9bbdXnk",
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "first_name": "Rosie",
     "last_name": "Cotton",
     "staff_image": "https://images.unsplash.com/photo-1571652542118-5cc33c994b7c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTI2fHxjb3NwbGF5fGVufDB8fDB8&auto=format&fit=crop&w=900&q=60",
     "years_worked": 2,
-    "role": "Strong mother of thirteen children"
+    "role": "strong mother of thirteen children"
   }
 }

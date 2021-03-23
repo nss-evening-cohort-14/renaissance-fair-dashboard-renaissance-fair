@@ -2,39 +2,39 @@
   "-MVqxNqxoNTgbacrgc_W": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNqxoNTgbacrgc_W",
-    "name": "Calypso - Black Cherry Lemonade",
-    "image": "http://dummyimage.com/133x250.png/cc0000/ffffff",
-    "description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
+    "name": "Lambas Bread",
+    "image": "https://4.bp.blogspot.com/_cd6_MFUGTUE/SU6yFC_7eHI/AAAAAAAAAII/dgbwkYf3cZs/s320/_DSC6981.jpg",
+    "description": "A savory elvish bread with magical properties. Don't eat too much!",
     "price": 15,
     "vegetarian": true,
-    "glutenFree": false
+    "glutenFree": true
   },
   "-MVqxNqzjWxKXeC6lbs2": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNqzjWxKXeC6lbs2",
-    "name": "Mix Pina Colada",
-    "image": "http://dummyimage.com/215x165.jpg/dddddd/000000",
-    "description": "Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
+    "name": "Po-tay-toes",
+    "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-191907-twice-baked-potatoes-0027-landscape-pf-1564166855.png",
+    "description": "You can boil em' mash em' or put em' in a stew. We just filled them with cheesy goodness.",
     "price": 9,
-    "vegetarian": false,
+    "vegetarian": true,
     "glutenFree": true
   },
   "-MVqxNr0wVophcLKgolo": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr0wVophcLKgolo",
-    "name": "Lid Tray - 12in Dome",
-    "image": "http://dummyimage.com/245x108.jpg/dddddd/000000",
-    "description": "Aliquam erat volutpat. In congue.",
-    "price": 10,
-    "vegetarian": true,
+    "name": "Bofur's Mince Pies",
+    "image": "https://i0.wp.com/www.feastofstarlight.com/wp-content/uploads/2015/12/the-hobbit-bofurs-mince-pies-title.jpg?w=2000",
+    "description": "A light and delicious mince pie that would entice any dwarf to share an ale with you.",
+    "price": 5,
+    "vegetarian": false,
     "glutenFree": false
   },
   "-MVqxNr2P3K2XSNYcnhH": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr2P3K2XSNYcnhH",
-    "name": "Sprite - 355 Ml",
-    "image": "http://dummyimage.com/147x163.png/cc0000/ffffff",
-    "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+    "name": "Bilbo's Seed Cakes",
+    "image": "https://i.pinimg.com/750x/46/96/d3/4696d337a7bb885e04fdcb8d860cb0a2.jpg",
+    "description": "A tasty pound cake filled with caraway seeds!",
     "price": 6,
     "vegetarian": false,
     "glutenFree": false
@@ -42,19 +42,19 @@
   "-MVqxNr4OrvYigAth_eb": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr4OrvYigAth_eb",
-    "name": "Cherries - Bing, Canned",
-    "image": "http://dummyimage.com/244x106.png/5fa2dd/ffffff",
-    "description": "In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+    "name": "Lamb Stew",
+    "image": "https://i1.wp.com/www.feastofstarlight.com/wp-content/uploads/2015/07/recipes-from-bag-end-weta-lamb-stew-close-up.jpg",
+    "description": "A classic lamb stew with flavours of Hobbiton.",
     "price": 18,
-    "vegetarian": true,
-    "glutenFree": true
+    "vegetarian": false,
+    "glutenFree": false
   },
   "-MVqxNr74tqCjRkC_V9H": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr74tqCjRkC_V9H",
-    "name": "Pepper - Scotch Bonnet",
-    "image": "http://dummyimage.com/139x119.jpg/5fa2dd/ffffff",
-    "description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam.",
+    "name": "Fish and Chips",
+    "image": "https://www.thespruceeats.com/thmb/t_rcaInDM6kmQ66F8EfNQ7xJwq0=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/best-fish-and-chips-recipe-434856-Hero-5b61b89346e0fb00500f2141.jpg",
+    "description": "Some fried goodies for the little ones.",
     "price": 8,
     "vegetarian": false,
     "glutenFree": false
@@ -62,41 +62,41 @@
   "-MVqxNr9L_9VM_ScMj6R": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNr9L_9VM_ScMj6R",
-    "name": "Bagel - 12 Grain Preslice",
-    "image": "http://dummyimage.com/171x169.bmp/5fa2dd/ffffff",
-    "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
-    "price": 5,
-    "vegetarian": true,
+    "name": "Gollum's Dinner",
+    "image": "https://cdn-japantimes.com/wp-content/uploads/2018/07/n-edomae-a-20180719.jpg",
+    "description": "Raw fish for the Gollum in you... Raw and wriggling!",
+    "price": 20,
+    "vegetarian": false,
     "glutenFree": false
   },
   "-MVqxNrB0w4QXvgBr_Zj": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNrB0w4QXvgBr_Zj",
-    "name": "Bag Clear 10 Lb",
-    "image": "http://dummyimage.com/221x149.png/5fa2dd/ffffff",
-    "description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
-    "price": 10,
+    "name": "Balin's Spiced Beef",
+    "image": "https://midearthfoodie.files.wordpress.com/2013/02/balins-spiced-beef-castiron1.jpg",
+    "description": "Balin's favorite spiced beef. The key to any legendary feast.",
+    "price": 25,
     "vegetarian": false,
-    "glutenFree": false
+    "glutenFree": true
   },
   "-MVqxNrEduzMS9XvYbbA": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNrEduzMS9XvYbbA",
-    "name": "Pail For Lid 1537",
-    "image": "http://dummyimage.com/191x127.bmp/5fa2dd/ffffff",
-    "description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
+    "name": "LOTR Cupcakes",
+    "image": "https://i.pinimg.com/originals/96/ae/19/96ae19ca7f4ba5916d913d5285b4763a.jpg",
+    "description": "Classic cupcakes with a middle-earth theme.",
     "price": 8,
-    "vegetarian": false,
+    "vegetarian": true,
     "glutenFree": false
   },
   "-MVqxNrHhO8NRulKEu00": {
     "event_id": "-MUuao2lynNljpuXaHnJ",
     "firebaseKey": "-MVqxNrHhO8NRulKEu00",
-    "name": "Foam Tray S2",
-    "image": "http://dummyimage.com/111x109.bmp/5fa2dd/ffffff",
-    "description": "Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
-    "price": 17,
-    "vegetarian": true,
-    "glutenFree": false
+    "name": "Eye of Sauron Eggs",
+    "image": "https://live.staticflickr.com/4104/5082620741_85c5d288bb_b.jpg",
+    "description": "Deviled eggs from Mordor. Eat at your own risk.",
+    "price": 2,
+    "vegetarian": false,
+    "glutenFree": true
   }
 }

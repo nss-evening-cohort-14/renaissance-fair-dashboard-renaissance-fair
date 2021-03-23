@@ -2,6 +2,7 @@ import headerTitle from '../headerTitle';
 
 const createShowForm = () => {
   headerTitle('Create a Show');
+  document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = `<form id="submit-show-form" class="mb-4" style="width: 50rem; margin: 0 auto;">
 <div class="form-group">

@@ -23,5 +23,21 @@ const deleteFood = (firebaseKey, id) => new Promise((resolve, reject) => {
     .then(() => getFood(id).then((array) => resolve(array)))
     .catch((error) => reject(error));
 });
+const getSingleFood = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/food/${firebaseKey}.json`)
+    .then((foodObject) => resolve(foodObject.data))
+    .catch((error) => reject(error));
+});
+const updateFood = (firebaseKey, foodObject, id) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/food/${firebaseKey}.json`, foodObject)
+    .then(() => getFood(id).then((response) => resolve(response)))
+    .catch((error) => reject(error));
+});
 
-export { createFood, getFood, deleteFood };
+export {
+  createFood,
+  getFood,
+  deleteFood,
+  getSingleFood,
+  updateFood
+};
