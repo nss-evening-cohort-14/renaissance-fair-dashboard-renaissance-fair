@@ -14,8 +14,9 @@ The purpose of this project is to demonstrate successful collaboration on a full
 https://github.com/nss-evening-cohort-14/renaissance-fair-dashboard-renaissance-fair/projects/1
 # WIREFRAMES + ERD
 
-Canva: https://bit.ly/2P1skp2
-ERD: https://dbdiagram.io/d/604d1efbfcdcb6230b24029b
+- Canva: https://bit.ly/2P1skp2
+
+- ERD: https://dbdiagram.io/d/604d1efbfcdcb6230b24029b
 # COLOR PALETTE
 
 ![shire palette](https://user-images.githubusercontent.com/67122062/111388953-2e8e2180-867e-11eb-8c0c-6f4b18d0abc9.png)
@@ -31,3 +32,8 @@ Product Owner: @drteresavasquez
 
 https://renfaire.netlify.app/
 # LOOM VIDEOS
+
+- Shows Page:
+- Souvenirs Page: https://www.loom.com/share/cf40062f54c14143ab94d5c32e732e66
+- Staff Page:
+- Food Page:
