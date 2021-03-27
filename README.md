@@ -33,7 +33,8 @@ Product Owner: @drteresavasquez
 https://renfaire.netlify.app/
 # LOOM VIDEOS
 
-- Shows Page:
+- Shows Page: https://www.loom.com/share/7ea3fc112b7b438096629850f45bb07b
 - Souvenirs Page: https://www.loom.com/share/cf40062f54c14143ab94d5c32e732e66
-- Staff Page:
-- Food Page:
+- Staff Page: https://www.loom.com/share/89929de9cf9546799e14df43ec38654f
+- Food Page: https://www.loom.com/share/8ee4dc438d93422e89da2c5b161264e6
+
