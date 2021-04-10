@@ -8,7 +8,7 @@
     "build": "webpack --mode production --module-bind js=babel-loader"
   },
   "keywords": [],
-  "author": "groupFive",
+  "author": "groupFour",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "7.11.4",
