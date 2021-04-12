@@ -29,3 +29,5 @@ const addEventForm = () => {
   selectMainCourseTwo();
   selectDesert();
 };
+
+export default addEventForm;
