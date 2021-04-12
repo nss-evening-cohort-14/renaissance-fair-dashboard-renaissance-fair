@@ -50,6 +50,39 @@ const selectDesert = () => {
     document.querySelector('#select-main-course-1').innerHTML = domString;
 
   });
-}; 
+};
 
-export { selectMainCourseOne, selectMainCourseTwo, selectDesert };
+const selectStaff = () => {
+  let domString = `<label for="staff">Staff</label>
+  <select multiple class="form-control" id="staff-option">
+  <option value="">Select a Desert</option>`;
+
+  getStaff(obj.firebaseKey).then((staffArray) => {
+    staffArray.forEach((item) => {
+      domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
+    });
+
+    domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
+
+    document.querySelector('#select-staff').innerHTML = domString;
+
+  });
+
+  const selectShow = () => {
+    let domString = `<label for="staff">Staff</label>
+    <select multiple class="form-control" id="staff-option">
+    <option value="">Select a Desert</option>`;
+  
+    getStaff(obj.firebaseKey).then((staffArray) => {
+      staffArray.forEach((item) => {
+        domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      });
+  
+      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
+  
+      document.querySelector('#select-staff').innerHTML = domString;
+  
+    });
+}
+
+export { selectMainCourseOne, selectMainCourseTwo, selectDesert, selectStaff };

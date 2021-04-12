@@ -22,6 +22,12 @@ const addEventForm = () => {
   </div>
   <div class="form-group" id="select-desert-choice">
   </div>
+  <div class="form-group" id="select-staff">
+  </div>
+  <div class="form-group" id="select-show">
+  </div>
+  <div class="form-group" id="select-souvenir">
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>`
 
