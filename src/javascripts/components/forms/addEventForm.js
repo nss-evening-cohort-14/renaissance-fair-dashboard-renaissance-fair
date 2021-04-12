@@ -2,7 +2,7 @@ const addEventForm = () => {
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = <form>
-  <div class="form-group">
+<div class="form-group">
     <label for="eventTitle">Title</label>
     <input type="text" class="form-control" id="event-title" aria-describedby="eventTitle">
   </div>
@@ -14,32 +14,11 @@ const addEventForm = () => {
     <label for="eventImage">Image</label>
     <input type="url" class="form-control" id="event-image">
   </div>
-  <div class="form-group">
-  <label for="mainCourseChoice1">Main Course Choice 1</label>
-    <select class="form-control" id="main-course-choice-1">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+  <div class="form-group" id="select-main-course-choice-1">
   </div>
-  <div class="form-group">
-  <label for="mainCourseChoice2">Main Course Choice 2</label>
-    <select class="form-control" id="main-course-choice-2">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+  <div class="form-group" id="select-main-course-choice-2">
   </div>
-  <div class="form-group">
-  <label for="desertChoice">Desert Choice</label>
-    <select class="form-control" id="desert-choice">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
+  <div class="form-group" id="select-desert-choice">
   </div>
   <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -47,4 +26,4 @@ const addEventForm = () => {
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-}
+};
