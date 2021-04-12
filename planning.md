@@ -16,4 +16,4 @@ https://github.com/nss-evening-cohort-14/renaissance-fair-dashboard-renaissance-
 https://github.com/nss-evening-cohort-14/renaissance-fair-dashboard-renaissance-fair/milestones
 
 ## User flow chart
-![](https://files.slack.com/files-pri/T03F2SDTJ-F01TRGYU3U6/image.png)
+![flow-chart-ren](https://user-images.githubusercontent.com/76187279/114329288-8ea0a800-9b04-11eb-8e94-55b930016101.png)
