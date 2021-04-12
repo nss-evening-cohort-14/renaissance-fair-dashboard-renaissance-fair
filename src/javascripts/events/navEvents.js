@@ -14,14 +14,11 @@ import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 
 const navEvents = (id, user) => {
-  // document.querySelector('#events-link').addEventListener('click', () => {
-  //   $('.create-food-btn').empty();
-  //   // if (user) {
-  //   //   getEvents(id).then((eventsArray) => showEvents(eventsArray));
-  //   // } else {
-  //   //   getEvents(id).then((eventsArray) => showEventsReadOnly(eventsArray));
-  //   // }
-  // });
+  document.querySelector('#events-link').addEventListener('click', () => {
+    $('.create-food-btn').empty();
+    console.warn('Events button');
+    // getEvents(id).then((eventsArray) => showEvents(eventsArray));
+  });
 
   document.querySelector('#shows-link').addEventListener('click', () => {
     $('.create-food-btn').empty();
