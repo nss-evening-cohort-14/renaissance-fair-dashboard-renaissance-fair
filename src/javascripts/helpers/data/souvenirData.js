@@ -3,6 +3,12 @@ import axios from 'axios';
 import firebaseConfig from '../apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
+// GET ALL SOUVENIRS
+const getAllSouvenirs = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/souvenirs.json`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
 // GET SOUVENIRS
 const getSouvenirs = (id) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/souvenirs.json?orderBy="event_id"&equalTo="${id}"`)
@@ -41,5 +47,10 @@ const updateSouvenir = (firebaseKey, souvenirObject, id) => new Promise((resolve
 });
 
 export {
-  getSouvenirs, createSouvenirs, deleteSouvenirs, getSingleSouvenir, updateSouvenir
+  getAllSouvenirs,
+  getSouvenirs,
+  createSouvenirs,
+  deleteSouvenirs,
+  getSingleSouvenir,
+  updateSouvenir
 };
