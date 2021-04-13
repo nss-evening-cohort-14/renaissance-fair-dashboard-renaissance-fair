@@ -37,7 +37,7 @@ import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
 import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadOnly';
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
-import getEvents from '../helpers/data/eventsData';
+import { getEvents } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
 
 const eventListeners = (e) => {

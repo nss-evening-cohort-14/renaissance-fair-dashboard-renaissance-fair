@@ -3,6 +3,12 @@ import firebaseConfig from '../apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
+const getAllFood = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/food.json`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 const getFood = (id) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/food.json?orderBy="event_id"&equalTo="${id}"`)
     .then((response) => resolve(Object.values(response.data)))
@@ -36,6 +42,7 @@ const updateFood = (firebaseKey, foodObject, id) => new Promise((resolve, reject
 
 export {
   createFood,
+  getAllFood,
   getFood,
   deleteFood,
   getSingleFood,
