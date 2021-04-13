@@ -54,6 +54,9 @@ const buildNav = (user) => {
             <a class="nav-link" href="#" id="home">FREELANCER</a>
             </li>
               <li class="nav-item">
+                <a class="nav-link" id="events-link" href="#" style="display: none">EVENTS</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" id="shows-link" aria-current="page" href="#">SHOWS</a>
               </li>
               <li class="nav-item">
