@@ -290,7 +290,9 @@ const eventListeners = (e) => {
   // Form input value stuff
   if (e.target.id.includes('submit-event-form')) {
     e.preventDefault();
-    const 
+    const mainCourseOneObject = {
+      
+    }
 
     
   }
