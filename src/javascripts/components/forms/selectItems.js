@@ -1,4 +1,7 @@
-// import { getFood } from '../../helpers/data/foodData';
+import { getAllFood } from '../../helpers/data/foodData';
+import { getAllSouvenir } from '../../helpers/data/souvenirData';
+import { getAllShows } from '../../helpers/data/showsData';
+import { getAllStaff } from '../../helpers/data/staffData';
 
 const selectMainCourseOne = () => {
   let domString = `<label for="mainCourseChoice1">Main Course Choice 1</label>
@@ -74,7 +77,7 @@ const selectShow = () => {
   <select multiple class="form-control" id="shows-option">
   <option value="">Select Shows</option>`;
 
-  getAllShows(obj.firebaseKey).then((showfArray) => {
+  getAllShows(obj.firebaseKey).then((showArray) => {
     showArray.forEach((item) => {
       domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
     });
@@ -91,7 +94,7 @@ const selectShow = () => {
     <select multiple class="form-control" id="souvenirs-option">
     <option value="">Select Souvenirs</option>`;
   
-    getAllSouvenirs(obj.firebaseKey).then((staffArray) => {
+    getAllSouvenir(obj.firebaseKey).then((staffArray) => {
       staffArray.forEach((item) => {
         domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
       });
