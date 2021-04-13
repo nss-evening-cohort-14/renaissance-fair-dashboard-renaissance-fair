@@ -288,6 +288,7 @@ const eventListeners = (e) => {
     });
   }
 };
+
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', eventListeners);
 };

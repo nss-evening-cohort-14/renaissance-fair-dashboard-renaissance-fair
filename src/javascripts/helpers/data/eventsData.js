@@ -15,4 +15,10 @@ const getEvents = () => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export { getAllEvents, getEvents };
+const deleteEvents = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/events/${firebaseKey}.json`)
+    .then(() => getAllEvents().then((eventArray) => resolve(eventArray)))
+    .catch((error) => reject(error));
+});
+
+export { getAllEvents, getEvents, deleteEvents };
