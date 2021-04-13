@@ -13,7 +13,7 @@ const startApp = (user) => {
   getEvents().then((response) => {
     domEvents();
     domBuilder();
-    buildNav();
+    buildNav(user);
     navEvents(response.firebaseKey, user);
     buttonBuilder();
     headerTitle('WELCOME');
