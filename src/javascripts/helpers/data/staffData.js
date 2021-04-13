@@ -3,6 +3,13 @@ import firebaseConfig from '../apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
+const getAllStaff = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/staff.json`)
+    .then((response) => {
+      resolve(Object.values(response.data));
+    }).catch((error) => reject(error));
+});
+
 const getStaff = (id) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/staff.json?orderBy="event_id"&equalTo="${id}"`)
     .then((response) => {
@@ -39,6 +46,7 @@ const updateStaff = (firebaseKey, staffObject, id) => new Promise((resolve, reje
 
 export {
   createNewStaff,
+  getAllStaff,
   getStaff,
   deleteStaff,
   getSingleStaff,

@@ -3,6 +3,12 @@ import firebaseConfig from '../apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
+const getAllShows = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/shows.json`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch((error) => reject(error));
+});
+
 const getShows = (id) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/shows.json?orderBy="event_id"&equalTo="${id}"`)
     .then((response) => resolve(Object.values(response.data)))
@@ -39,6 +45,7 @@ const getSingleShow = (firebaseKey) => new Promise((resolve, reject) => {
 });
 
 export {
+  getAllShows,
   getShows,
   createShow,
   deleteShow,
