@@ -39,6 +39,7 @@ import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 import { getEvents } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
+import addEventForm from '../components/forms/addEventForm';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -288,14 +289,15 @@ const eventListeners = (e) => {
     });
   }
   // Form input value stuff
-  if (e.target.id.includes('submit-event-form')) {
-    e.preventDefault();
-    const mainCourseOneObject = {
-      
-    }
-
-    
+  if (e.target.id.includes('add-new-event-btn')) {
+    console.warn('add event button');
+    addEventForm();
   }
+  // if (e.target.id.includes('submit-event-form')) {
+  //   e.preventDefault();
+  //   const mainCourseOneObject = {
+  //   }
+  // }
 };
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', eventListeners);

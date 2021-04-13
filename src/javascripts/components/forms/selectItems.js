@@ -1,5 +1,5 @@
 import { getAllFood } from '../../helpers/data/foodData';
-import { getAllSouvenir } from '../../helpers/data/souvenirData';
+import { getAllSouvenirs } from '../../helpers/data/souvenirData';
 import { getAllShows } from '../../helpers/data/showsData';
 import { getAllStaff } from '../../helpers/data/staffData';
 
@@ -7,17 +7,14 @@ const selectMainCourseOne = () => {
   let domString = `<label for="mainCourseChoice1">Main Course Choice 1</label>
   <select class="form-control" id="main-course-1">
   <option value="">Select a Main Course</option>`;
-  
-  // Might need to refactor getFood promise => it has event_id rule on it
-  getAllFood(obj.firebaseKey).then((foodArray) => {
+
+  getAllFood().then((foodArray) => {
     foodArray.forEach((item) => {
-      domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
     });
 
     domString += '</select>';
-
     document.querySelector('#select-main-course-1').innerHTML = domString;
-
   });
 };
 
@@ -26,15 +23,13 @@ const selectMainCourseTwo = () => {
   <select class="form-control" id="main-course-2">
   <option value="">Select a Main Course</option>`;
 
-  getAllFood(obj.firebaseKey).then((foodArray) => {
+  getAllFood().then((foodArray) => {
     foodArray.forEach((item) => {
-      domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
     });
 
     domString += '</select>';
-
-    document.querySelector('#select-main-course-1').innerHTML = domString;
-
+    document.querySelector('#select-main-course-2').innerHTML = domString;
   });
 };
 
@@ -43,15 +38,13 @@ const selectDesert = () => {
   <select class="form-control" id="desert">
   <option value="">Select a Desert</option>`;
 
-  getAllFood(obj.firebaseKey).then((foodArray) => {
+  getAllFood().then((foodArray) => {
     foodArray.forEach((item) => {
-      domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
     });
 
     domString += '</select>';
-
-    document.querySelector('#select-main-course-1').innerHTML = domString;
-
+    document.querySelector('#select-desert').innerHTML = domString;
   });
 };
 
@@ -60,15 +53,13 @@ const selectStaff = () => {
   <select multiple class="form-control" id="staff-options">
   <option value="">Select Staff</option>`;
 
-  getAllStaff(obj.firebaseKey).then((staffArray) => {
+  getAllStaff().then((staffArray) => {
     staffArray.forEach((item) => {
-      domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<option value="${item.firebaseKey}">${item.first_name} ${item.last_name}</option>`;
     });
 
-    domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
-
+    domString += '</select>';
     document.querySelector('#select-staff').innerHTML = domString;
-
   });
 };
 
@@ -77,34 +68,31 @@ const selectShow = () => {
   <select multiple class="form-control" id="shows-option">
   <option value="">Select Shows</option>`;
 
-  getAllShows(obj.firebaseKey).then((showArray) => {
+  getAllShows().then((showArray) => {
     showArray.forEach((item) => {
-      domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
     });
 
-    domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
-
-    document.querySelector('#select-staff').innerHTML = domString;
-
+    domString += '</select>';
+    document.querySelector('#select-show').innerHTML = domString;
   });
 };
 
-  const selectSouvenirs = () => {
-    let domString = `<label for="souvenirs">Souvenirs</label>
+const selectSouvenirs = () => {
+  let domString = `<label for="souvenirs">Souvenirs</label>
     <select multiple class="form-control" id="souvenirs-option">
     <option value="">Select Souvenirs</option>`;
-  
-    getAllSouvenir(obj.firebaseKey).then((staffArray) => {
-      staffArray.forEach((item) => {
-        domstring += `<option value="${item.firebaseKey}">${item.name}</option>`;
-      });
-  
+
+  getAllSouvenirs().then((staffArray) => {
+    staffArray.forEach((item) => {
       domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
-  
-      document.querySelector('#select-staff').innerHTML = domString;
-  
     });
-  };
 
+    domString += '</select>';
+    document.querySelector('#select-staff').innerHTML = domString;
+  });
+};
 
-export { selectMainCourseOne, selectMainCourseTwo, selectDesert, selectStaff, selectShow, selectSouvenirs };
+export {
+  selectMainCourseOne, selectMainCourseTwo, selectDesert, selectStaff, selectShow, selectSouvenirs
+};
