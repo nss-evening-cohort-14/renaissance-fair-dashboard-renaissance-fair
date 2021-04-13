@@ -1,7 +1,7 @@
 import headerTitle from './headerTitle';
 
 const printShows = (array) => {
-  headerTitle('Watch a Show');
+  headerTitle('ENTERTAINMENT');
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="show-show-form">Add Shows<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';

@@ -1,9 +1,14 @@
+import headerTitle from './headerTitle';
+
 const showEvents = (array) => {
+  headerTitle('EVENTS');
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-event-btn" id="add-new-event-btn">Add Event<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';
   array.forEach((item) => {
-    document.querySelector('#content-container').innerHTML += `<div class="item card border-0 bg-transparent">
+    document.querySelector(
+      '#content-container'
+    ).innerHTML += `<div class="item card border-0 bg-transparent">
     <div class="events-container m-3" style="width: 20rem;">
       <img src='${item.image}' class="card-img-top rounded mx-auto d-block image top" id='card-img'></img>
       <div class="middle">
@@ -20,6 +25,7 @@ const showEvents = (array) => {
 };
 
 const emptyEvents = () => {
+  headerTitle('EVENTS');
   document.querySelector('#content-container').innerHTML = '<h1>No Events</h1>';
 };
 
