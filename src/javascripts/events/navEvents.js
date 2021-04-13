@@ -18,7 +18,6 @@ import { getAllEvents } from '../helpers/data/eventsData';
 const navEvents = (id, user) => {
   document.querySelector('#events-link').addEventListener('click', () => {
     $('.create-food-btn').empty();
-    // getAllEvents().then((eventsArray) => showEvents(eventsArray));
     getAllEvents().then((eventsArray) => {
       if (eventsArray.length) {
         showEvents(eventsArray);
