@@ -1,4 +1,4 @@
-import { selectMainCourseOne, selectMainCourseTwo, selectDesert } from '../forms/selectItems';
+import { selectMainCourseOne, selectMainCourseTwo, selectDesert, selectSouvenirs, selectShow, selectStaff } from '../forms/selectItems';
 
 const addEventForm = () => {
   document.querySelector('#add-button-container').innerHTML = '';
@@ -28,12 +28,15 @@ const addEventForm = () => {
   </div>
   <div class="form-group" id="select-souvenir">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" id="submit-event-form">Submit</button>
 </form>`
 
   selectMainCourseOne();
   selectMainCourseTwo();
   selectDesert();
+  selectSouvenirs();
+  selectShow();
+  selectStaff();
 };
 
 export default addEventForm;

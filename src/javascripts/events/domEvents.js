@@ -287,6 +287,10 @@ const eventListeners = (e) => {
       $('#formModal').modal('toggle');
     });
   }
+  // Form input value stuff
+  if (e.target.id.includes('submit-event-form')) {
+    e.preventDefault();
+  }
 };
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', eventListeners);
