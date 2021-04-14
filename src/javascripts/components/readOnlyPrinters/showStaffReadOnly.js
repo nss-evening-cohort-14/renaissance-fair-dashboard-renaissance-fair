@@ -1,4 +1,7 @@
+import headerTitle from '../headerTitle';
+
 const showStaffReadOnly = (array) => {
+  headerTitle('STAFF');
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `
@@ -13,6 +16,7 @@ const showStaffReadOnly = (array) => {
 };
 
 const emptyStaff = () => {
+  headerTitle('STAFF');
   document.querySelector('#content-container').innerHTML = '<h1>No Staff</h1>';
 };
 

@@ -29,7 +29,7 @@ const buildNav = (user) => {
                 <a class="nav-link" id="court-link" href="#">COURT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="food-link" href="#">FOOD SHOPPES</a>
+                <a class="nav-link" id="food-link" href="#">FOOD</a>
               </li>
               <li class="nav-item pt-3 ml-2">
               <div id="auth-button"></div>
@@ -66,7 +66,7 @@ const buildNav = (user) => {
                 <a class="nav-link" id="court-link" href="#">COURT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="food-link" href="#">FOOD SHOPPES</a>
+                <a class="nav-link" id="food-link" href="#">FOOD</a>
               </li>
               <li class="nav-item pt-3 ml-2">
               <div id="auth-button"></div>
