@@ -310,7 +310,6 @@ const eventListeners = (e) => {
     };
 
     createEvent(eventObject).then((event) => console.warn(event));
-    
   }
 
   if (e.target.id.includes('delete-event')) {
