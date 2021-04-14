@@ -37,8 +37,11 @@ import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
 import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadOnly';
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
-import { getEvents } from '../helpers/data/eventsData';
+import {
+  getAllEvents, getEvents, getSingleEvent, deleteEvent
+} from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
+import { showEvents } from '../components/showEvents';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -211,6 +214,9 @@ const eventListeners = (e) => {
     if (e.target.id.includes('staff')) {
       getSingleStaff(firebaseKey).then((staffObject) => deleteConfirm(staffObject, 'staff'));
     }
+    if (e.target.id.includes('event')) {
+      getSingleEvent(firebaseKey).then((eventObject) => deleteConfirm(eventObject, 'event'));
+    }
   }
   if (e.target.id.includes('delete-show')) {
     const firebaseKey = e.target.id.split('--')[1];
@@ -287,7 +293,16 @@ const eventListeners = (e) => {
       $('#formModal').modal('toggle');
     });
   }
+
+  if (e.target.id.includes('delete-event')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    getAllEvents().then(() => {
+      deleteEvent(firebaseKey).then((eventsArray) => showEvents(eventsArray));
+    });
+    $('#formModal').modal('toggle');
+  }
 };
+
 const domEvents = () => {
   document.querySelector('body').addEventListener('click', eventListeners);
 };

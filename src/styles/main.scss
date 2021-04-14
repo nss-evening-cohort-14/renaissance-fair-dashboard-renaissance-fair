@@ -117,7 +117,7 @@ nav {
     }
   }
 }
-a#home.nav-link, a#events-link.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.nav-link, a#food-link.nav-link {
+a#home.nav-link, a#events-link.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.nav-link, a#food-link.nav-link, a#show-event-title {
   color:$mainfontcolor;
 }
 #auth-button {
@@ -159,7 +159,7 @@ a#home.nav-link, a#events-link.nav-link, a#shows-link.nav-link, a#souvenirs-link
   }
 }
 
-.delete-btn {
+.delete-btn, .event-details-btn {
   background-color: $secondarycolor;
   color: $secondaryfontcolor;
   padding: 0.8rem;
