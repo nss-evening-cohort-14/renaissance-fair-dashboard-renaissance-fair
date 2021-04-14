@@ -1,6 +1,9 @@
+import headerTitle from '../headerTitle';
+
 const createStaff = () => {
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
+  headerTitle('Add Staff');
   document.querySelector('#content-container').innerHTML = `<form>
   <div class="form-group">
     <label for="firstName">First Name</label>
