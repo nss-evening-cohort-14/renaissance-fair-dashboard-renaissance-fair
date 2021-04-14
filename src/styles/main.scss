@@ -1,5 +1,5 @@
-@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
 @import './staff.scss';
 @import './food.scss';
@@ -83,6 +83,9 @@ nav {
 .head-title {
   text-align: center;
   padding: 40px;
+}
+#header-title-container {
+  font-size: 36px;
 }
 .menu{
 	background-color: #1A1F14;

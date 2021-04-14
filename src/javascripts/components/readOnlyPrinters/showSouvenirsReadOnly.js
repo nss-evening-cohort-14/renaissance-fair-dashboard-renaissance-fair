@@ -1,4 +1,7 @@
+import headerTitle from '../headerTitle';
+
 const showSouvenirsReadOnly = (array) => {
+  headerTitle('SOUVENIRS');
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((item) => {
     document.querySelector('#content-container').innerHTML += `<div class="item card border-0 bg-transparent">
@@ -19,6 +22,7 @@ const showSouvenirsReadOnly = (array) => {
 };
 
 const emptySouvenirs = () => {
+  headerTitle('SOUVENIRS');
   document.querySelector('#content-container').innerHTML = '<h1>No souvenirs</h1>';
 };
 

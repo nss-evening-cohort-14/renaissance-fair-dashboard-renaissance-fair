@@ -38,7 +38,6 @@ const navEvents = (id, user) => {
 
   document.querySelector('#souvenirs-link').addEventListener('click', () => {
     $('.create-food-btn').empty();
-    headerTitle('Souvenirs');
     if (user) {
       getAllSouvenirs().then((souvenirArray) => showSouvenirs(souvenirArray));
     } else {
@@ -48,7 +47,6 @@ const navEvents = (id, user) => {
 
   document.querySelector('#court-link').addEventListener('click', () => {
     $('.create-food-btn').empty();
-    headerTitle('See Our Staff');
     if (user) {
       getAllStaff().then((staffArray) => showStaff(staffArray));
     } else {

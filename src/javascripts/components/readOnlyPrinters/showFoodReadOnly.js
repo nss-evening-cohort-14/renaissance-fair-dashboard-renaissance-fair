@@ -1,7 +1,7 @@
 import headerTitle from '../headerTitle';
 
 const showFoodReadOnly = (array) => {
-  headerTitle('Food Shoppes');
+  headerTitle('FOOD ITEMS');
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((food) => {
     const domString = `<div class="food-card item card border-0 bg-transparent" style="width: 18rem;">
