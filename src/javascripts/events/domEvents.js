@@ -38,7 +38,7 @@ import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadO
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 import {
-  getAllEvents, getSingleEvent, deleteEvent, createEvent
+  getSingleEvent, deleteEvent, createEvent
 } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
