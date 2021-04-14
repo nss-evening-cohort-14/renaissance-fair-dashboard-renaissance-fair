@@ -308,9 +308,7 @@ const eventListeners = (e) => {
       image: document.querySelector('#event-image').value,
       uid: firebase.auth().currentUser.uid
     };
-
     createEvent(eventObject).then((event) => console.warn(event));
-    
   }
 
   if (e.target.id.includes('delete-event')) {

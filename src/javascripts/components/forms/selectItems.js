@@ -50,45 +50,54 @@ const selectDesert = () => {
 
 const selectStaff = () => {
   let domString = `<label for="staff">Staff</label>
-  <select multiple class="form-control" id="staff-options">
-  <option value="">Select Staff</option>`;
+    <div class="checkbox-container">
+    <ul class="check-box">`;
 
   getAllStaff().then((staffArray) => {
     staffArray.forEach((item) => {
-      domString += `<option value="${item.firebaseKey}">${item.first_name} ${item.last_name}</option>`;
+      domString += `<li>
+        <input type="checkbox" id="staff_checkbox_${item.firebaseKey}"
+          name="staff_checkbox_${item.first_name}" value="${item.firebaseKey}">
+          <label for="staff_checkbox_${item.first_name}">${item.first_name} ${item.last_name}</label></li>`;
     });
 
-    domString += '</select>';
+    domString += '</ul></div>';
     document.querySelector('#select-staff').innerHTML = domString;
   });
 };
 
 const selectShow = () => {
   let domString = `<label for="shows">Shows</label>
-  <select multiple class="form-control" id="shows-option">
-  <option value="">Select Shows</option>`;
+    <div class="checkbox-container">
+    <ul class="check-box">`;
 
   getAllShows().then((showArray) => {
     showArray.forEach((item) => {
-      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<li>
+        <input type="checkbox" id="show_checkbox_${item.firebaseKey}"
+          name="show_checkbox_${item.name}" value="${item.firebaseKey}">
+          <label for="show_checkbox_${item.name}">${item.name}</label></li>`;
     });
 
-    domString += '</select>';
+    domString += '</ul></div>';
     document.querySelector('#select-show').innerHTML = domString;
   });
 };
 
 const selectSouvenirs = () => {
   let domString = `<label for="souvenirs">Souvenirs</label>
-    <select multiple class="form-control" id="souvenirs-option">
-    <option value="">Select Souvenirs</option>`;
+      <div class="checkbox-container">
+      <ul class="check-box">`;
 
   getAllSouvenirs().then((souvenirArray) => {
     souvenirArray.forEach((item) => {
-      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<li>
+        <input type="checkbox" id="souvenir_checkbox_${item.firebaseKey}"
+          name="souvenir_checkbox_${item.name}" value="${item.firebaseKey}">
+          <label for="souvenir_checkbox_${item.name}">${item.name}</label></li>`;
     });
+    domString += '</ul></div>';
 
-    domString += '</select>';
     document.querySelector('#select-souvenir').innerHTML = domString;
   });
 };

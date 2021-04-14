@@ -1,0 +1,18 @@
+// checkboxList.scss
+
+div.checkbox-container {
+  height: 90px;
+  overflow: auto;
+  background-color: white;
+  text-align: left;
+}
+
+.checkbox-container ul {
+  list-style: none;
+  padding-inline-start: 12px;
+}
+
+.checkbox-container li {
+  line-height: 1em;
+  text-align: left;
+}
