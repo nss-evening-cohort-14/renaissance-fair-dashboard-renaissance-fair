@@ -64,7 +64,7 @@ const navEvents = (id, user) => {
   document.querySelector('#home').addEventListener('click', () => {
     $('.create-food-btn').empty();
     buttonBuilder();
-    headerTitle('Welcome to ye ol\' home');
+    headerTitle('Welcome to ye ol\' home.');
   });
 };
 
