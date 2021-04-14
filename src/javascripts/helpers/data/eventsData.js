@@ -1,5 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../apiKeys';
+import { getAllFood } from './foodData';
 
 const dbUrl = firebaseConfig.databaseURL;
 
@@ -31,6 +32,10 @@ const deleteEvent = (firebaseKey) => new Promise((resolve, reject) => {
   axios.delete(`${dbUrl}/events/${firebaseKey}.json`)
     .then(() => getAllEvents().then((eventArray) => resolve(eventArray)))
     .catch((error) => reject(error));
+});
+
+const createEvent = () => new Promise((resolve, reject) => {
+  Promise.all([getAllFood, ])
 });
 
 export {
