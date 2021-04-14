@@ -83,13 +83,13 @@ const selectSouvenirs = () => {
     <select multiple class="form-control" id="souvenirs-option">
     <option value="">Select Souvenirs</option>`;
 
-  getAllSouvenirs().then((staffArray) => {
-    staffArray.forEach((item) => {
+  getAllSouvenirs().then((souvenirArray) => {
+    souvenirArray.forEach((item) => {
       domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
     });
 
     domString += '</select>';
-    document.querySelector('#select-staff').innerHTML = domString;
+    document.querySelector('#select-souvenir').innerHTML = domString;
   });
 };
 

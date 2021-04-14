@@ -14,4 +14,13 @@ const getEventsStaff = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default getEventsStaff;
+const createEventStaffRelationship = (obj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/events_staff.json`, obj)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/events_staff/${response.data.name}.json`, body)
+    }).then(() => getEventsStaff().then((esResp) => resolve(esResp)))
+    .catch((error) => reject(error));
+});
+
+export { getEventsStaff, createEventStaffRelationship };

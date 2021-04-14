@@ -14,4 +14,13 @@ const getEventsFood = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export default getEventsFood;
+const createEventFoodRelationship = (obj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/events_food.json`, obj)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/events_food/${response.data.name}.json`, body)
+    }).then(() => getEventsFood().then((esResp) => resolve(esResp)))
+    .catch((error) => reject(error));
+});
+
+export { getEventsFood, createEventFoodRelationship };
