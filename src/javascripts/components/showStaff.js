@@ -1,4 +1,7 @@
+import headerTitle from './headerTitle';
+
 const showStaff = (array) => {
+  headerTitle('STAFF');
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="add-newStaff-btn">Add Staff<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';
@@ -17,6 +20,7 @@ const showStaff = (array) => {
 };
 
 const emptyStaff = () => {
+  headerTitle('STAFF');
   document.querySelector('#content-container').innerHTML = '<h1>No Staff</h1>';
 };
 

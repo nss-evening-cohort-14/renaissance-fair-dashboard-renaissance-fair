@@ -1,4 +1,7 @@
+import headerTitle from './headerTitle';
+
 const showEvents = (array) => {
+  headerTitle('EVENTS');
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="add-new-event-btn">Add Event<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';
@@ -17,6 +20,7 @@ const showEvents = (array) => {
 };
 
 const emptyEvents = () => {
+  headerTitle('EVENTS');
   document.querySelector('#content-container').innerHTML = '<h1>No Events</h1>';
 };
 
