@@ -37,9 +37,13 @@ import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
 import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadOnly';
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
-import { getSingleEvent, deleteEvent } from '../helpers/data/eventsData';
+import {
+  getSingleEvent, deleteEvent
+} from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
+import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
+import eventsEvents from './eventsEvents';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -260,6 +264,15 @@ const eventListeners = (e) => {
     };
     updateFood(firebaseKey, foodObject).then((arr) => showFood(arr));
     $('#formModal').modal('toggle');
+  }
+  // Form input value stuff
+  if (e.target.id.includes('add-new-event-btn')) {
+    console.warn('add event button');
+    addEventForm();
+  }
+
+  if (e.target.id.includes('submit-event-form')) {
+    eventsEvents(e);
   }
 
   if (e.target.id.includes('delete-event')) {
