@@ -16,7 +16,7 @@ const newSouvenirsForm = () => {
       </div>
       <div class='form-group'>
         <label for='price'>Price</label>
-        <input type='text' class='form-control' id='price' placeholder='Book Price' required>
+        <input type='number' class='form-control' id='price' placeholder='Price' required>
       </div>
       <div class='form-group'>
       <label for='description'>Souvenir Description</label>

@@ -21,6 +21,10 @@ const createShowForm = () => {
   <label for="date">Date</label>
   <input type="date" class="form-control" id="date" aria-describedby="showDate" placeholder="mm/dd/yyyy" required>
 </div>
+<div class="form-group">
+  <label for="price">Price</label>
+  <input type="number" class="form-control" id="price" min="1" max="500">
+</div>
   <button type="button" id="submit-show" class="btn btn-danger">Submit show</button>
 </div>`;
 };
