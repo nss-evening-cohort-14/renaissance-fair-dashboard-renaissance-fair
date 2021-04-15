@@ -33,7 +33,17 @@ const deleteEvent = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const createEvent = (eventObject) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/events.json`, eventObject)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/events/${response.data.name}.json`, body)
+        .then(() => getSingleEvent(response.data.name).then((eventResponse) => resolve(eventResponse)))
+        .catch((error) => reject(error));
+    });
+});
+
 export {
   getAllEvents, getEvents, getSingleEvent,
-  deleteEvent
+  deleteEvent, createEvent
 };
