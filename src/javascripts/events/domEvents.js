@@ -128,6 +128,7 @@ const eventListeners = (e) => {
       image: document.querySelector('#image').value,
       date: document.querySelector('#date').value,
       description: document.querySelector('#description').value,
+      show_price: document.querySelector('#price').value,
     };
     createShow(showObject).then((showsArray) => printShows(showsArray));
   }
@@ -247,6 +248,7 @@ const eventListeners = (e) => {
       image: document.querySelector('#image').value,
       date: document.querySelector('#date').value,
       description: document.querySelector('#description').value,
+      show_price: document.querySelector('#price').value,
     };
     updateShow(firebaseKey, showObject).then((showsArray) => printShows(showsArray));
     $('#formModal').modal('toggle');
