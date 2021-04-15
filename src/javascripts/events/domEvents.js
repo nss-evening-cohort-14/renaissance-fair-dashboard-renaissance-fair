@@ -40,6 +40,7 @@ import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouven
 import { getSingleEvent, deleteEvent } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
 import { showEvents } from '../components/showEvents';
+import showSingleEvent from '../components/showSingleEvent';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -266,6 +267,10 @@ const eventListeners = (e) => {
     const firebaseKey = e.target.id.split('--')[1];
     deleteEvent(firebaseKey).then((eventsArray) => showEvents(eventsArray));
     $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('event-details-btn')) {
+    showSingleEvent();
   }
 };
 
