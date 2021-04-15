@@ -1,6 +1,6 @@
 import buildNav from '../components/navBuilder';
 import domBuilder from './views/domBuilder';
-import headerTitle from '../components/headerTitle';
+import { headerTitle } from '../components/headerTitle';
 import { domEvents } from '../events/domEvents';
 import navEvents from '../events/navEvents';
 import buttonBuilder from '../components/buttonBuilder';
