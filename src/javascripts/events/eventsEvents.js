@@ -19,9 +19,7 @@ const eventsEvents = (e) => {
     const souvenirObject = {};
     const eventSouvenirArray = document.querySelector('#ul-souvenir').childNodes;
     eventSouvenirArray.forEach((element) => {
-      console.warn(element.childNodes[1].checked);
       if (element.childNodes[1].checked) {
-        // console.warn(element.childNodes[1].value);
         souvenirObject.event_firebaseKey = eventKey;
         souvenirObject.souvenir_firebaseKey = element.childNodes[1].value;
         createEventSouvenirsRelationship(souvenirObject).then(() => console.warn(souvenirObject));
