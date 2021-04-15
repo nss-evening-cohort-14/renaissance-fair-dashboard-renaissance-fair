@@ -18,7 +18,7 @@ const createEventShowsRelationship = (obj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/events_shows.json`, obj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/events_shows/${response.data.name}.json`, body)
+      axios.patch(`${dbUrl}/events_shows/${response.data.name}.json`, body);
     }).then(() => getEventsShows().then((esResp) => resolve(esResp)))
     .catch((error) => reject(error));
 });

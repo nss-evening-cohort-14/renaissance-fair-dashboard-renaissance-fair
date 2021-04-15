@@ -38,11 +38,12 @@ import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadO
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 import {
-  getSingleEvent, deleteEvent, createEvent
+  getSingleEvent, deleteEvent
 } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
+import eventsEvents from './eventsEvents';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -269,17 +270,9 @@ const eventListeners = (e) => {
     console.warn('add event button');
     addEventForm();
   }
-  // add user key
-  if (e.target.id.includes('submit-event-form')) {
-    e.preventDefault();
-    const eventObject = {
-      date: document.querySelector('#event-date').value,
-      title: document.querySelector('#event-title').value,
-      image: document.querySelector('#event-image').value,
-      uid: firebase.auth().currentUser.uid
-    };
 
-    createEvent(eventObject).then((event) => console.warn(event));
+  if (e.target.id.includes('submit-event-form')) {
+    eventsEvents(e);
   }
 
   if (e.target.id.includes('delete-event')) {

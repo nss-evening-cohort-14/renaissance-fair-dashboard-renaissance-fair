@@ -51,14 +51,14 @@ const selectDesert = () => {
 const selectStaff = () => {
   let domString = `<label for="staff">Staff</label>
   <div class="checkbox-container">
-  <ul class="check-box">`;
+  <ul class="check-box" id="ul-staff">`;
 
   getAllStaff().then((staffArray) => {
     staffArray.forEach((item) => {
       domString += `<li>
-        <input type="checkbox" id="staff_checkbox_${item.firebaseKey}"
-          name="staff_checkbox_${item.first_name}" value="${item.firebaseKey}">
-          <label for="staff_checkbox_${item.first_name}">${item.first_name} ${item.last_name}</label></li>`;
+        <input type="checkbox" id="staff_checkbox--${item.firebaseKey}"
+          name="staff_checkbox--${item.first_name}" value="${item.firebaseKey}">
+          <label for="staff_checkbox--${item.first_name}">${item.first_name} ${item.last_name}</label></li>`;
     });
 
     domString += '</ul></div>';
@@ -69,14 +69,14 @@ const selectStaff = () => {
 const selectShow = () => {
   let domString = `<label for="shows">Shows</label>
     <div class="checkbox-container">
-    <ul class="check-box">`;
+    <ul class="check-box" id="ul-show">`;
 
   getAllShows().then((showArray) => {
     showArray.forEach((item) => {
       domString += `<li>
-      <input type="checkbox" id="staff_checkbox_${item.firebaseKey}"
-        name="show_checkbox_${item.name}" value="${item.firebaseKey}">
-        <label for="show_checkbox_${item.name}">${item.name}</label></li>`;
+      <input type="checkbox" id="staff_checkbox--${item.firebaseKey}"
+        name="show_checkbox--${item.name}" value="${item.firebaseKey}">
+        <label for="show_checkbox--${item.name}">${item.name}</label></li>`;
     });
 
     domString += '</ul></div>';
@@ -87,14 +87,14 @@ const selectShow = () => {
 const selectSouvenirs = () => {
   let domString = `<label for="souvenirs">Souvenirs</label>
       <div class="checkbox-container">
-      <ul class="check-box">`;
+      <ul class="check-box" id="ul-souvenir">`;
 
   getAllSouvenirs().then((souvenirArray) => {
     souvenirArray.forEach((item) => {
       domString += `<li>
-        <input type="checkbox" id="souvenir_checkbox_${item.firebaseKey}"
-          name="souvenir_checkbox_${item.name}" value="${item.firebaseKey}">
-          <label for="souvenir_checkbox_${item.name}">${item.name}</label></li>`;
+        <input type="checkbox" id="souvenir_checkbox--${item.firebaseKey}"
+          name="souvenir_checkbox--${item.name}" value="${item.firebaseKey}">
+          <label for="souvenir_checkbox--${item.name}">${item.name}</label></li>`;
     });
     domString += '</ul></div>';
 

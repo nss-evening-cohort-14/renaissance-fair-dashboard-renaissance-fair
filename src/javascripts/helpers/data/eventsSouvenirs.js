@@ -14,13 +14,13 @@ const getEventsSouvenirs = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const createEventSouvenirRelationship = (obj) => new Promise((resolve, reject) => {
+const createEventSouvenirsRelationship = (obj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/events_souvenirs.json`, obj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
-      axios.patch(`${dbUrl}/events_souvenirs/${response.data.name}.json`, body)
+      axios.patch(`${dbUrl}/events_souvenirs/${response.data.name}.json`, body);
     }).then(() => getEventsSouvenirs().then((esResp) => resolve(esResp)))
     .catch((error) => reject(error));
 });
 
-export { getEventsSouvenirs, createEventSouvenirRelationship };
+export { getEventsSouvenirs, createEventSouvenirsRelationship };
