@@ -1,4 +1,4 @@
-import headerTitle from '../components/headerTitle';
+import { headerTitle } from '../components/headerTitle';
 import { getAllShows } from '../helpers/data/showsData';
 import printShows from '../components/printShows';
 import buttonBuilder from '../components/buttonBuilder';
@@ -64,7 +64,7 @@ const navEvents = (id, user) => {
   document.querySelector('#home').addEventListener('click', () => {
     $('.create-food-btn').empty();
     buttonBuilder();
-    headerTitle('Welcome to ye ol\' home.');
+    headerTitle();
   });
 };
 

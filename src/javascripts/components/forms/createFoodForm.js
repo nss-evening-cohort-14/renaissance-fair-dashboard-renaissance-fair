@@ -1,9 +1,9 @@
-import headerTitle from '../headerTitle';
+import { foodTitle } from '../headerTitle';
 
 const createFoodForm = () => {
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
-  headerTitle('Add food');
+  foodTitle();
   document.querySelector('#content-container').innerHTML = `
   <form class="add-food-form">
     <div class="form-group">

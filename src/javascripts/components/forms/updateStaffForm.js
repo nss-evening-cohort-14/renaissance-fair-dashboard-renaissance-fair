@@ -15,7 +15,11 @@ const updateStaffForm = (staffObject) => {
   <div class="form-group">
     <label for="staffRole">Role</label>
     <input type="text" class="form-control" id="staffRole" aria-describedby="staffRole" placeholder="Role" value="${staffObject.role}" required>
-</div>
+  </div>
+  <div class="form-group">
+    <label for="staffPrice">Price</label>
+    <input type="text" class="form-control" id="staffPrice" aria-describedby="staffPrice" placeholder="Price" value="${staffObject.staff_price}" required>
+  </div>
   <button type="submit" id="update-staff--${staffObject.firebaseKey}" class="btn btn-primary">Update Staff</button>
 </form>`;
 };
