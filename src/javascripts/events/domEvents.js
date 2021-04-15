@@ -111,6 +111,7 @@ const eventListeners = (e) => {
       last_name: document.querySelector('#staffLastName').value,
       staff_image: document.querySelector('#staffImage').value,
       role: document.querySelector('#staffRole').value,
+      staff_price: document.querySelector('#staffPrice').value
     };
     createNewStaff(staffObject).then((staffArray) => showStaff(staffArray));
   }
@@ -225,6 +226,7 @@ const eventListeners = (e) => {
       last_name: document.querySelector('#staffLastName').value,
       staff_image: document.querySelector('#staffImage').value,
       role: document.querySelector('#staffRole').value,
+      staff_price: document.querySelector('#staffPrice').value,
     };
     updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));
     $('#formModal').modal('toggle');
