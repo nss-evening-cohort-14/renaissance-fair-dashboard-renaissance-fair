@@ -1,9 +1,9 @@
-import headerTitle from '../headerTitle';
+import { staffTitle } from '../headerTitle';
 
 const createStaff = () => {
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
-  headerTitle('Add Staff');
+  staffTitle();
   document.querySelector('#content-container').innerHTML = `<form>
   <div class="form-group">
     <label for="firstName">First Name</label>

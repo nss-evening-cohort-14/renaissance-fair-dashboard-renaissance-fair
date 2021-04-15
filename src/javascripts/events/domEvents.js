@@ -37,7 +37,7 @@ import showFoodReadOnly from '../components/readOnlyPrinters/showFoodReadOnly';
 import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadOnly';
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
-import { getSingleEvent, deleteEvent } from '../helpers/data/eventsData';
+import { getSingleEvent, deleteEvent, getAllEvents } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
 import { showEvents } from '../components/showEvents';
 
@@ -73,6 +73,10 @@ const eventListeners = (e) => {
     } else {
       getAllShows().then((showsArray) => printShowsReadOnly(showsArray));
     }
+  }
+
+  if (e.target.id.includes('events-view')) {
+    getAllEvents().then((eventsArray) => showEvents(eventsArray));
   }
 
   if (e.target.id.includes('create-food')) {

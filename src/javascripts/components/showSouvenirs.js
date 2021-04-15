@@ -1,7 +1,7 @@
-import headerTitle from './headerTitle';
+import { souvenirTitle } from './headerTitle';
 
 const showSouvenirs = (array) => {
-  headerTitle('SOUVENIRS');
+  souvenirTitle();
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="add-souvenir-btn">Add Wares<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';
@@ -26,7 +26,7 @@ const showSouvenirs = (array) => {
 };
 
 const emptySouvenirs = () => {
-  headerTitle('SOUVENIRS');
+  souvenirTitle();
   document.querySelector('#content-container').innerHTML = '<h1>No souvenirs</h1>';
 };
 
