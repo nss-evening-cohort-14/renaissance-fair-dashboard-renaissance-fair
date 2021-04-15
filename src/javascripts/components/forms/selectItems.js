@@ -13,7 +13,8 @@ const selectFood = () => {
       domString += `<li>
         <input type="checkbox" id="food_checkbox--${item.firebaseKey}"
           name="food_checkbox--${item.name}" value="${item.firebaseKey}">
-          <label for="food_checkbox--${item.name}">${item.name}</label></li>`;
+          <label for="food_checkbox--${item.name}">${item.name}</label>
+          <input type="number" min="0" step="1"/></li>`;
     });
 
     domString += '</ul></div>';
