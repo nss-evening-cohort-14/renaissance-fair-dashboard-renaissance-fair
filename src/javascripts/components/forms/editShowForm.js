@@ -17,6 +17,10 @@ const editShowForm = (showObject) => {
   <label for="date">Date</label>
   <input type="date" class="form-control" id="date" aria-describedby="showDate" value="${showObject.date}" required>
 </div>
+<div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" min="1" max="500" value="${showObject.show_price}">
+    </div>
 <button type="button" id="update-show--${showObject.firebaseKey}" class="btn btn-danger">Update Show</button>
 </div>`;
 };
