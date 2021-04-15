@@ -38,7 +38,7 @@ import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadO
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 import {
-  getSingleEvent, deleteEvent
+  getSingleEvent, deleteEvent, getAllEvents
 } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
@@ -79,6 +79,10 @@ const eventListeners = (e) => {
     }
   }
 
+  if (e.target.id.includes('events-view')) {
+    getAllEvents().then((eventsArray) => showEvents(eventsArray));
+  }
+
   if (e.target.id.includes('create-food')) {
     createFoodForm();
   }
@@ -107,6 +111,7 @@ const eventListeners = (e) => {
       last_name: document.querySelector('#staffLastName').value,
       staff_image: document.querySelector('#staffImage').value,
       role: document.querySelector('#staffRole').value,
+      staff_price: document.querySelector('#staffPrice').value
     };
     createNewStaff(staffObject).then((staffArray) => showStaff(staffArray));
   }
@@ -221,6 +226,7 @@ const eventListeners = (e) => {
       last_name: document.querySelector('#staffLastName').value,
       staff_image: document.querySelector('#staffImage').value,
       role: document.querySelector('#staffRole').value,
+      staff_price: document.querySelector('#staffPrice').value,
     };
     updateStaff(firebaseKey, staffObject).then((staffArray) => showStaff(staffArray));
     $('#formModal').modal('toggle');
