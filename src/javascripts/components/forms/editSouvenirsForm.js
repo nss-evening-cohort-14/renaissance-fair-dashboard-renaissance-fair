@@ -11,7 +11,7 @@ const editSouvenirsForm = (souvenirObject) => {
       </div>
       <div class='form-group'>
         <label for='price'>Price</label>
-        <input type='text' class='form-control' id='price' placeholder='Book Price' value="${souvenirObject.souvenir_price}">
+        <input type='number' class='form-control' id='price' placeholder='Price' value="${souvenirObject.souvenir_price}">
       </div>
       <div class='form-group'>
       <label for='description'>Souvenir Description</label>
