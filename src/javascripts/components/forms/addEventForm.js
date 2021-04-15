@@ -1,5 +1,5 @@
 import {
-  selectMainCourseOne, selectMainCourseTwo, selectDesert, selectSouvenirs, selectShow, selectStaff
+  selectSouvenirs, selectShow, selectStaff, selectFood
 } from './selectItems';
 
 const addEventForm = () => {
@@ -18,11 +18,7 @@ const addEventForm = () => {
     <label for="eventImage">Image</label>
     <input type="url" class="form-control" id="event-image">
   </div>
-  <div class="form-group" id="select-main-course-1">
-  </div>
-  <div class="form-group" id="select-main-course-2">
-  </div>
-  <div class="form-group" id="select-desert">
+  <div class="form-group" id="select-food">
   </div>
   <div class="form-group" id="select-staff">
   </div>
@@ -33,9 +29,7 @@ const addEventForm = () => {
   <button type="submit" class="btn btn-primary" id="submit-event-form">Submit</button>
 </form>`;
 
-  selectMainCourseOne();
-  selectMainCourseTwo();
-  selectDesert();
+  selectFood();
   selectSouvenirs();
   selectShow();
   selectStaff();

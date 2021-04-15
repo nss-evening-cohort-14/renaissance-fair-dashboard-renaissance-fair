@@ -1,50 +1,23 @@
-import { getAllFood } from '../../helpers/data/foodData';
 import { getAllSouvenirs } from '../../helpers/data/souvenirData';
 import { getAllShows } from '../../helpers/data/showsData';
 import { getAllStaff } from '../../helpers/data/staffData';
+import { getAllFood } from '../../helpers/data/foodData';
 
-const selectMainCourseOne = () => {
-  let domString = `<label for="mainCourseChoice1">Main Course Choice 1</label>
-  <select class="form-control" id="main-course-1">
-  <option value="">Select a Main Course</option>`;
-
-  getAllFood().then((foodArray) => {
-    foodArray.forEach((item) => {
-      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
-    });
-
-    domString += '</select>';
-    document.querySelector('#select-main-course-1').innerHTML = domString;
-  });
-};
-
-const selectMainCourseTwo = () => {
-  let domString = `<label for="mainCourseChoice2">Main Course Choice 2</label>
-  <select class="form-control" id="main-course-2">
-  <option value="">Select a Main Course</option>`;
+const selectFood = () => {
+  let domString = `<label for="food">Food</label>
+  <div class="checkbox-container">
+  <ul class="check-box" id="ul-food">`;
 
   getAllFood().then((foodArray) => {
     foodArray.forEach((item) => {
-      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
+      domString += `<li>
+        <input type="checkbox" id="food_checkbox--${item.firebaseKey}"
+          name="food_checkbox--${item.name}" value="${item.firebaseKey}">
+          <label for="food_checkbox--${item.name}">${item.name}</label></li>`;
     });
 
-    domString += '</select>';
-    document.querySelector('#select-main-course-2').innerHTML = domString;
-  });
-};
-
-const selectDesert = () => {
-  let domString = `<label for="desert">Desert</label>
-  <select class="form-control" id="desert">
-  <option value="">Select a Desert</option>`;
-
-  getAllFood().then((foodArray) => {
-    foodArray.forEach((item) => {
-      domString += `<option value="${item.firebaseKey}">${item.name}</option>`;
-    });
-
-    domString += '</select>';
-    document.querySelector('#select-desert').innerHTML = domString;
+    domString += '</ul></div>';
+    document.querySelector('#select-food').innerHTML = domString;
   });
 };
 
@@ -103,5 +76,5 @@ const selectSouvenirs = () => {
 };
 
 export {
-  selectMainCourseOne, selectMainCourseTwo, selectDesert, selectStaff, selectShow, selectSouvenirs
+  selectStaff, selectShow, selectSouvenirs, selectFood
 };
