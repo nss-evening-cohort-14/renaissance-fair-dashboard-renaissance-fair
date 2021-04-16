@@ -275,7 +275,7 @@ const eventListeners = (e) => {
     updateFood(firebaseKey, foodObject).then((arr) => showFood(arr));
     $('#formModal').modal('toggle');
   }
-  // Form input value stuff
+  // Form input value
   if (e.target.id.includes('add-new-event-btn')) {
     addEventForm();
   }
