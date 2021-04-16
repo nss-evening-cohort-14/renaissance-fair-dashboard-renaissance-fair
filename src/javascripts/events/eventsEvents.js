@@ -51,7 +51,7 @@ const eventsEvents = (e) => {
     eventFoodArray.forEach((element) => {
       if (element.childNodes[1].checked) {
         foodObject.event_firebaseKey = eventKey;
-        foodObject.staff_firebaseKey = element.childNodes[1].value;
+        foodObject.food_firebaseKey = element.childNodes[1].value;
         createEventFoodRelationship(foodObject).then(() => console.warn(foodObject));
       }
     });

@@ -3,7 +3,7 @@ import firebaseConfig from '../apiKeys';
 
 const dbUrl = firebaseConfig.databaseURL;
 
-const getEventsShows = () => new Promise((resolve, reject) => {
+const getEventsShowsTables = () => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/events_shows.json`)
     .then((response) => {
       if (response.data) {
@@ -19,8 +19,8 @@ const createEventShowsRelationship = (obj) => new Promise((resolve, reject) => {
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/events_shows/${response.data.name}.json`, body);
-    }).then(() => getEventsShows().then((esResp) => resolve(esResp)))
+    }).then(() => getEventsShowsTables().then((esResp) => resolve(esResp)))
     .catch((error) => reject(error));
 });
 
-export { getEventsShows, createEventShowsRelationship };
+export { getEventsShowsTables, createEventShowsRelationship };
