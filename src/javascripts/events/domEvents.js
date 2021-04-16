@@ -45,9 +45,7 @@ import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
 import showSingleEvent from '../components/showSingleEvent';
 import eventsEvents from './eventsEvents';
-import {
-  getEventSouvenirs, getEventShows, getEventStaff, getEventFood, getAllEventItems
-} from '../helpers/data/eventsRelationships';
+import { getAllEventItems } from '../helpers/data/eventsRelationships';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -294,13 +292,8 @@ const eventListeners = (e) => {
   }
 
   if (e.target.id.includes('event-details-btn')) {
-<<<<<<< HEAD
     const firebaseKey = e.target.id.split('--')[1];
-    getAllEventItems(firebaseKey).then(())
-    // getEventSouvenirs(firebaseKey).then((souvenirsArr) => console.warn(souvenirsArr));
-=======
-    showSingleEvent();
->>>>>>> v2-development
+    getAllEventItems(firebaseKey).then((obj) => showSingleEvent(obj));
   }
 };
 
