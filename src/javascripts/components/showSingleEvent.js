@@ -51,10 +51,12 @@ const souvenirQuad = (souvenirArr) => {
   souvenirQuadrant.innerHTML += '</ul>';
 };
 
+// const eventName = ()
+
 const showSingleEvent = (Obj) => {
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
-  document.querySelector('#content-container').innerHTML += '<div class="event-quadrant"><h3>Food</h3><div id="food-quad"></div></div><div class="event-quadrant"><h3>Staff</h3><div id="staff-quad"></div></div><div class="event-quadrant"><h3>Shows</h3><div id="show-quad"></div><div class="event-quadrant"><h3>Souvenirs</h3><div id="souvenir-quad"></div>';
+  document.querySelector('#content-container').innerHTML += '<div class="event-a"><h1>Event Name:</h1><div id="event-name"></div></div><div class="event-b"><h1>Event Date:</h1><div id="event-date"></div></div><div class="event-c"><h1>Event Planner:</h1><div id="event-planner"></div></div><div class="event-quadrant"><h1>Food</h1><div id="food-quad"></div></div><div class="event-quadrant"><h1>Staff</h1><div id="staff-quad"></div></div><div class="event-quadrant"><h1>Shows</h1><div id="show-quad"></div></div><div class="event-quadrant"><h1>Souvenirs</h1><div id="souvenir-quad"></div></div>';
   foodQuad(Obj.food);
   showQuad(Obj.shows);
   staffQuad(Obj.staff);

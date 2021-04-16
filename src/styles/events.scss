@@ -1,8 +1,20 @@
+.event-a {
+  flex: 100%;
+}
+
+.event-b {
+  flex: 100%;
+}
+
+.event-c {
+  flex: 100%;
+}
+
 .event-quadrant {
-  padding: 100px;
-  display: flex;
-  flex-wrap: wrap;
+  padding: 50px 100px 50px 100px;
+  // display: inline;
+  // flex-wrap: nowrap;
   flex: 50%;
-  align-items: center;
-  justify-content: center;
+  // align-items: center;
+  // justify-content: center;
 }
