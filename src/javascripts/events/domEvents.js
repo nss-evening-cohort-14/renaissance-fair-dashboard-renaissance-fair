@@ -43,6 +43,7 @@ import {
 import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
+import showSingleEvent from '../components/showSingleEvent';
 import eventsEvents from './eventsEvents';
 
 const eventListeners = (e) => {
@@ -287,6 +288,10 @@ const eventListeners = (e) => {
     const firebaseKey = e.target.id.split('--')[1];
     deleteEvent(firebaseKey).then((eventsArray) => showEvents(eventsArray));
     $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('event-details-btn')) {
+    showSingleEvent();
   }
 };
 
