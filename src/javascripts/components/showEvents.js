@@ -13,6 +13,7 @@ const showEvents = (array) => {
         <a href="#" id="show-event-title"><h5 id="event-title--${item.firebaseKey}" class="card-title mt-1 text-center">${item.title}</h5></a>
           <p class="card-text" id="show-event-date">${item.date}</p>
           <button type="button" id="event-details-btn--${item.firebaseKey}" class="btn btn-sm event-details-btn">View details</button>
+          <button type="button" class="btn edit-btn" id="event-edit-btn--${item.firebaseKey}"><i id="event-edit-icon--${item.firebaseKey}" class="fas fa-edit fa-lg"></i></button>
           <button class="btn delete-btn" data-toggle="modal" data-target="#formModal" id="delete-modal-event--${item.firebaseKey}"><i class="fas fa-trash-alt" id="delete-modal-event--${item.firebaseKey}"></i></button>
       </div>
     </div>`;

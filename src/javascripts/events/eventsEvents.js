@@ -1,11 +1,13 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { createEvent, getAllEvents } from '../helpers/data/eventsData';
+import { createEvent, getAllEvents, getSingleEvent } from '../helpers/data/eventsData';
 import { createEventSouvenirsRelationship } from '../helpers/data/eventsSouvenirs';
 import { createEventShowsRelationship } from '../helpers/data/eventsShows';
 import { createEventStaffRelationship } from '../helpers/data/eventsStaff';
 import { createEventFoodRelationship } from '../helpers/data/eventsFood';
 import { showEvents } from '../components/showEvents';
+import editEventForm from '../components/forms/editEventForm';
+import { getAllEventItems } from '../helpers/data/eventsRelationships';
 
 const eventsEvents = (e) => {
   e.preventDefault();
@@ -59,4 +61,10 @@ const eventsEvents = (e) => {
   });
 };
 
-export default eventsEvents;
+const editEvent = (firebaseKey) => {
+  getSingleEvent(firebaseKey).then((event) => {
+    getAllEventItems(event.firebaseKey).then((obj) => editEventForm(event, obj));
+  });
+};
+
+export { eventsEvents, editEvent };

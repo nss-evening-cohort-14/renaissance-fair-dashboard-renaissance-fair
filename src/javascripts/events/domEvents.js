@@ -44,7 +44,7 @@ import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
 import showSingleEvent from '../components/showSingleEvent';
-import eventsEvents from './eventsEvents';
+import { eventsEvents, editEvent } from './eventsEvents';
 import { getAllEventItems } from '../helpers/data/eventsRelationships';
 
 const eventListeners = (e) => {
@@ -277,7 +277,6 @@ const eventListeners = (e) => {
   }
   // Form input value stuff
   if (e.target.id.includes('add-new-event-btn')) {
-    console.warn('add event button');
     addEventForm();
   }
 
@@ -294,6 +293,11 @@ const eventListeners = (e) => {
   if (e.target.id.includes('event-details-btn')) {
     const firebaseKey = e.target.id.split('--')[1];
     getAllEventItems(firebaseKey).then((obj) => showSingleEvent(obj));
+  }
+  if (e.target.id.includes('event-edit-btn')
+      || e.target.id.includes('event-edit-icon')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    editEvent(firebaseKey);
   }
 };
 
