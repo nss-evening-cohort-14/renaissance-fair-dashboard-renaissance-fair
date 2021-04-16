@@ -59,7 +59,7 @@ const showSingleEvent = (Obj, eventId) => {
   getSingleEvent(eventId).then((eventObj) => {
     document.querySelector('#content-container').innerHTML = '';
     document.querySelector('#add-button-container').innerHTML = '';
-    document.querySelector('#content-container').innerHTML += `<div class="event-a"><h1>Event Name:</h1><div id="event-name"></div>${eventObj.title}</div><div class="event-b"><h1>Event Date:</h1><div id="event-date"></div>${eventObj.date}</div><div class="event-quad"><h1>Food</h1><div id="food-quad"></div></div><div class="event-quad"><h1>Staff</h1><div id="staff-quad"></div></div><div class="event-quad"><h1>Shows</h1><div id="show-quad"></div></div><div class="event-quad"><h1>Souvenirs</h1><div id="souvenir-quad"></div></div>`;
+    document.querySelector('#content-container').innerHTML += `<div class="event-a"><h1>Event Name:</h1><div class="l" id="event-name"></div>${eventObj.title}</div><div class="event-b"><h1>Event Date:</h1><div class="l" id="event-date"></div>${eventObj.date}</div><div class="event-quad"><h1>Food</h1><div class="l" id="food-quad"></div></div><div class="event-quad"><h1>Staff</h1><div class="l" id="staff-quad"></div></div><div class="event-quad"><h1>Shows</h1><div class="l" id="show-quad"></div></div><div class="event-quad"><h1>Souvenirs</h1><div class="l" id="souvenir-quad"></div></div>`;
     foodQuad(Obj.food);
     showQuad(Obj.shows);
     staffQuad(Obj.staff);

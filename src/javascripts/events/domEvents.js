@@ -277,7 +277,6 @@ const eventListeners = (e) => {
   }
   // Form input value stuff
   if (e.target.id.includes('add-new-event-btn')) {
-    console.warn('add event button');
     addEventForm();
   }
 
