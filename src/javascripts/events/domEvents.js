@@ -44,6 +44,9 @@ import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
 import eventsEvents from './eventsEvents';
+import {
+  getEventSouvenirs, getEventShows, getEventStaff, getEventFood, getAllEventItems
+} from '../helpers/data/eventsRelationships';
 
 const eventListeners = (e) => {
   const user = firebase.auth().currentUser;
@@ -287,6 +290,12 @@ const eventListeners = (e) => {
     const firebaseKey = e.target.id.split('--')[1];
     deleteEvent(firebaseKey).then((eventsArray) => showEvents(eventsArray));
     $('#formModal').modal('toggle');
+  }
+
+  if (e.target.id.includes('event-details-btn')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    getAllEventItems(firebaseKey).then(())
+    // getEventSouvenirs(firebaseKey).then((souvenirsArr) => console.warn(souvenirsArr));
   }
 };
 
