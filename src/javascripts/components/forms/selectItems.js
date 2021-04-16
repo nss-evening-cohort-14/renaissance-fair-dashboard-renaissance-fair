@@ -39,7 +39,6 @@ const selectStaff = (selectedStaffArr) => {
       let checked = '';
       if (selectedStaffArr) {
         selectedStaffArr.forEach((staff) => {
-          console.warn(staff.staff_firebaseKey, item.firebaseKey);
           if (staff.staff_firebaseKey === item.firebaseKey) {
             checked = 'checked';
           }
@@ -66,7 +65,6 @@ const selectShow = (selectedShowsArr) => {
       let checked = '';
       if (selectedShowsArr) {
         selectedShowsArr.forEach((show) => {
-          console.warn(show.show_firebaseKey, item.firebaseKey);
           if (show.show_firebaseKey === item.firebaseKey) {
             checked = 'checked';
           }
@@ -93,7 +91,6 @@ const selectSouvenirs = (selectedSouvenirsArr) => {
       let checked = '';
       if (selectedSouvenirsArr) {
         selectedSouvenirsArr.forEach((souvenir) => {
-          console.warn(souvenir.souvenir_firebaseKey, item.firebaseKey);
           if (souvenir.souvenir_firebaseKey === item.firebaseKey) {
             checked = 'checked';
           }

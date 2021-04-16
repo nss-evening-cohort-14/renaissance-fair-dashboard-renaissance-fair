@@ -299,6 +299,11 @@ const eventListeners = (e) => {
     const firebaseKey = e.target.id.split('--')[1];
     editEvent(firebaseKey);
   }
+  if (e.target.id.includes('submit-edit-event-form')) {
+    e.preventDefault();
+    // const firebaseKey = e.target.id.split('--')[1];
+    console.warn('EDIT EVENT');
+  }
 };
 
 const domEvents = () => {

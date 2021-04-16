@@ -27,7 +27,7 @@ const editEventForm = (objEvent, objData) => {
   </div>
   <div class="form-group" id="select-souvenir">
   </div>
-  <button type="submit" class="btn btn-primary" id="submit-event-form">Submit</button>
+  <button type="submit" class="btn btn-primary" id="submit-edit-event-form--${objEvent.firebaseKey}">Submit</button>
 </form>`;
 
   selectFood(objData.food);
