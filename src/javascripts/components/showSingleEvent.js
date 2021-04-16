@@ -1,7 +1,9 @@
+import 'firebase/auth';
 import { getSingleFood } from '../helpers/data/foodData';
 import { getSingleShow } from '../helpers/data/showsData';
 import { getSingleStaff } from '../helpers/data/staffData';
 import { getSingleSouvenir } from '../helpers/data/souvenirData';
+import { getSingleEvent } from '../helpers/data/eventsData';
 
 const foodQuad = (foodArr) => {
   const foodQuadrant = document.querySelector('#food-quad');
@@ -53,14 +55,16 @@ const souvenirQuad = (souvenirArr) => {
 
 // const eventName = ()
 
-const showSingleEvent = (Obj) => {
-  document.querySelector('#content-container').innerHTML = '';
-  document.querySelector('#add-button-container').innerHTML = '';
-  document.querySelector('#content-container').innerHTML += '<div class="event-a"><h1>Event Name:</h1><div id="event-name"></div></div><div class="event-b"><h1>Event Date:</h1><div id="event-date"></div></div><div class="event-c"><h1>Event Planner:</h1><div id="event-planner"></div></div><div class="event-quadrant"><h1>Food</h1><div id="food-quad"></div></div><div class="event-quadrant"><h1>Staff</h1><div id="staff-quad"></div></div><div class="event-quadrant"><h1>Shows</h1><div id="show-quad"></div></div><div class="event-quadrant"><h1>Souvenirs</h1><div id="souvenir-quad"></div></div>';
-  foodQuad(Obj.food);
-  showQuad(Obj.shows);
-  staffQuad(Obj.staff);
-  souvenirQuad(Obj.souvenirs);
+const showSingleEvent = (Obj, eventId) => {
+  getSingleEvent(eventId).then((eventObj) => {
+    document.querySelector('#content-container').innerHTML = '';
+    document.querySelector('#add-button-container').innerHTML = '';
+    document.querySelector('#content-container').innerHTML += `<div class="event-a"><h1>Event Name:</h1><div id="event-name"></div>${eventObj.title}</div><div class="event-b"><h1>Event Date:</h1><div id="event-date"></div>${eventObj.date}</div><div class="event-quad"><h1>Food</h1><div id="food-quad"></div></div><div class="event-quad"><h1>Staff</h1><div id="staff-quad"></div></div><div class="event-quad"><h1>Shows</h1><div id="show-quad"></div></div><div class="event-quad"><h1>Souvenirs</h1><div id="souvenir-quad"></div></div>`;
+    foodQuad(Obj.food);
+    showQuad(Obj.shows);
+    staffQuad(Obj.staff);
+    souvenirQuad(Obj.souvenirs);
+  });
 };
 
 export default showSingleEvent;

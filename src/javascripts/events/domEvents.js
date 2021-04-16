@@ -293,7 +293,7 @@ const eventListeners = (e) => {
 
   if (e.target.id.includes('event-details-btn')) {
     const firebaseKey = e.target.id.split('--')[1];
-    getAllEventItems(firebaseKey).then((obj) => showSingleEvent(obj));
+    getAllEventItems(firebaseKey).then((obj) => showSingleEvent(obj, firebaseKey));
   }
 };
 
