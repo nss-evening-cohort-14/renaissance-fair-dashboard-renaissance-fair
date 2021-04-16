@@ -43,6 +43,7 @@ import {
 import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
+import showSingleEvent from '../components/showSingleEvent';
 import eventsEvents from './eventsEvents';
 import {
   getEventSouvenirs, getEventShows, getEventStaff, getEventFood, getAllEventItems
@@ -293,9 +294,13 @@ const eventListeners = (e) => {
   }
 
   if (e.target.id.includes('event-details-btn')) {
+<<<<<<< HEAD
     const firebaseKey = e.target.id.split('--')[1];
     getAllEventItems(firebaseKey).then(())
     // getEventSouvenirs(firebaseKey).then((souvenirsArr) => console.warn(souvenirsArr));
+=======
+    showSingleEvent();
+>>>>>>> v2-development
   }
 };
 
