@@ -62,13 +62,15 @@ User flow chart: ![flow-chart-ren](https://user-images.githubusercontent.com/761
 
 ## Deployed Netlify App [![Netlify Status](https://api.netlify.com/api/v1/badges/faa643b4-c3c3-4711-9204-b643023d960b/deploy-status)](https://app.netlify.com/sites/renfaire-v2/deploys)
 https://renfaire-v2.netlify.app
+## Screenshots
+![freelancer](https://user-images.githubusercontent.com/76187279/115093500-296ffc80-9ee0-11eb-9b7b-1095175b9c26.png)
+
+![freelancer2](https://user-images.githubusercontent.com/76187279/115093504-2f65dd80-9ee0-11eb-90b4-a84483840eaa.png)
+
+![freelancer3](https://user-images.githubusercontent.com/76187279/115094361-dba8c380-9ee2-11eb-805a-c1d1d4e36633.png)
 
 ## Contributors 
 - John Maple: https://github.com/Greenfin17
 - Lindsey Satterfield: https://github.com/lindseysatterfield
 - Tad Sekeres: https://github.com/tsekeres
 - Gabrielle Tobermann: https://github.com/Gabrielle-Tobermann
-
-## Screenshots
-
-## Loom Video
