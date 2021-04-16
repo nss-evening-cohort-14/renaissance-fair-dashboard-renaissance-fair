@@ -20,12 +20,10 @@ const eventsEvents = (e) => {
     const souvenirObject = {};
     const eventSouvenirArray = document.querySelector('#ul-souvenir').childNodes;
     eventSouvenirArray.forEach((element) => {
-      console.warn(element.childNodes[1].checked);
       if (element.childNodes[1].checked) {
-        // console.warn(element.childNodes[1].value);
         souvenirObject.event_firebaseKey = eventKey;
         souvenirObject.souvenir_firebaseKey = element.childNodes[1].value;
-        createEventSouvenirsRelationship(souvenirObject).then(() => console.warn(souvenirObject));
+        createEventSouvenirsRelationship(souvenirObject);
       }
     });
     const showObject = {};
@@ -34,7 +32,7 @@ const eventsEvents = (e) => {
       if (element.childNodes[1].checked) {
         showObject.event_firebaseKey = eventKey;
         showObject.show_firebaseKey = element.childNodes[1].value;
-        createEventShowsRelationship(showObject).then(() => console.warn(showObject));
+        createEventShowsRelationship(showObject);
       }
     });
     const staffObject = {};
@@ -43,7 +41,7 @@ const eventsEvents = (e) => {
       if (element.childNodes[1].checked) {
         staffObject.event_firebaseKey = eventKey;
         staffObject.staff_firebaseKey = element.childNodes[1].value;
-        createEventStaffRelationship(staffObject).then(() => console.warn(staffObject));
+        createEventStaffRelationship(staffObject);
       }
     });
     const foodObject = {};
@@ -52,7 +50,7 @@ const eventsEvents = (e) => {
       if (element.childNodes[1].checked) {
         foodObject.event_firebaseKey = eventKey;
         foodObject.food_firebaseKey = element.childNodes[1].value;
-        createEventFoodRelationship(foodObject).then(() => console.warn(foodObject));
+        createEventFoodRelationship(foodObject);
       }
     });
     getAllEvents().then((eventsArray) => showEvents(eventsArray));
