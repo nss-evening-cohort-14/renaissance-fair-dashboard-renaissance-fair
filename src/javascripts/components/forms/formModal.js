@@ -14,5 +14,5 @@ const formModal = (modalTitle) => {
     </div>
   </div>`;
 };
-// CREATED NEW MODAL FOR UPDATE/EDIT FUNCTIONALITY - WON'T WORK WITH OTHER MODAL
+
 export default formModal;
