@@ -72,9 +72,14 @@ const updateExistingEvent = (eventId) => {
     const souvenirObject = {};
     const eventSouvenirArray = document.querySelector('#ul-souvenir').childNodes;
     eventSouvenirArray.forEach((element) => {
+      let count = element.childNodes[5].value;
+      if (!count) {
+        count = '0';
+      }
       if (element.childNodes[1].checked) {
         souvenirObject.event_firebaseKey = eventId;
         souvenirObject.souvenir_firebaseKey = element.childNodes[1].value;
+        souvenirObject.count = parseInt(count, 10);
         createEventSouvenirsRelationship(souvenirObject);
       }
     });
@@ -99,9 +104,14 @@ const updateExistingEvent = (eventId) => {
     const foodObject = {};
     const eventFoodArray = document.querySelector('#ul-food').childNodes;
     eventFoodArray.forEach((element) => {
+      let count = element.childNodes[5].value;
+      if (!count) {
+        count = '0';
+      }
       if (element.childNodes[1].checked) {
         foodObject.event_firebaseKey = eventId;
         foodObject.food_firebaseKey = element.childNodes[1].value;
+        foodObject.count = parseInt(count, 10);
         createEventFoodRelationship(foodObject);
       }
     });
@@ -128,7 +138,6 @@ const submitUpdateEvent = (eventId) => {
 };
 
 const deleteEventWithData = (eventId) => {
-  console.warn('clearing event data');
   clearEventData(eventId);
   return deleteEvent(eventId);
 };
