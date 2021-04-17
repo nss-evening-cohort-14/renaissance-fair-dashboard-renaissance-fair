@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import {
   createEvent, updateEvent,
-  getAllEvents, getSingleEvent
+  getAllEvents, getSingleEvent, deleteEvent
 } from '../helpers/data/eventsData';
 import { createEventSouvenirsRelationship, deleteEventSouvenirs } from '../helpers/data/eventsSouvenirs';
 import { createEventShowRelationship, deleteEventShows } from '../helpers/data/eventsShows';
@@ -127,7 +127,13 @@ const submitUpdateEvent = (eventId) => {
   updateExistingEvent(eventId);
 };
 
+const deleteEventWithData = (eventId) => {
+  console.warn('clearing event data');
+  clearEventData(eventId);
+  return deleteEvent(eventId);
+};
+
 export {
   eventsEvents, editEvent,
-  submitUpdateEvent
+  submitUpdateEvent, deleteEventWithData
 };
