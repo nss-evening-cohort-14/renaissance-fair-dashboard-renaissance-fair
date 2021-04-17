@@ -15,10 +15,12 @@ const selectFood = (selectedFoodArr) => {
   getAllFood().then((foodArr) => {
     foodArr.forEach((item) => {
       let checked = '';
+      let count = '';
       if (selectedFoodArr) {
         selectedFoodArr.forEach((food) => {
           if (food.food_firebaseKey === item.firebaseKey) {
             checked = 'checked';
+            count = food.count;
           }
         });
       }
@@ -27,7 +29,7 @@ const selectFood = (selectedFoodArr) => {
           name="food_checkbox--${item.name}" value="${item.firebaseKey}" ${checked}>
           <label for="food_checkbox--${item.name}">${item.name}</label>
           <input type="number" class="module_count" min="0" step="1"
-          id="food_count--${item.firebaseKey}"/></li>`;
+          id="food_count--${item.firebaseKey}" value="${count}"></li>`;
     });
 
     domString += '</ul></div>';
@@ -99,10 +101,12 @@ const selectSouvenirs = (selectedSouvenirsArr) => {
   getAllSouvenirs().then((souvenirArray) => {
     souvenirArray.forEach((item) => {
       let checked = '';
+      let count = '';
       if (selectedSouvenirsArr) {
         selectedSouvenirsArr.forEach((souvenir) => {
           if (souvenir.souvenir_firebaseKey === item.firebaseKey) {
             checked = 'checked';
+            count = souvenir.count;
           }
         });
       }
@@ -111,7 +115,7 @@ const selectSouvenirs = (selectedSouvenirsArr) => {
           name="souvenir_checkbox--${item.name}" value="${item.firebaseKey}" ${checked}>
           <label for="souvenir_checkbox--${item.name}">${item.name}</label>
           <input type="number" class="module_count" min="0" step="1"
-          id="souvenir_count--${item.firebaseKey}"/></li>`;
+          id="souvenir_count--${item.firebaseKey}" value="${count}"></li>`;
     });
 
     domString += '</ul></div>';

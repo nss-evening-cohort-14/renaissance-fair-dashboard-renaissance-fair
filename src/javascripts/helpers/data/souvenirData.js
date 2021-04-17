@@ -37,6 +37,7 @@ const getSingleSouvenir = (firebaseKey) => new Promise((resolve, reject) => {
     .then((response) => resolve(response.data))
     .catch((error) => reject(error));
 });
+
 // UPDATE A SOUVENIR'S INFO IN REAL TIME
 const updateSouvenir = (firebaseKey, souvenirObject) => new Promise((resolve, reject) => {
   axios.patch(`${dbUrl}/souvenirs/${firebaseKey}.json`, souvenirObject)
