@@ -1,6 +1,8 @@
 import axios from 'axios';
 import firebaseConfig from '../apiKeys';
 
+import { getEventStaff } from './eventsRelationships';
+
 const dbUrl = firebaseConfig.databaseURL;
 
 const getEventsStaffTables = () => new Promise((resolve, reject) => {
@@ -23,4 +25,19 @@ const createEventStaffRelationship = (obj) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export { getEventsStaffTables, createEventStaffRelationship };
+const deleteEventStaffRelationship = (tableId) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/events_staff/${tableId}.json`)
+    .then((response) => resolve(response))
+    .catch((error) => reject(error));
+});
+
+const deleteEventStaff = (eventId) => {
+  getEventStaff(eventId).then((staffArr) => {
+    staffArr.forEach((member) => deleteEventStaffRelationship(member.firebaseKey));
+  });
+};
+
+export {
+  getEventsStaffTables, createEventStaffRelationship,
+  deleteEventStaff
+};

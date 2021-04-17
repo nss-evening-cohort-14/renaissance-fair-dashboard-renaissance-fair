@@ -44,7 +44,7 @@ import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
 import showSingleEvent from '../components/showSingleEvent';
-import { eventsEvents, editEvent } from './eventsEvents';
+import { eventsEvents, editEvent, submitUpdateEvent } from './eventsEvents';
 import { getAllEventItems } from '../helpers/data/eventsRelationships';
 
 const eventListeners = (e) => {
@@ -281,7 +281,8 @@ const eventListeners = (e) => {
   }
 
   if (e.target.id.includes('submit-event-form')) {
-    eventsEvents(e);
+    e.preventDefault();
+    eventsEvents();
   }
 
   if (e.target.id.includes('delete-event')) {
@@ -301,8 +302,8 @@ const eventListeners = (e) => {
   }
   if (e.target.id.includes('submit-edit-event-form')) {
     e.preventDefault();
-    // const firebaseKey = e.target.id.split('--')[1];
-    console.warn('EDIT EVENT');
+    const firebaseKey = e.target.id.split('--')[1];
+    submitUpdateEvent(firebaseKey);
   }
 };
 

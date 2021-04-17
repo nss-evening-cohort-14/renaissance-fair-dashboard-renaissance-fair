@@ -1,6 +1,8 @@
 import axios from 'axios';
 import firebaseConfig from '../apiKeys';
 
+import { getEventFood } from './eventsRelationships';
+
 const dbUrl = firebaseConfig.databaseURL;
 
 const getEventsFoodTables = () => new Promise((resolve, reject) => {
@@ -23,4 +25,18 @@ const createEventFoodRelationship = (obj) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export { getEventsFoodTables, createEventFoodRelationship };
+const deleteEventFoodRelationship = (tableId) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/events_food/${tableId}.json`)
+    .then((response) => resolve(response))
+    .catch((error) => reject(error));
+});
+
+const deleteEventFood = (eventId) => {
+  getEventFood(eventId).then((foodArr) => {
+    foodArr.forEach((item) => deleteEventFoodRelationship(item.firebaseKey));
+  });
+};
+export {
+  getEventsFoodTables, createEventFoodRelationship,
+  deleteEventFood
+};
