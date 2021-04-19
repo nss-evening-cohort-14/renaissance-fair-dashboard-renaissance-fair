@@ -42,7 +42,7 @@ https://renfaire.netlify.app/
 # Freelancer Version 2
 
 ## Overview
-The second version of this app offers a new feature. The authenticated user can now add events. This feature allows the user to add food, souvenirs, staff, and shows from existing modules to their event. 
+The second version of this app offers a new feature. The authenticated user can now add, update and delete events. This feature allows the user to add food, souvenirs, staff, and shows from existing modules to their event. 
 
 ## Features
 1. A new events button on the nav bar for authenticated users
