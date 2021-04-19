@@ -1,0 +1,102 @@
+{
+  "-MVqxNqxoNTgbacrgc_W" : {
+    "description" : "A savory elvish bread with magical properties. Don't eat too much!",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNqxoNTgbacrgc_W",
+    "glutenFree" : false,
+    "image" : "https://4.bp.blogspot.com/_cd6_MFUGTUE/SU6yFC_7eHI/AAAAAAAAAII/dgbwkYf3cZs/s320/_DSC6981.jpg",
+    "name" : "Lambas Bread",
+    "price" : "20",
+    "vegetarian" : true
+  },
+  "-MVqxNqzjWxKXeC6lbs2" : {
+    "description" : "You can boil em' mash em' or put em' in a stew. We just filled them with cheesy goodness.",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNqzjWxKXeC6lbs2",
+    "glutenFree" : true,
+    "image" : "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-191907-twice-baked-potatoes-0027-landscape-pf-1564166855.png",
+    "name" : "Po-tay-toes",
+    "price" : 9,
+    "vegetarian" : true
+  },
+  "-MVqxNr0wVophcLKgolo" : {
+    "description" : "A light and delicious mince pie that would entice any dwarf to share an ale with you.",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNr0wVophcLKgolo",
+    "glutenFree" : false,
+    "image" : "https://i0.wp.com/www.feastofstarlight.com/wp-content/uploads/2015/12/the-hobbit-bofurs-mince-pies-title.jpg?w=2000",
+    "name" : "Bofur's Mince Pies",
+    "price" : 5,
+    "vegetarian" : false
+  },
+  "-MVqxNr2P3K2XSNYcnhH" : {
+    "description" : "A tasty pound cake filled with caraway seeds!",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNr2P3K2XSNYcnhH",
+    "glutenFree" : false,
+    "image" : "https://i.pinimg.com/750x/46/96/d3/4696d337a7bb885e04fdcb8d860cb0a2.jpg",
+    "name" : "Bilbo's Seed Cakes",
+    "price" : 6,
+    "vegetarian" : false
+  },
+  "-MVqxNr4OrvYigAth_eb" : {
+    "description" : "A classic lamb stew with flavours of Hobbiton.",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNr4OrvYigAth_eb",
+    "glutenFree" : false,
+    "image" : "https://i1.wp.com/www.feastofstarlight.com/wp-content/uploads/2015/07/recipes-from-bag-end-weta-lamb-stew-close-up.jpg",
+    "name" : "Lamb Stew",
+    "price" : 18,
+    "vegetarian" : false
+  },
+  "-MVqxNr74tqCjRkC_V9H" : {
+    "description" : "Some fried goodies for the little ones.",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNr74tqCjRkC_V9H",
+    "glutenFree" : false,
+    "image" : "https://www.thespruceeats.com/thmb/t_rcaInDM6kmQ66F8EfNQ7xJwq0=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/best-fish-and-chips-recipe-434856-Hero-5b61b89346e0fb00500f2141.jpg",
+    "name" : "Fish and Chips",
+    "price" : 8,
+    "vegetarian" : false
+  },
+  "-MVqxNr9L_9VM_ScMj6R" : {
+    "description" : "Raw fish for the Gollum in you... Raw and wriggling!",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNr9L_9VM_ScMj6R",
+    "glutenFree" : false,
+    "image" : "https://cdn-japantimes.com/wp-content/uploads/2018/07/n-edomae-a-20180719.jpg",
+    "name" : "Gollum's Dinner",
+    "price" : 20,
+    "vegetarian" : false
+  },
+  "-MVqxNrB0w4QXvgBr_Zj" : {
+    "description" : "Balin's favorite spiced beef. The key to any legendary feast.",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNrB0w4QXvgBr_Zj",
+    "glutenFree" : true,
+    "image" : "https://midearthfoodie.files.wordpress.com/2013/02/balins-spiced-beef-castiron1.jpg",
+    "name" : "Balin's Spiced Beef",
+    "price" : 25,
+    "vegetarian" : false
+  },
+  "-MVqxNrEduzMS9XvYbbA" : {
+    "description" : "Classic cupcakes with a middle-earth theme.",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNrEduzMS9XvYbbA",
+    "glutenFree" : false,
+    "image" : "https://i.pinimg.com/originals/96/ae/19/96ae19ca7f4ba5916d913d5285b4763a.jpg",
+    "name" : "LOTR Cupcakes",
+    "price" : 8,
+    "vegetarian" : true
+  },
+  "-MVqxNrHhO8NRulKEu00" : {
+    "description" : "Deviled eggs from Mordor. Eat at your own risk.",
+    "event_id" : "-MUuao2lynNljpuXaHnJ",
+    "firebaseKey" : "-MVqxNrHhO8NRulKEu00",
+    "glutenFree" : true,
+    "image" : "https://live.staticflickr.com/4104/5082620741_85c5d288bb_b.jpg",
+    "name" : "Eye of Sauron Eggs",
+    "price" : 2,
+    "vegetarian" : false
+  }
+}
