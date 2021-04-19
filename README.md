@@ -62,7 +62,7 @@ User flow chart: ![flow-chart-ren](https://user-images.githubusercontent.com/761
 
 ## Deployed Netlify App [![Netlify Status](https://api.netlify.com/api/v1/badges/faa643b4-c3c3-4711-9204-b643023d960b/deploy-status)](https://app.netlify.com/sites/renfaire-v2/deploys)
 https://renfaire-v2.netlify.app
-## Screenshots
+
  ## Loom Video
 https://www.loom.com/share/d73f3f43131c45b5a71aab550186368c
 
