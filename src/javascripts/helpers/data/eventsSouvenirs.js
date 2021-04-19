@@ -1,6 +1,8 @@
 import axios from 'axios';
 import firebaseConfig from '../apiKeys';
 
+import { getEventSouvenirs } from './eventsRelationships';
+
 const dbUrl = firebaseConfig.databaseURL;
 
 const getEventsSouvenirTables = () => new Promise((resolve, reject) => {
@@ -23,4 +25,19 @@ const createEventSouvenirsRelationship = (obj) => new Promise((resolve, reject) 
     .catch((error) => reject(error));
 });
 
-export { getEventsSouvenirTables, createEventSouvenirsRelationship };
+const deleteEventSouvenirRelationship = (tableId) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/events_souvenirs/${tableId}.json`)
+    .then((response) => resolve(response))
+    .catch((error) => reject(error));
+});
+
+const deleteEventSouvenirs = (eventId) => {
+  getEventSouvenirs(eventId).then((souvenirsArr) => {
+    souvenirsArr.forEach((souvenir) => deleteEventSouvenirRelationship(souvenir.firebaseKey));
+  });
+};
+
+export {
+  getEventsSouvenirTables, createEventSouvenirsRelationship,
+  deleteEventSouvenirs
+};

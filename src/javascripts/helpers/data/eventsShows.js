@@ -1,5 +1,6 @@
 import axios from 'axios';
 import firebaseConfig from '../apiKeys';
+import { getEventShows } from './eventsRelationships';
 
 const dbUrl = firebaseConfig.databaseURL;
 
@@ -14,7 +15,7 @@ const getEventsShowsTables = () => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-const createEventShowsRelationship = (obj) => new Promise((resolve, reject) => {
+const createEventShowRelationship = (obj) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/events_shows.json`, obj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
@@ -23,4 +24,19 @@ const createEventShowsRelationship = (obj) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export { getEventsShowsTables, createEventShowsRelationship };
+const deleteEventShowRelationship = (tableId) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/events_shows/${tableId}.json`)
+    .then((response) => resolve(response))
+    .catch((error) => reject(error));
+});
+
+const deleteEventShows = (eventId) => {
+  getEventShows(eventId).then((showsArr) => {
+    showsArr.forEach((show) => deleteEventShowRelationship(show.firebaseKey));
+  });
+};
+
+export {
+  getEventsShowsTables, createEventShowRelationship,
+  deleteEventShows
+};

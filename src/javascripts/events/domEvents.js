@@ -38,13 +38,16 @@ import { showStaffReadOnly } from '../components/readOnlyPrinters/showStaffReadO
 import printShowsReadOnly from '../components/readOnlyPrinters/showShowsReadOnly';
 import { showSouvenirsReadOnly } from '../components/readOnlyPrinters/showSouvenirsReadOnly';
 import {
-  getSingleEvent, deleteEvent, getAllEvents
+  getSingleEvent, getAllEvents
 } from '../helpers/data/eventsData';
 import deleteConfirm from '../components/forms/deleteConfirm';
 import addEventForm from '../components/forms/addEventForm';
 import { showEvents } from '../components/showEvents';
 import showSingleEvent from '../components/showSingleEvent';
-import eventsEvents from './eventsEvents';
+import {
+  eventsEvents, editEvent,
+  submitUpdateEvent, deleteEventWithData
+} from './eventsEvents';
 import { getAllEventItems } from '../helpers/data/eventsRelationships';
 
 const eventListeners = (e) => {
@@ -281,18 +284,29 @@ const eventListeners = (e) => {
   }
 
   if (e.target.id.includes('submit-event-form')) {
-    eventsEvents(e);
+    e.preventDefault();
+    eventsEvents();
   }
 
   if (e.target.id.includes('delete-event')) {
     const firebaseKey = e.target.id.split('--')[1];
-    deleteEvent(firebaseKey).then((eventsArray) => showEvents(eventsArray));
+    deleteEventWithData(firebaseKey).then((eventsArray) => showEvents(eventsArray));
     $('#formModal').modal('toggle');
   }
 
   if (e.target.id.includes('event-details-btn')) {
     const firebaseKey = e.target.id.split('--')[1];
     getAllEventItems(firebaseKey).then((obj) => showSingleEvent(obj, firebaseKey));
+  }
+  if (e.target.id.includes('event-edit-btn')
+      || e.target.id.includes('event-edit-icon')) {
+    const firebaseKey = e.target.id.split('--')[1];
+    editEvent(firebaseKey);
+  }
+  if (e.target.id.includes('submit-edit-event-form')) {
+    e.preventDefault();
+    const firebaseKey = e.target.id.split('--')[1];
+    submitUpdateEvent(firebaseKey);
   }
 };
 

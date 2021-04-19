@@ -33,8 +33,8 @@ const deleteEvent = (firebaseKey) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-const createEvent = (eventObject) => new Promise((resolve, reject) => {
-  axios.post(`${dbUrl}/events.json`, eventObject)
+const createEvent = (eventObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/events.json`, eventObj)
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/events/${response.data.name}.json`, body)
@@ -43,7 +43,19 @@ const createEvent = (eventObject) => new Promise((resolve, reject) => {
     });
 });
 
+const updateEvent = (eventId, eventObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/events/${eventId}.json`, eventObj)
+    .then((response) => {
+      if (response.data.name) {
+        getSingleEvent(response.data.name)
+          .then((updatedObj) => resolve(updatedObj));
+      } else {
+        resolve([]);
+      }
+    }).catch((error) => reject(error));
+});
+
 export {
   getAllEvents, getEvents, getSingleEvent,
-  deleteEvent, createEvent
+  deleteEvent, createEvent, updateEvent
 };

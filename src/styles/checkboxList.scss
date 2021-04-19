@@ -13,4 +13,28 @@ div.checkbox-container {
 .checkbox-container li {
   line-height: 1em;
   text-align: left;
+  position: relative;
+}
+
+.module_count {
+  width: 3.5em;
+  position: absolute;
+  right: 10px;
+  height: 90%;
+}
+
+.label-container {
+  position: relative;
+}
+
+.name-label {
+  position: absolute;
+  left: 10px;
+  top: -30px;
+}
+
+.quantity-label {
+  position: absolute;
+  right: 10px;
+  top: -30px;
 }
