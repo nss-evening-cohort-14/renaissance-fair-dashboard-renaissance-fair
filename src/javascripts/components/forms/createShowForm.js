@@ -1,7 +1,7 @@
-import headerTitle from '../headerTitle';
+import { entertainmentTitle } from '../headerTitle';
 
 const createShowForm = () => {
-  headerTitle('Create a Show');
+  entertainmentTitle();
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = `<form id="submit-show-form" class="mb-4" style="width: 50rem; margin: 0 auto;">
@@ -20,6 +20,10 @@ const createShowForm = () => {
 <div class="form group">
   <label for="date">Date</label>
   <input type="date" class="form-control" id="date" aria-describedby="showDate" placeholder="mm/dd/yyyy" required>
+</div>
+<div class="form-group">
+  <label for="price">Price</label>
+  <input type="number" class="form-control" id="price" min="1" max="500">
 </div>
   <button type="button" id="submit-show" class="btn btn-danger">Submit show</button>
 </div>`;

@@ -1,7 +1,7 @@
-import headerTitle from '../headerTitle';
+import { entertainmentTitle } from '../headerTitle';
 
 const printShowsReadOnly = (array) => {
-  headerTitle('Watch a Show');
+  entertainmentTitle();
   document.querySelector('#content-container').innerHTML = '';
   array.forEach((show) => {
     const domString = `

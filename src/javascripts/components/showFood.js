@@ -1,7 +1,7 @@
-import headerTitle from './headerTitle';
+import { foodTitle } from './headerTitle';
 
 const showFood = (array) => {
-  headerTitle('Food Shoppes');
+  foodTitle();
   document.querySelector('#content-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#add-button-container').innerHTML = '<button class="btn add-new-form-btn" id="create-food-form">Add Food<span class="button-icon"><i class="fas fa-user-friends"></i></span></button>';

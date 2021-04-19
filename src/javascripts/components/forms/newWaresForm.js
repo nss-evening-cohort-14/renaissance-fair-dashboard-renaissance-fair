@@ -1,9 +1,9 @@
-import headerTitle from '../headerTitle';
+import { souvenirTitle } from '../headerTitle';
 
 const newSouvenirsForm = () => {
   document.querySelector('#add-button-container').innerHTML = '';
   document.querySelector('#content-container').innerHTML = '';
-  headerTitle('Add Souvenir');
+  souvenirTitle();
   document.querySelector('#content-container').innerHTML = `
     <form id='submit-souvenirs-form' class='mb-4' style='width:25%;'>
       <div class='form-group'>
@@ -16,7 +16,7 @@ const newSouvenirsForm = () => {
       </div>
       <div class='form-group'>
         <label for='price'>Price</label>
-        <input type='text' class='form-control' id='price' placeholder='Book Price' required>
+        <input type='number' class='form-control' id='price' placeholder='Price' required>
       </div>
       <div class='form-group'>
       <label for='description'>Souvenir Description</label>

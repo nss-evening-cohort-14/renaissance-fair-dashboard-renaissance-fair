@@ -1,11 +1,13 @@
-@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Alike&display=swap');
 @import './staff.scss';
 @import './food.scss';
 @import './souvenirs.scss';
 @import './show.scss';
 @import './vars.scss';
+@import './events.scss';
+@import './checkboxList.scss';
 
 body {
   background-color: $secondarycolor;
@@ -83,6 +85,9 @@ nav {
   text-align: center;
   padding: 40px;
 }
+#header-title-container {
+  font-size: 36px;
+}
 .menu{
 	background-color: #1A1F14;
   color: $secondarycolor;
@@ -101,7 +106,6 @@ nav {
 		padding:0.5em 0;
 		margin:0;
 		li{
-			// padding:0.5em 1em 0.5em 3em;
       color: $secondarycolor;
 			font-size: 24px;
 			font-weight:regular;
@@ -113,7 +117,7 @@ nav {
     }
   }
 }
-a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.nav-link, a#food-link.nav-link {
+a#home.nav-link, a#events-link.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.nav-link, a#food-link.nav-link, a#show-event-title {
   color:$mainfontcolor;
 }
 #auth-button {
@@ -155,7 +159,7 @@ a#home.nav-link, a#shows-link.nav-link, a#souvenirs-link.nav-link, a#court-link.
   }
 }
 
-.delete-btn {
+.delete-btn, .event-details-btn {
   background-color: $secondarycolor;
   color: $secondaryfontcolor;
   padding: 0.8rem;
@@ -237,7 +241,6 @@ a.nav-link:hover {
       padding:0.5em 0;
       margin:0;
       li{
-        // padding:0.5em 1em 0.5em 3em;
         color: $secondarycolor;
         font-size: 24px;
         font-weight:regular;

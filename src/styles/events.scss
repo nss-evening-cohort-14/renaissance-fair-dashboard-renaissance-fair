@@ -1,0 +1,40 @@
+.event-a {
+  flex: 100%;
+}
+
+.event-b {
+  flex: 100%;
+}
+
+.event-c {
+  flex: 100%;
+}
+
+.event-quad {
+  padding: 50px 50px;
+  flex: 50%;
+}
+
+.l {
+  font-size: 1.2em;
+}
+
+.row-header {
+  border-bottom: 1px solid black;
+}
+
+.item-list {
+  list-style-type: none;
+}
+
+.list-name {
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  max-height: 1.5em;
+  max-width: 300px;
+}
+
+.list-count {
+  text-align: right;;
+}
