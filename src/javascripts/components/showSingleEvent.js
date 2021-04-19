@@ -71,8 +71,6 @@ const souvenirQuad = (souvenirArr) => {
   });
 };
 
-// const eventName = ()
-
 const showSingleEvent = (Obj, eventId) => {
   getSingleEvent(eventId).then((eventObj) => {
     document.querySelector('#content-container').innerHTML = '';
