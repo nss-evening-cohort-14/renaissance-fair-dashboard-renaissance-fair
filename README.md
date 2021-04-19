@@ -63,12 +63,14 @@ User flow chart: ![flow-chart-ren](https://user-images.githubusercontent.com/761
 ## Deployed Netlify App [![Netlify Status](https://api.netlify.com/api/v1/badges/faa643b4-c3c3-4711-9204-b643023d960b/deploy-status)](https://app.netlify.com/sites/renfaire-v2/deploys)
 https://renfaire-v2.netlify.app
 ## Screenshots
+ ## Loom Videos
+https://www.loom.com/share/d73f3f43131c45b5a71aab550186368c
+
 ![freelancer](https://user-images.githubusercontent.com/76187279/115093500-296ffc80-9ee0-11eb-9b7b-1095175b9c26.png)
 
-![freelancer2](https://user-images.githubusercontent.com/76187279/115093504-2f65dd80-9ee0-11eb-90b4-a84483840eaa.png)
+![EventEdit](https://user-images.githubusercontent.com/51683901/115166332-43444780-a078-11eb-9023-71ad09a13758.PNG)
 
-![freelancer3](https://user-images.githubusercontent.com/76187279/115094361-dba8c380-9ee2-11eb-805a-c1d1d4e36633.png)
-
+![SingleEventView](https://user-images.githubusercontent.com/51683901/115166344-4dfedc80-a078-11eb-9430-a4ece4228512.PNG)
 ## Contributors 
 - John Maple: https://github.com/Greenfin17
 - Lindsey Satterfield: https://github.com/lindseysatterfield
